@@ -2,7 +2,7 @@ CREATE TABLE `users` (
   `id` integer PRIMARY KEY,
   `username` varchar(255) NOT NULL,
   `age` TINYINT,
-  `sex` varchar(255),
+  `sex` char(1)  COMMENT 'M / W',
   `nation` char(2),
   `email` char,
   `created_at` timestamp COMMENT '필요없으면 빼기. 로그 같은 곳에 쓸 데 없으려나?'
@@ -56,7 +56,7 @@ CREATE TABLE `review` (
   `title` VARCHAR(255) NOT NULL,
   `body` text COMMENT '리뷰 내용',
   `created_at` timestamp COMMENT '업로드한 날짜 ',
-  `img` image COMMENT 'image를 추가할 수 있도록?',
+  `img` text COMMENT 'image를 추가할 수 있도록?',
   `user_id` integer NOT NULL,
   `city_id` integer NOT NULL
 );
