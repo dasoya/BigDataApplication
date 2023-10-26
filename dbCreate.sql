@@ -42,7 +42,7 @@ CREATE TABLE `Userliked` (
 );
 
 CREATE TABLE `country` (
-  'iso_number' integer(3),
+  `iso_number` integer(3),
   `iso_code3` char(3),
   `iso_code2` char(2) PRIMARY KEY,
   `name` varchar(255) NOT NULL,
@@ -114,8 +114,6 @@ ALTER TABLE `trip` ADD FOREIGN KEY (`city_id`) REFERENCES `city` (`id`);
 ALTER TABLE `Userliked` ADD FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
 
 ALTER TABLE `Userliked` ADD FOREIGN KEY (`city_id`) REFERENCES `city` (`id`);
-
-ALTER TABLE `Userliked` ADD FOREIGN KEY (`landmark_id`) REFERENCES `landmark` (`id`);
 
 ALTER TABLE `country` ADD FOREIGN KEY (`continent_id`) REFERENCES `continent` (`id`);
 
