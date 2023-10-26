@@ -38,13 +38,13 @@ CREATE TABLE `trip` (
 CREATE TABLE `Userliked` (
   `user_id` integer NOT NULL,
   `city_id` integer,
-  `landmark_id` integer,
   PRIMARY KEY (`user_id`, `city_id`)
 );
 
 CREATE TABLE `country` (
-  `iso_num2` char(2) PRIMARY KEY,
-  `iso_num3` char(3),
+  'iso_number' integer(3),
+  `iso_code3` char(3),
+  `iso_code2` char(2) PRIMARY KEY,
   `name` varchar(255) NOT NULL,
   `flag` text COMMENT '국기 img url',
   `info` text COMMENT '국가 정보',
@@ -103,7 +103,7 @@ CREATE TABLE `feedback` (
   `text` text
 );
 
-ALTER TABLE `users` ADD FOREIGN KEY (`nation`) REFERENCES `country` (`iso_num2`);
+ALTER TABLE `users` ADD FOREIGN KEY (`nation`) REFERENCES `country` (`iso_code2`);
 
 ALTER TABLE `prediction` ADD FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
 
@@ -123,11 +123,11 @@ ALTER TABLE `review` ADD FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
 
 ALTER TABLE `review` ADD FOREIGN KEY (`city_id`) REFERENCES `city` (`id`);
 
-ALTER TABLE `airport` ADD FOREIGN KEY (`country_id`) REFERENCES `country` (`iso_num2`);
+ALTER TABLE `airport` ADD FOREIGN KEY (`country_id`) REFERENCES `country` (`iso_code2`);
 
 ALTER TABLE `station` ADD FOREIGN KEY (`city_id`) REFERENCES `city` (`id`);
 
-ALTER TABLE `city` ADD FOREIGN KEY (`country_id`) REFERENCES `country` (`iso_num2`);
+ALTER TABLE `city` ADD FOREIGN KEY (`country_id`) REFERENCES `country` (`iso_code2`);
 
 ALTER TABLE `landmark` ADD FOREIGN KEY (`city_id`) REFERENCES `city` (`id`);
 
