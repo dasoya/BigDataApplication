@@ -19,14 +19,14 @@
       );
     */
     
-    $sql = "INSERT INTO review (id, title, body, created_at, img, user_id, city_id ) VALUES (?, ?, ?, ?, ?, ?, ?)";
-
-    //post? request?
+    $sql = "INSERT INTO review (id, title, body, created_at, img, user_id, city_id ) VALUES (?, ?, ?, ?, ?, ?, ?);";    
       
     if($stmt = mysqli_prepare($dblink, $sql)) {
         
         mysqli_stmt_bind_param($stmt,"issssss", $id, $title, $body, $created_at, $img, $user_id, $city_id); //데이터 구조 보고 수정
         
+        //post? request?
+
         $id = $_REQUEST['id'];
         $title = $_REQUEST['title'];
         $body = $_REQUEST['body'];
@@ -44,10 +44,14 @@
             echo 'upload success'; 
         }
         else {
-
             //실패한 경우
-            echo 'upload failed';
+            printf("", mysqli_error($dblink));
         }
-
     }
+    else{ //prepare 실패
+        printf("", mysqli_error($dblink));
+    }
+    
+    mysqli_stmt_close($stmt);
+    mysqli_close($dblink);
 ?>
