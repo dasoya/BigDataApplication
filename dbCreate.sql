@@ -1,11 +1,10 @@
 CREATE TABLE `users` (
   `id` integer PRIMARY KEY,
+  `email` char UNIQUE COMMENT '회원가입 및 로그인에 사용',
+  `pw` varchar(255) NOT NULL,
   `username` varchar(255) NOT NULL,
   `age` TINYINT,
   `sex` char(1)  COMMENT 'M / W',
-  `nation` char(2),
-  `email` char,
-  `created_at` timestamp COMMENT '필요없으면 빼기. 로그 같은 곳에 쓸 데 없으려나?'
 );
 
 CREATE TABLE `prediction` (
@@ -58,15 +57,15 @@ CREATE TABLE `review` (
   `created_at` timestamp COMMENT '업로드한 날짜 ',
   `img` text COMMENT 'image를 추가할 수 있도록?',
   `user_id` integer NOT NULL,
-  `city_id` integer NOT NULL
+   -- `city_id` integer NOT NULL
 );
 
 CREATE TABLE `airport` (
   `iata_code` varchar(32) PRIMARY KEY,
   `icao_code` varchar(32) UNIQUE,
   `airport_name` varchar(255) NOT NULL,
-  `continent_id` integer NOT NULL,
   `country_id` char(2) NOT NULL
+  `city_id` integer NOT NULL
 );
 
 CREATE TABLE `station` (
@@ -103,8 +102,6 @@ CREATE TABLE `feedback` (
   `text` text
 );
 
-ALTER TABLE `users` ADD FOREIGN KEY (`nation`) REFERENCES `country` (`iso_code2`);
-
 ALTER TABLE `prediction` ADD FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
 
 ALTER TABLE `prediction` ADD FOREIGN KEY (`city_id`) REFERENCES `city` (`id`);
@@ -119,7 +116,7 @@ ALTER TABLE `country` ADD FOREIGN KEY (`continent_id`) REFERENCES `continent` (`
 
 ALTER TABLE `review` ADD FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
 
-ALTER TABLE `review` ADD FOREIGN KEY (`city_id`) REFERENCES `city` (`id`);
+-- ALTER TABLE `review` ADD FOREIGN KEY (`city_id`) REFERENCES `city` (`id`);
 
 ALTER TABLE `airport` ADD FOREIGN KEY (`country_id`) REFERENCES `country` (`iso_code2`);
 
