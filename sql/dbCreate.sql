@@ -5,7 +5,7 @@ CREATE TABLE `user` (
   `pw` varchar(255) NOT NULL,
   `username` varchar(255) NOT NULL,
   `age` TINYINT,
-  `sex` ENUM ('M', 'W') COMMENT 'M / W'
+  `sex` ENUM ('Female', 'Male') COMMENT 'Female / Male'
 );
 
 CREATE TABLE `prediction` (
@@ -24,12 +24,14 @@ CREATE TABLE `trip` (
   `id` integer PRIMARY KEY,
   `travelerName` varchar(255),
   `travelerAge` integer,
-  `travelerSex` char(1) COMMENT 'M / W',
+  `travelerSex` ENUM ('Female', 'Male') COMMENT 'Female / Male',
   `start_date` date,
   `end_date` date,
   `duration` integer,
   `transportaion_type` varchar(255),
+  `transportaion_cost` integer,
   `accommodation_type` varchar(255),
+  `accommodation_cost` integer,
   `city_id` integer NOT NULL
 );
 
