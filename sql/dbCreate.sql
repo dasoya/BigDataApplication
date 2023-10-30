@@ -24,7 +24,7 @@ CREATE TABLE `trip` (
   `id` integer PRIMARY KEY,
   `travelerName` varchar(255),
   `travelerAge` integer,
-  `travelerSex` char(1) COMMENT 'M / W',
+  `travelerSex` ENUM ('Female', 'Male') COMMENT 'Female / Male',
   `start_date` date,
   `end_date` date,
   `duration` integer,
