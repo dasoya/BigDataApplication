@@ -5,7 +5,7 @@ CREATE TABLE `user` (
   `pw` varchar(255) NOT NULL,
   `username` varchar(255) NOT NULL,
   `age` TINYINT,
-  `sex` ENUM ('M', 'W') COMMENT 'M / W'
+  `sex` ENUM ('Female', 'Male') COMMENT 'Female / Male'
 );
 
 CREATE TABLE `prediction` (
