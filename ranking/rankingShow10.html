@@ -11,8 +11,13 @@
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/bootstrap-icons.css" rel="stylesheet">
         <link href="../css/templatemo-topic-listing.css" rel="stylesheet">  
+        <link href="table.css" rel="stylesheet">
     </head>
   <body id="top">
+    <?php
+        include "countryRanking.php";
+        include "cityRanking.php";
+    ?>
     <main> <!-- base.html의 head, 상단 메뉴 복사 -->
         <nav class="navbar navbar-expand-lg">
             <div class="container">
@@ -67,20 +72,109 @@
             <div class="container">
                 <div class="row">
 
-                    <div class="col-lg-8 col-12 mx-auto">
+                    <div class="col-lg-6 col-7 mx-auto">
                         <h1 class="text-white text-center">Ranking </h1>
                         <h6 class="text-center">Most visited Top 10</h6>
                         <!-- TODO -->
                         <!-- 표로 어떻게 보여줄지 고민하기 -->
-                        
-                       
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="explore-section section-padding" id="section_2">
+            <div class="container">
+                <div class="row">
 
-                        
+                    <div class="col-12 text-center">
+                        <h2 class="mb-4">TOP 3</h1>
                     </div>
 
                 </div>
             </div>
+
+            <div class="container-fluid">
+                <div class="row">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="design-tab" data-bs-toggle="tab" data-bs-target="#design-tab-pane" type="button" role="tab" aria-controls="design-tab-pane" aria-selected="true">city</button>
+                        </li>
+
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="marketing-tab" data-bs-toggle="tab" data-bs-target="#marketing-tab-pane" type="button" role="tab" aria-controls="marketing-tab-pane" aria-selected="false">country</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- TODO -->
+            <!-- 이렇게 말고 select box로 정렬 우선순위 바꾸면 바꿔지게?-->
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-12">
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="design-tab-pane" role="tabpanel" aria-labelledby="design-tab" tabindex="0">
+                                <div class="row">
+                                    <table class="styled-table">
+                                        <thead>
+                                            <tr>
+                                                <th>Rank</th>
+                                                <th>name</th>
+                                                <th>total</th>
+                                                <th>info</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php
+                                                foreach ($cityRanking as $city) {
+                                                    echo "<tr>";
+                                                        echo "<td>" . $city['rank'] . "</td>";
+                                                        echo "<td>" . $city['name'] . "</td>";
+                                                        echo "<td>" . $city['cou'] . "</td>";
+                                                        echo "<td>" . $city['info'] . "</td>";
+                                                    echo "</tr>";
+                                                }
+                                            ?>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- 여기부터 country -->
+                            <div class="tab-pane fade" id="marketing-tab-pane" role="tabpanel" aria-labelledby="marketing-tab" tabindex="0">
+                                <div class="row">
+                                    <table class="styled-table">
+                                        <thead>
+                                            <tr>
+                                                <th>Rank</th>
+                                                <th>Name</th>
+                                                <th>total</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php
+                                                foreach ($countryRanking as $country) {
+                                                    echo "<tr>";
+                                                        echo "<td>" . $country['rank'] . "</td>";
+                                                        echo "<td>" . $country['name'] . "</td>";
+                                                        echo "<td>" . $country['total'] . "</td>";
+                                                    echo "</tr>";
+                                                }
+                                            ?>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
+
+
+
+
+        
 
 
         <!-- base.html의 footer 복사 및 js 경로 수정-->
