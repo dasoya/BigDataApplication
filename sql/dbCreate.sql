@@ -3,7 +3,7 @@ CREATE TABLE `user` (
   `id` integer PRIMARY KEY,
   `email` varchar(255) UNIQUE COMMENT '회원가입 및 로그인에 사용',
   `pw` varchar(255) NOT NULL,
-  `username` varchar(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
   `age` TINYINT,
   `sex` ENUM ('Female', 'Male') COMMENT 'Female / Male'
 );
@@ -76,7 +76,7 @@ CREATE TABLE `station` (
 
 CREATE TABLE `city` (
   `id` integer PRIMARY KEY,
-  `city_name` varchar(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
   `latitude` float,
   `longitude` float,
   `info` text COMMENT '도시 설명',
@@ -85,7 +85,7 @@ CREATE TABLE `city` (
 
 CREATE TABLE `landmark` (
   `id` integer PRIMARY KEY,
-  `landmark_name` varchar(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
   `img` text COMMENT 'img url',
   `info` text COMMENT '랜드마크 설명',
   `city_id` integer NOT NULL
