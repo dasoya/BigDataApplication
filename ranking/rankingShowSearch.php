@@ -1,19 +1,19 @@
 <?php
 
-    $dblink = mysqli_connect("localhost", 'root', '', 'dbName');
+    $dblink = mysqli_connect("localhost", 'root', '', 'bibibig');
     
     if (mysqli_connect_errno()) {
         printf('', mysqli_connect_error());
         exit();
     }
     // 랭킹 순으로 정리한 테이블에 where문 추가
-    $sql = "SELECT c.id, c.name, t.cou, RANK() OVER (ORDER BY t.cou DESC) AS rank
+    $sql = "SELECT c.id, c.city_name, t.cou, RANK() OVER (ORDER BY t.cou DESC) AS rank
             FROM (SELECT city_id, COUNT(*) cou
                     FROM trip
                     GROUP BY city_id
                     ORDER BY cou DESC) AS t
             JOIN city AS c ON c.id = t.city_id
-            WHERE c.name = ? ";
+            WHERE c.city_name = ? ";
     
     if($stmt = mysqli_prepare($dblink, $sql)) {
 
