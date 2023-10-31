@@ -212,7 +212,7 @@ INSERT INTO landmark VALUES(2004, 'Statue of Liberty', 'https://www.google.com/u
 INSERT INTO landmark VALUES(2005, 'Tokyo Tower', 'https://upload.wikimedia.org/wikipedia/commons/5/58/Tokyo_Tower_2023.jpg', 'Radio transmission tower in Tokyo',1005);
 INSERT INTO landmark VALUES(2006, 'Eiffel Tower', 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Tour_Eiffel_Wikimedia_Commons_%28cropped%29.jpg/250px-Tour_Eiffel_Wikimedia_Commons_%28cropped%29.jpg', 'Iron tower in Paris',1006);
 INSERT INTO landmark VALUES(2007, 'Sydney Opera House', 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Sydney_Australia._%2821339175489%29.jpg', 'Music and theater venue in Sydney',1007);
-INSERT INTO landmark VALUES(2008, 'Christ the Redeemer', 'https://cdn.britannica.com/54/150754-050-5B93A950/statue-Christ-the-Redeemer-Rio-de-Janeiro.jpg',1008);
+INSERT INTO landmark VALUES(2008, 'Christ the Redeemer', 'https://cdn.britannica.com/54/150754-050-5B93A950/statue-Christ-the-Redeemer-Rio-de-Janeiro.jpg','Christ the Redeemer is a towering Art Deco statue of Jesus Christ perched atop the Corcovado mountain in Rio de Janeiro, Brazil, serving as an iconic symbol of both the city and Christianity.',1008);
 INSERT INTO landmark VALUES(2009, 'Anne Frank House', 'https://images.app.goo.gl/Y5xE66hapa4erQpR7', 'Anne Frank''s hiding place in Amsterdam',1009);
 INSERT INTO landmark VALUES(2010, 'Burj Al Arab', 'https://images.app.goo.gl/NEjS9rQGhU9Dgq2N6', '7-star hotel in Dubai',1010);
 INSERT INTO landmark VALUES(2011, 'Cancun Beach', 'https://images.app.goo.gl/ZEGadUa8hhHg2hpM6', 'Beach with turquoise waters in Mexico',1011);
