@@ -7,7 +7,7 @@
         exit();
     }
     else{
-        $sql = "SELECT name, flag, total, RANK() OVER (ORDER BY total DESC) AS rank
+        $sql = "SELECT country.name, flag, total, RANK() OVER (ORDER BY total DESC) AS rank
                     FROM (SELECT country_id, sum(cou) as total
                         FROM (SELECT city_id, count(*) cou
                                 FROM trip

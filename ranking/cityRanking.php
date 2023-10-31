@@ -8,7 +8,7 @@
     }
     else{
         //Query 내용은 아래 서술
-        $sql = "SELECT c.id, c.city_name, c.info, c.latitude, c.longitude, l.img landmarkImgUrl ,RANK() OVER (ORDER BY t.cou DESC) AS rank
+        $sql = "SELECT c.id, c.name, c.info, c.latitude, c.longitude, l.img landmarkImgUrl ,RANK() OVER (ORDER BY t.cou DESC) AS rank
                 FROM (SELECT city_id, COUNT(*) cou
                         FROM trip
                         GROUP BY city_id
