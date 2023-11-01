@@ -68,25 +68,25 @@
             </div>
         </nav>
        
-        <section class="hero-section d-flex justify-content-center align-items-center" id="section_1">
+        <section class="hero-section d-flex justify-content-center align-items-center " style="padding-bottom: 1%;" id="section_1">
             <div class="container">
                 <div class="row">
 
                     <div class="col-lg-6 col-7 mx-auto">
                         <h1 class="text-white text-center">Ranking </h1>
-                        <h6 class="text-center">Most visited Top 10</h6>
-                        <!-- TODO -->
-                        <!-- 표로 어떻게 보여줄지 고민하기 -->
+                        <h6 class="text-center">Most visited cities & country </h6>
+
                     </div>
                 </div>
             </div>
+            
         </section>
         <section class="explore-section section-padding" id="section_2">
             <div class="container">
                 <div class="row">
 
                     <div class="col-12 text-center">
-                        <h2 class="mb-4">TOP 3</h1>
+                        <h2 class="mb-4"> Criteria? </h1>
                     </div>
 
                 </div>
@@ -101,6 +101,12 @@
 
                         <li class="nav-item" role="presentation">
                             <button class="nav-link" id="marketing-tab" data-bs-toggle="tab" data-bs-target="#marketing-tab-pane" type="button" role="tab" aria-controls="marketing-tab-pane" aria-selected="false">country</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="finance-tab" data-bs-toggle="tab" data-bs-target="#finance-tab-pane" type="button" role="tab" aria-controls="finance-tab-pane" aria-selected="false">Country&City</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="music-tab" data-bs-toggle="tab" data-bs-target="#music-tab-pane" type="button" role="tab" aria-controls="music-tab-pane" aria-selected="false">Search</button>
                         </li>
                     </ul>
                 </div>
@@ -165,6 +171,28 @@
                                     </table>
                                 </div>
                             </div>
+                            <!-- 여기서부터 rollup -->
+                            <div class="tab-pane fade" id="finance-tab-pane" role="tabpanel" aria-labelledby="finance-tab" tabindex="0">   
+                                <div class="row">
+
+                                </div>
+                            </div>
+                            <!-- 여기서부터 search-->
+                            <div class="tab-pane fade" id="music-tab-pane" role="tabpanel" aria-labelledby="music-tab" tabindex="0">
+                                <div class>
+                                    <form method="get" class="custom-form mt-4 pt-2 mb-lg-0 mb-5" role="search">
+                                        <div class="input-group input-group-lg">
+                                            <span class="input-group-text bi-search" id="basic-addon1">
+                                                
+                                            </span>
+        
+                                            <input name="keyword" type="search" class="form-control" id="keyword" placeholder="Design, Code, Marketing, Finance ..." aria-label="Search">
+        
+                                            <button type="submit" class="form-control">Search</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -173,7 +201,7 @@
 
 
 
-
+       
         
 
 
