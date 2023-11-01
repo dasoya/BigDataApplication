@@ -98,8 +98,8 @@ CREATE TABLE `continent` (
 
 CREATE TABLE `feedback` (
   `user_id` integer PRIMARY KEY,
-  `rate` integer NOT NULL,
-  `text` text
+  `rating` integer NOT NULL,
+  `message` text
 );
 
 ALTER TABLE `airport` ADD FOREIGN KEY (`city_id`) REFERENCES `city` (`id`);
