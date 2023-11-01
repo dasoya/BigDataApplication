@@ -98,7 +98,7 @@ CREATE TABLE `continent` (
 
 CREATE TABLE `feedback` (
   `user_id` integer PRIMARY KEY,
-  `rate` integer,
+  `rate` integer NOT NULL,
   `text` text
 );
 
