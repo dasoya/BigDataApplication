@@ -1,4 +1,75 @@
--- 3. trip table
+
+-- Continent DB
+
+INSERT INTO continent (continent_name, id) VALUES ('Europe', '3001');
+INSERT INTO continent (continent_name, id) VALUES ('Asia', '3002');
+INSERT INTO continent (continent_name, id) VALUES ('North America', '3003');
+INSERT INTO continent (continent_name, id) VALUES ('Oceania', '3004');
+INSERT INTO continent (continent_name, id) VALUES ('South America', '3005');
+INSERT INTO continent (continent_name, id) VALUES ('Africa', '3006');
+INSERT INTO continent (continent_name, id) VALUES ('Antarctica', '3007');
+
+-- Country DB
+
+INSERT INTO country (name, iso_number, iso_code3, iso_code2, continent_id, flag) VALUES ('UK', '826', 'GBR', 'GB', '3001', 'https://img.freepik.com/premium-vector/vector-image-of-the-british-flag-of-england-sign-of-the-kingdom-of-great-britain-lovely-london-badge_213497-1010.jpg');
+INSERT INTO country (name, iso_number, iso_code3, iso_code2, continent_id, flag) VALUES ('Thailand', '764', 'THA', 'TH', '3002', 'https://img.freepik.com/free-vector/illustration-of-thailand-flag_53876-27145.jpg');
+INSERT INTO country (name, iso_number, iso_code3, iso_code2, continent_id, flag) VALUES ('Indonesia', '360', 'IDN', 'ID', '3002', 'https://img.freepik.com/free-vector/illustration-of-indonesia-flag_53876-27131.jpg');
+INSERT INTO country (name, iso_number, iso_code3, iso_code2, continent_id, flag) VALUES ('USA', '840', 'USA', 'US', '3003', 'https://upload.wikimedia.org/wikipedia/commons/a/a9/Flag_of_the_United_States_%28DoS_ECA_Color_Standard%29.svg');
+INSERT INTO country (name, iso_number, iso_code3, iso_code2, continent_id, flag) VALUES ('Japan', '392', 'JPN', 'JP', '3002', 'https://img.freepik.com/premium-vector/japan-flag_855948-3.jpg');
+INSERT INTO country (name, iso_number, iso_code3, iso_code2, continent_id, flag) VALUES ('France', '250', 'FRA', 'FR', '3001', 'https://img.freepik.com/premium-vector/australia-flag-button-icon_147072-600.jpg');
+INSERT INTO country (name, iso_number, iso_code3, iso_code2, continent_id, flag) VALUES ('Australia', '36', 'AUS', 'AU', '3004', 'https://img.freepik.com/premium-vector/australia-flag-button-icon_147072-600.jpg');
+INSERT INTO country (name, iso_number, iso_code3, iso_code2, continent_id, flag) VALUES ('Brazil', '76', 'BRA', 'BR', '3005', 'https://i.namu.wiki/i/zp21MgQRhFJiasIohLO-MnI7LB2jDRlN9pEpiMSMy_KAXJxPUJfPzlNU3G8JzpNnJ0_JOUHvQVA_4viZGYbn5A.svg');
+INSERT INTO country (name, iso_number, iso_code3, iso_code2, continent_id, flag) VALUES ('Netherlands', '528', 'NLD', 'NL', '3001', 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Flag_of_the_Netherlands.svg/255px-Flag_of_the_Netherlands.svg.png');
+INSERT INTO country (name, iso_number, iso_code3, iso_code2, continent_id, flag) VALUES ('United Arab Emirates', '784', 'ARE', 'AE', '3002', 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Flag_of_the_United_Arab_Emirates.svg/255px-Flag_of_the_United_Arab_Emirates.svg.png');
+INSERT INTO country (name, iso_number, iso_code3, iso_code2, continent_id, flag) VALUES ('Mexico', '484', 'MEX', 'MX', '3003', 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Flag_of_Mexico.svg/290px-Flag_of_Mexico.svg.png');
+INSERT INTO country (name, iso_number, iso_code3, iso_code2, continent_id, flag) VALUES ('Spain', '724', 'ESP', 'ES', '3001', 'https://img.freepik.com/free-vector/illustration-of-spain-flag_53876-18168.jpg?size=626&ext=jpg&ga=GA1.1.1413502914.1697155200&semt=ais');
+INSERT INTO country (name, iso_number, iso_code3, iso_code2, continent_id, flag) VALUES ('Germany', '276', 'DEU', 'DE', '3001', 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Flag_of_West_Germany%3B_Flag_of_Germany_%281990%E2%80%931996%29.svg/220px-Flag_of_West_Germany%3B_Flag_of_Germany_%281990%E2%80%931996%29.svg.png');
+INSERT INTO country (name, iso_number, iso_code3, iso_code2, continent_id, flag) VALUES ('Morocco', '504', 'MAR', 'MA', '3006', 'https://www.infomorocco.net/uploads/9/4/9/2/9492999/moro-flag_orig.jpg');
+INSERT INTO country (name, iso_number, iso_code3, iso_code2, continent_id, flag) VALUES ('Italy', '380', 'ITA', 'IT', '3001', 'https://img.freepik.com/free-vector/illustration-of-italy-flag_53876-27098.jpg');
+INSERT INTO country (name, iso_number, iso_code3, iso_code2, continent_id, flag) VALUES ('Greece', '300', 'GRC', 'GR', '3001', 'https://img.freepik.com/premium-vector/flag-of-greece-vector-illustration_514344-273.jpg');
+INSERT INTO country (name, iso_number, iso_code3, iso_code2, continent_id, flag) VALUES ('Egypt', '818', 'EGY', 'EG', '3006', 'https://img.freepik.com/free-vector/illustration-of-egypt-flag_53876-27140.jpg');
+INSERT INTO country (name, iso_number, iso_code3, iso_code2, continent_id, flag) VALUES ('Canada', '124', 'CAN', 'CA', '3003', 'https://img.freepik.com/premium-vector/canada-flag-official-colors-and-proportion-correctly-national-canada-flag_721791-960.jpg');
+INSERT INTO country (name, iso_number, iso_code3, iso_code2, continent_id, flag) VALUES ('South Korea', '410', 'KOR', 'KR', '3002', 'https://img.freepik.com/premium-vector/vector-south-korea-flag_1001513-6.jpg');
+INSERT INTO country (name, iso_number, iso_code3, iso_code2, continent_id, flag) VALUES ('South Africa', '710', 'ZAF', 'ZA', '3006', 'https://img.freepik.com/premium-vector/national-flag-of-south-africa-with-official-colors_445068-1821.jpg');
+INSERT INTO country (name, iso_number, iso_code3, iso_code2, continent_id, flag) VALUES ('Cambodia', '116', 'KHM', 'KH', '3002','https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Flag_of_Cambodia.svg/510px-Flag_of_Cambodia.svg.png');
+INSERT INTO country (name, iso_number, iso_code3, iso_code2, continent_id, flag) VALUES ('New Zealand', '554', 'NZL', 'NZ', '3004', 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Flag_of_New_Zealand.svg/1024px-Flag_of_New_Zealand.svg.png');
+
+
+
+-- city DB
+
+INSERT INTO city VALUES(1001, 'London', 51.5074, -0.1278, 'The capital of the United Kingdom, known for its rich history, cultural attractions, and iconic landmarks such as the Tower Bridge and Buckingham Palace.', 'GB');
+INSERT INTO city VALUES(1002, 'Phuket', 7.8804, 98.3923, 'An island in Thailand famous for its beautiful beaches, vibrant nightlife, and water sports.', 'TH');
+INSERT INTO city VALUES(1003, 'Bali', -8.3405, 115.092, 'A popular Indonesian island destination with stunning beaches, lush rice terraces, and a vibrant culture.', 'ID');
+INSERT INTO city VALUES(1004, 'New York', 40.7128, -74.006, 'The largest city in the United States, famous for its diverse culture, iconic skyscrapers, and attractions like Central Park and Times Square.', 'US');
+INSERT INTO city VALUES(1005, 'Tokyo', 35.682839, 139.759455, 'The capital of Japan, known for its modern technology, historic temples, and vibrant street life.', 'JP');
+INSERT INTO city VALUES(1006, 'Paris', 48.8566, 2.3522, 'The capital of France, celebrated for its art, fashion, and iconic landmarks like the Eiffel Tower and the Louvre.', 'FR');
+INSERT INTO city VALUES(1007, 'Sydney', -33.8651, 151.2099, 'The largest city in Australia, renowned for its stunning harbor, the Sydney Opera House, and beautiful beaches.', 'AU');
+INSERT INTO city VALUES(1008, 'Rio de Janeiro', -22.9068, -43.1729, 'A coastal city in Brazil, famous for its Carnival, Copacabana Beach, and Christ the Redeemer statue.', 'BR');
+INSERT INTO city VALUES(1009, 'Amsterdam', 52.3676, 4.9041, 'The capital of the Netherlands, known for its picturesque canals, historic architecture, and vibrant cultural scene.', 'NL');
+INSERT INTO city VALUES(1010, 'Dubai', 25.276987, 55.296249, 'A city in the United Arab Emirates known for its futuristic architecture, luxury shopping, and desert adventures.', 'AE');
+INSERT INTO city VALUES(1011, 'Cancun', 21.1743, -86.8466, 'A popular tourist destination in Mexico, famous for its beautiful beaches and vibrant nightlife.', 'MX');
+INSERT INTO city VALUES(1012, 'Barcelona', 41.3851, 2.1734, 'A vibrant Spanish city famous for its architecture, art, and unique Catalan culture.', 'ES');
+INSERT INTO city VALUES(1013, 'Honolulu', 21.3069, -157.8583, 'The capital of Hawaii, known for its beautiful beaches, surf culture, and natural beauty.', 'US');
+INSERT INTO city VALUES(1014, 'Berlin', 52.52, 13.405, 'The capital of Germany, known for its history, arts, and lively nightlife.', 'DE');
+INSERT INTO city VALUES(1015, 'Marrakech', 31.6295, -7.9811, 'A city in Morocco famous for its colorful markets, historic palaces, and vibrant street life.', 'MA');
+INSERT INTO city VALUES(1016, 'Edinburgh', 55.9533, -3.1883, 'The capital of Scotland, celebrated for its rich history, festivals, and stunning architecture.', 'GB');
+INSERT INTO city VALUES(1017, 'Rome', 41.9028, 12.4964, 'The capital of Italy, known for its ancient history, iconic monuments, and delicious cuisine.', 'IT');
+INSERT INTO city VALUES(1018, 'Bangkok', 13.7563, 100.5018, 'The capital of Thailand, famous for its vibrant street life, ornate temples, and delicious street food.', 'TH');
+INSERT INTO city VALUES(1019, 'Santorini', 36.3932, 25.4615, 'A picturesque Greek island known for its stunning sunsets, white-washed buildings, and beautiful blue-domed churches.', 'GR');
+INSERT INTO city VALUES(1020, 'Cairo', 30.0444, 31.2357, 'The capital of Egypt, famous for its ancient pyramids, historic sites, and bustling markets.', 'EG');
+INSERT INTO city VALUES(1021, 'Vancouver', 49.2827, -123.1207, 'A Canadian city known for its natural beauty, outdoor activities, and diverse culture.', 'CA');
+INSERT INTO city VALUES(1022, 'Seoul', 37.5665, 126.978, 'The capital of South Korea, celebrated for its technology, traditional palaces, and street food.', 'KR');
+INSERT INTO city VALUES(1023, 'Los Angeles', 34.0522, -118.2437, 'A major city in California, known for its entertainment industry, beautiful beaches, and diverse neighborhoods.', 'US');
+INSERT INTO city VALUES(1024, 'Cape Town', -33.9249, 18.4241, 'A South African city known for its stunning scenery, wildlife, and multicultural atmosphere.', 'ZA');
+INSERT INTO city VALUES(1025, 'Phnom Penh', 11.5564, 104.9282, 'The capital of Cambodia, known for its rich history, royal palaces, and markets.', 'KH');
+INSERT INTO city VALUES(1026, 'Athens', 37.9838, 23.7275, 'The capital of Greece, famous for its ancient ruins, historic sites, and Mediterranean cuisine.', 'GR');
+INSERT INTO city VALUES(1027, 'Auckland', -36.8485, 174.7633, 'The largest city in New Zealand, known for its natural beauty, harbor, and outdoor activities.', 'NZ');
+
+
+
+
+-- trip table
 INSERT INTO trip VALUES(1, 'John Smith', 35, 'Male', '2023-05-01', '2023-05-08',7,'Airplane',2700 ,'Vacation rental',900,1001);
 INSERT INTO trip VALUES(2, 'Jane Doe', 28, 'Female', '2023-06-15', '2023-06-20',5,'Train',344 ,'Guesthouse',400,1002);
 INSERT INTO trip VALUES(3, 'David Lee', 45, 'Male', '2023-07-01', '2023-07-08',7,'Bus',70 ,'Guesthouse',400,1003);
@@ -137,74 +208,7 @@ INSERT INTO trip VALUES(137, 'Ryan Chen', 34, 'Male', '2023-09-01', '2023-09-08'
 INSERT INTO trip VALUES(138, 'Sofia Rodriguez', 25, 'Female', '2023-09-15', '2023-09-22',7,'Airplane',2700 ,'Airbnb',1181,1012);
 INSERT INTO trip VALUES(139, 'William Brown', 39, 'Male', '2023-10-01', '2023-10-08',7,'Flight',753 ,'Resort',1521,1027);
 
--- 5. Country DB
 
-INSERT INTO country (name, iso_number, iso_code3, iso_code2, continent_id, flag) VALUES ('UK', '826', 'GBR', 'GB', '3001', 'https://img.freepik.com/premium-vector/vector-image-of-the-british-flag-of-england-sign-of-the-kingdom-of-great-britain-lovely-london-badge_213497-1010.jpg');
-INSERT INTO country (name, iso_number, iso_code3, iso_code2, continent_id, flag) VALUES ('Thailand', '764', 'THA', 'TH', '3002', 'https://img.freepik.com/free-vector/illustration-of-thailand-flag_53876-27145.jpg');
-INSERT INTO country (name, iso_number, iso_code3, iso_code2, continent_id, flag) VALUES ('Indonesia', '360', 'IDN', 'ID', '3002', 'https://img.freepik.com/free-vector/illustration-of-indonesia-flag_53876-27131.jpg');
-INSERT INTO country (name, iso_number, iso_code3, iso_code2, continent_id, flag) VALUES ('USA', '840', 'USA', 'US', '3003', 'https://upload.wikimedia.org/wikipedia/commons/a/a9/Flag_of_the_United_States_%28DoS_ECA_Color_Standard%29.svg');
-INSERT INTO country (name, iso_number, iso_code3, iso_code2, continent_id, flag) VALUES ('Japan', '392', 'JPN', 'JP', '3002', 'https://img.freepik.com/premium-vector/japan-flag_855948-3.jpg');
-INSERT INTO country (name, iso_number, iso_code3, iso_code2, continent_id, flag) VALUES ('France', '250', 'FRA', 'FR', '3001', 'https://img.freepik.com/premium-vector/australia-flag-button-icon_147072-600.jpg');
-INSERT INTO country (name, iso_number, iso_code3, iso_code2, continent_id, flag) VALUES ('Australia', '36', 'AUS', 'AU', '3004', 'https://img.freepik.com/premium-vector/australia-flag-button-icon_147072-600.jpg');
-INSERT INTO country (name, iso_number, iso_code3, iso_code2, continent_id, flag) VALUES ('Brazil', '76', 'BRA', 'BR', '3005', 'https://i.namu.wiki/i/zp21MgQRhFJiasIohLO-MnI7LB2jDRlN9pEpiMSMy_KAXJxPUJfPzlNU3G8JzpNnJ0_JOUHvQVA_4viZGYbn5A.svg');
-INSERT INTO country (name, iso_number, iso_code3, iso_code2, continent_id, flag) VALUES ('Netherlands', '528', 'NLD', 'NL', '3001', 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Flag_of_the_Netherlands.svg/255px-Flag_of_the_Netherlands.svg.png');
-INSERT INTO country (name, iso_number, iso_code3, iso_code2, continent_id, flag) VALUES ('United Arab Emirates', '784', 'ARE', 'AE', '3002', 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Flag_of_the_United_Arab_Emirates.svg/255px-Flag_of_the_United_Arab_Emirates.svg.png');
-INSERT INTO country (name, iso_number, iso_code3, iso_code2, continent_id, flag) VALUES ('Mexico', '484', 'MEX', 'MX', '3003', 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Flag_of_Mexico.svg/290px-Flag_of_Mexico.svg.png');
-INSERT INTO country (name, iso_number, iso_code3, iso_code2, continent_id, flag) VALUES ('Spain', '724', 'ESP', 'ES', '3001', 'https://img.freepik.com/free-vector/illustration-of-spain-flag_53876-18168.jpg?size=626&ext=jpg&ga=GA1.1.1413502914.1697155200&semt=ais');
-INSERT INTO country (name, iso_number, iso_code3, iso_code2, continent_id, flag) VALUES ('Germany', '276', 'DEU', 'DE', '3001', 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Flag_of_West_Germany%3B_Flag_of_Germany_%281990%E2%80%931996%29.svg/220px-Flag_of_West_Germany%3B_Flag_of_Germany_%281990%E2%80%931996%29.svg.png');
-INSERT INTO country (name, iso_number, iso_code3, iso_code2, continent_id, flag) VALUES ('Morocco', '504', 'MAR', 'MA', '3006', 'https://www.infomorocco.net/uploads/9/4/9/2/9492999/moro-flag_orig.jpg');
-INSERT INTO country (name, iso_number, iso_code3, iso_code2, continent_id, flag) VALUES ('Italy', '380', 'ITA', 'IT', '3001', 'https://img.freepik.com/free-vector/illustration-of-italy-flag_53876-27098.jpg');
-INSERT INTO country (name, iso_number, iso_code3, iso_code2, continent_id, flag) VALUES ('Greece', '300', 'GRC', 'GR', '3001', 'https://img.freepik.com/premium-vector/flag-of-greece-vector-illustration_514344-273.jpg');
-INSERT INTO country (name, iso_number, iso_code3, iso_code2, continent_id, flag) VALUES ('Egypt', '818', 'EGY', 'EG', '3006', 'https://img.freepik.com/free-vector/illustration-of-egypt-flag_53876-27140.jpg');
-INSERT INTO country (name, iso_number, iso_code3, iso_code2, continent_id, flag) VALUES ('Canada', '124', 'CAN', 'CA', '3003', 'https://img.freepik.com/premium-vector/canada-flag-official-colors-and-proportion-correctly-national-canada-flag_721791-960.jpg');
-INSERT INTO country (name, iso_number, iso_code3, iso_code2, continent_id, flag) VALUES ('South Korea', '410', 'KOR', 'KR', '3002', 'https://img.freepik.com/premium-vector/vector-south-korea-flag_1001513-6.jpg');
-INSERT INTO country (name, iso_number, iso_code3, iso_code2, continent_id, flag) VALUES ('South Africa', '710', 'ZAF', 'ZA', '3006', 'https://img.freepik.com/premium-vector/national-flag-of-south-africa-with-official-colors_445068-1821.jpg');
-INSERT INTO country (name, iso_number, iso_code3, iso_code2, continent_id, flag) VALUES ('Cambodia', '116', 'KHM', 'KH', '3002','https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Flag_of_Cambodia.svg/510px-Flag_of_Cambodia.svg.png');
-INSERT INTO country (name, iso_number, iso_code3, iso_code2, continent_id, flag) VALUES ('New Zealand', '554', 'NZL', 'NZ', '3004', 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Flag_of_New_Zealand.svg/1024px-Flag_of_New_Zealand.svg.png');
-
--- 11. Continent DB
-
-INSERT INTO continent (continent_name, id) VALUES ('Europe', '3001');
-INSERT INTO continent (continent_name, id) VALUES ('Asia', '3002');
-INSERT INTO continent (continent_name, id) VALUES ('North America', '3003');
-INSERT INTO continent (continent_name, id) VALUES ('Oceania', '3004');
-INSERT INTO continent (continent_name, id) VALUES ('South America', '3005');
-INSERT INTO continent (continent_name, id) VALUES ('Africa', '3006');
-INSERT INTO continent (continent_name, id) VALUES ('Antarctica', '3007');
-
-
--- city DB
-
-INSERT INTO city VALUES(1001, 'London', 51.5074, -0.1278, 'The capital of the United Kingdom, known for its rich history, cultural attractions, and iconic landmarks such as the Tower Bridge and Buckingham Palace.', 'GB');
-INSERT INTO city VALUES(1002, 'Phuket', 7.8804, 98.3923, 'An island in Thailand famous for its beautiful beaches, vibrant nightlife, and water sports.', 'TH');
-INSERT INTO city VALUES(1003, 'Bali', -8.3405, 115.092, 'A popular Indonesian island destination with stunning beaches, lush rice terraces, and a vibrant culture.', 'ID');
-INSERT INTO city VALUES(1004, 'New York', 40.7128, -74.006, 'The largest city in the United States, famous for its diverse culture, iconic skyscrapers, and attractions like Central Park and Times Square.', 'US');
-INSERT INTO city VALUES(1005, 'Tokyo', 35.682839, 139.759455, 'The capital of Japan, known for its modern technology, historic temples, and vibrant street life.', 'JP');
-INSERT INTO city VALUES(1006, 'Paris', 48.8566, 2.3522, 'The capital of France, celebrated for its art, fashion, and iconic landmarks like the Eiffel Tower and the Louvre.', 'FR');
-INSERT INTO city VALUES(1007, 'Sydney', -33.8651, 151.2099, 'The largest city in Australia, renowned for its stunning harbor, the Sydney Opera House, and beautiful beaches.', 'AU');
-INSERT INTO city VALUES(1008, 'Rio de Janeiro', -22.9068, -43.1729, 'A coastal city in Brazil, famous for its Carnival, Copacabana Beach, and Christ the Redeemer statue.', 'BR');
-INSERT INTO city VALUES(1009, 'Amsterdam', 52.3676, 4.9041, 'The capital of the Netherlands, known for its picturesque canals, historic architecture, and vibrant cultural scene.', 'NL');
-INSERT INTO city VALUES(1010, 'Dubai', 25.276987, 55.296249, 'A city in the United Arab Emirates known for its futuristic architecture, luxury shopping, and desert adventures.', 'AE');
-INSERT INTO city VALUES(1011, 'Cancun', 21.1743, -86.8466, 'A popular tourist destination in Mexico, famous for its beautiful beaches and vibrant nightlife.', 'MX');
-INSERT INTO city VALUES(1012, 'Barcelona', 41.3851, 2.1734, 'A vibrant Spanish city famous for its architecture, art, and unique Catalan culture.', 'ES');
-INSERT INTO city VALUES(1013, 'Honolulu', 21.3069, -157.8583, 'The capital of Hawaii, known for its beautiful beaches, surf culture, and natural beauty.', 'US');
-INSERT INTO city VALUES(1014, 'Berlin', 52.52, 13.405, 'The capital of Germany, known for its history, arts, and lively nightlife.', 'DE');
-INSERT INTO city VALUES(1015, 'Marrakech', 31.6295, -7.9811, 'A city in Morocco famous for its colorful markets, historic palaces, and vibrant street life.', 'MA');
-INSERT INTO city VALUES(1016, 'Edinburgh', 55.9533, -3.1883, 'The capital of Scotland, celebrated for its rich history, festivals, and stunning architecture.', 'GB');
-INSERT INTO city VALUES(1017, 'Rome', 41.9028, 12.4964, 'The capital of Italy, known for its ancient history, iconic monuments, and delicious cuisine.', 'IT');
-INSERT INTO city VALUES(1018, 'Bangkok', 13.7563, 100.5018, 'The capital of Thailand, famous for its vibrant street life, ornate temples, and delicious street food.', 'TH');
-INSERT INTO city VALUES(1019, 'Santorini', 36.3932, 25.4615, 'A picturesque Greek island known for its stunning sunsets, white-washed buildings, and beautiful blue-domed churches.', 'GR');
-INSERT INTO city VALUES(1020, 'Cairo', 30.0444, 31.2357, 'The capital of Egypt, famous for its ancient pyramids, historic sites, and bustling markets.', 'EG');
-INSERT INTO city VALUES(1021, 'Vancouver', 49.2827, -123.1207, 'A Canadian city known for its natural beauty, outdoor activities, and diverse culture.', 'CA');
-INSERT INTO city VALUES(1022, 'Seoul', 37.5665, 126.978, 'The capital of South Korea, celebrated for its technology, traditional palaces, and street food.', 'KR');
-INSERT INTO city VALUES(1023, 'Los Angeles', 34.0522, -118.2437, 'A major city in California, known for its entertainment industry, beautiful beaches, and diverse neighborhoods.', 'US');
-INSERT INTO city VALUES(1024, 'Cape Town', -33.9249, 18.4241, 'A South African city known for its stunning scenery, wildlife, and multicultural atmosphere.', 'ZA');
-INSERT INTO city VALUES(1025, 'Phnom Penh', 11.5564, 104.9282, 'The capital of Cambodia, known for its rich history, royal palaces, and markets.', 'KH');
-INSERT INTO city VALUES(1026, 'Athens', 37.9838, 23.7275, 'The capital of Greece, famous for its ancient ruins, historic sites, and Mediterranean cuisine.', 'GR');
-INSERT INTO city VALUES(1027, 'Auckland', -36.8485, 174.7633, 'The largest city in New Zealand, known for its natural beauty, harbor, and outdoor activities.', 'NZ');
-
-
---landmark DB
 INSERT INTO landmark VALUES(2001, 'Big Ben', 'https://www.thetrainline.com/cms/media/5743/uk-london-big-ben.jpg?mode=crop&width=660&height=440&quality=70', 'London''s clock tower',1001);
 INSERT INTO landmark VALUES(2002, 'Patong Beach', 'https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcQL3n6rfg8_wFwPHgF7CPU2f7n-qp1DYijHBwrcOxmsFvba8JL7pxpelV7fgwuabQkvMCgju2WZHiKXjfqcVrfl6zWpp-ft', 'Popular beach in Phuket',1002);
 INSERT INTO landmark VALUES(2003, 'Jalan Legian', 'https://upload.wikimedia.org/wikipedia/commons/7/7e/Jalan_Legian_Hariadhi.jpg', 'Tourism and entertainment strip',1003);
@@ -232,6 +236,8 @@ INSERT INTO landmark VALUES(2024, 'Table Mountain', 'https://cdn.britannica.com/
 INSERT INTO landmark VALUES(2025, 'Wat Phnom', 'https://files.intocambodia.org/content/small/adfb128d97ca55fe045fd0dc2af2c285.jpg', 'Temple in Phnom Penh',1025);
 INSERT INTO landmark VALUES(2026, 'Acropolis', 'https://cdn-imgix.headout.com/microbrands-banner-image/image/b698f96a3bf7e35418940973f33c4708-The%20Acropolis%20of%20Athens.jpeg', 'Ancient temple in Athens',1026);
 INSERT INTO landmark VALUES(2027, 'Sky Tower', 'https://upload.wikimedia.org/wikipedia/commons/f/f8/01_Auckland_New_Zealand-1000137.jpg', 'Observation tower in Auckland',1027);
+
+
 -- airport DB
 
 INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('BQH', 'EGKB', 'Biggin Hill Airport', '826', '1001');
@@ -282,36 +288,6 @@ INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VA
 INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('ATH', 'LGAV', 'Eleftherios Venizelos International Airport', '300', '1026');
 INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('AKL', 'NZAA', 'Auckland International Airport', '554', '1027');
 
-
--- city DB
-
-INSERT INTO city VALUES(1001, 'London', 51.5074, -0.1278, 'The capital of the United Kingdom, known for its rich history, cultural attractions, and iconic landmarks such as the Tower Bridge and Buckingham Palace.', 'GB');
-INSERT INTO city VALUES(1002, 'Phuket', 7.8804, 98.3923, 'An island in Thailand famous for its beautiful beaches, vibrant nightlife, and water sports.', 'TH');
-INSERT INTO city VALUES(1003, 'Bali', -8.3405, 115.092, 'A popular Indonesian island destination with stunning beaches, lush rice terraces, and a vibrant culture.', 'ID');
-INSERT INTO city VALUES(1004, 'New York', 40.7128, -74.006, 'The largest city in the United States, famous for its diverse culture, iconic skyscrapers, and attractions like Central Park and Times Square.', 'US');
-INSERT INTO city VALUES(1005, 'Tokyo', 35.682839, 139.759455, 'The capital of Japan, known for its modern technology, historic temples, and vibrant street life.', 'JP');
-INSERT INTO city VALUES(1006, 'Paris', 48.8566, 2.3522, 'The capital of France, celebrated for its art, fashion, and iconic landmarks like the Eiffel Tower and the Louvre.', 'FR');
-INSERT INTO city VALUES(1007, 'Sydney', -33.8651, 151.2099, 'The largest city in Australia, renowned for its stunning harbor, the Sydney Opera House, and beautiful beaches.', 'AU');
-INSERT INTO city VALUES(1008, 'Rio de Janeiro', -22.9068, -43.1729, 'A coastal city in Brazil, famous for its Carnival, Copacabana Beach, and Christ the Redeemer statue.', 'BR');
-INSERT INTO city VALUES(1009, 'Amsterdam', 52.3676, 4.9041, 'The capital of the Netherlands, known for its picturesque canals, historic architecture, and vibrant cultural scene.', 'NL');
-INSERT INTO city VALUES(1010, 'Dubai', 25.276987, 55.296249, 'A city in the United Arab Emirates known for its futuristic architecture, luxury shopping, and desert adventures.', 'AE');
-INSERT INTO city VALUES(1011, 'Cancun', 21.1743, -86.8466, 'A popular tourist destination in Mexico, famous for its beautiful beaches and vibrant nightlife.', 'MX');
-INSERT INTO city VALUES(1012, 'Barcelona', 41.3851, 2.1734, 'A vibrant Spanish city famous for its architecture, art, and unique Catalan culture.', 'ES');
-INSERT INTO city VALUES(1013, 'Honolulu', 21.3069, -157.8583, 'The capital of Hawaii, known for its beautiful beaches, surf culture, and natural beauty.', 'US');
-INSERT INTO city VALUES(1014, 'Berlin', 52.52, 13.405, 'The capital of Germany, known for its history, arts, and lively nightlife.', 'DE');
-INSERT INTO city VALUES(1015, 'Marrakech', 31.6295, -7.9811, 'A city in Morocco famous for its colorful markets, historic palaces, and vibrant street life.', 'MA');
-INSERT INTO city VALUES(1016, 'Edinburgh', 55.9533, -3.1883, 'The capital of Scotland, celebrated for its rich history, festivals, and stunning architecture.', 'GB');
-INSERT INTO city VALUES(1017, 'Rome', 41.9028, 12.4964, 'The capital of Italy, known for its ancient history, iconic monuments, and delicious cuisine.', 'IT');
-INSERT INTO city VALUES(1018, 'Bangkok', 13.7563, 100.5018, 'The capital of Thailand, famous for its vibrant street life, ornate temples, and delicious street food.', 'TH');
-INSERT INTO city VALUES(1019, 'Santorini', 36.3932, 25.4615, 'A picturesque Greek island known for its stunning sunsets, white-washed buildings, and beautiful blue-domed churches.', 'GR');
-INSERT INTO city VALUES(1020, 'Cairo', 30.0444, 31.2357, 'The capital of Egypt, famous for its ancient pyramids, historic sites, and bustling markets.', 'EG');
-INSERT INTO city VALUES(1021, 'Vancouver', 49.2827, -123.1207, 'A Canadian city known for its natural beauty, outdoor activities, and diverse culture.', 'CA');
-INSERT INTO city VALUES(1022, 'Seoul', 37.5665, 126.978, 'The capital of South Korea, celebrated for its technology, traditional palaces, and street food.', 'KR');
-INSERT INTO city VALUES(1023, 'Los Angeles', 34.0522, -118.2437, 'A major city in California, known for its entertainment industry, beautiful beaches, and diverse neighborhoods.', 'US');
-INSERT INTO city VALUES(1024, 'Cape Town', -33.9249, 18.4241, 'A South African city known for its stunning scenery, wildlife, and multicultural atmosphere.', 'ZA');
-INSERT INTO city VALUES(1025, 'Phnom Penh', 11.5564, 104.9282, 'The capital of Cambodia, known for its rich history, royal palaces, and markets.', 'KH');
-INSERT INTO city VALUES(1026, 'Athens', 37.9838, 23.7275, 'The capital of Greece, famous for its ancient ruins, historic sites, and Mediterranean cuisine.', 'GR');
-INSERT INTO city VALUES(1027, 'Auckland', -36.8485, 174.7633, 'The largest city in New Zealand, known for its natural beauty, harbor, and outdoor activities.', 'NZ');
 
 -- station DB
 
