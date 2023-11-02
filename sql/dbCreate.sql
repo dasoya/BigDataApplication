@@ -1,3 +1,4 @@
+
 -- 10/30 카톡 내용 반영
 CREATE TABLE `user` (
   `id` integer PRIMARY KEY,
