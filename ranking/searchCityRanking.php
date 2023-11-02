@@ -18,10 +18,10 @@
                     ) AS t
                     JOIN city AS c ON c.id = t.city_id
                 )
-            SELECT id, name, cou, rank
-            FROM RankedCities
-            WHERE name = ?;";
-    
+                SELECT id, name, cou, rank
+                FROM RankedCities
+                WHERE name = ?;";
+        
 
     //country면 아래 수행하고? 
     $sql_country = "WITH RankedCountries AS (
@@ -42,13 +42,17 @@
                     FROM RankedCountries
                     WHERE name = ?;";
 
+    //if(isset($_GET['select'])!=true){
 
-    if(/*select box 값이 city일 경우*/$_REQUEST ["select"] == "city") {
+    //    $searchResult=null;
+    //}*/
+
+    if(/*select box 값이 city일 경우*/$_GET["select"] == "city") {
         if($stmt = mysqli_prepare($dblink, $sql_city)) {
 
             mysqli_stmt_bind_param($stmt,"s", $keyword);
 
-            $keyword = $_REQUEST['keyword'];
+            $keyword = $_GET['keyword'];
 
             if(mysqli_stmt_execute($stmt)) { 
                 
@@ -56,25 +60,25 @@
                 $searchResult = [];
                 while($row = mysqli_fetch_assoc($result)) {
                     $searchResult[] = $row;
-                    echo''. $row['id'] .''. $row['name'].''. $row['cou'] .''. $row['rank'];
                 }
                 mysqli_free_result($result);
             }
             else{
                 printf('', mysqli_error($dblink));
             }
+            mysqli_stmt_close($stmt);
         } 
         else {
             printf("", mysqli_error($dblink));
         }
     }
     
-    elseif(/*select box가 country 일 경우*/$_REQUEST ["select"] == "country") {
+    elseif(/*select box가 country 일 경우*/$_GET ["select"] == "country") {
         if($stmt = mysqli_prepare($dblink, $sql_country)) {
 
             mysqli_stmt_bind_param($stmt,"s", $keyword);
     
-            $keyword = $_REQUEST['keyword'];
+            $keyword = $_GET['keyword'];
     
             if(mysqli_stmt_execute($stmt)) { 
                 
@@ -82,22 +86,24 @@
                 $searchResult = [];
                 while($row = mysqli_fetch_assoc($result)) {
                     $searchResult[] = $row;
-                    echo''. $row['id'] .''. $row['name'].''. $row['cou'] .''. $row['rank'];
+                    //TODO
+                    //만약에 결과가 없다면 어떤 값을 보내줄건지.
                 }
                 mysqli_free_result($result);
             }
             else{
                 printf('', mysqli_error($dblink));
             }
+            mysqli_stmt_close($stmt);
         } 
         else {
             printf("", mysqli_error($dblink));
         }
-    }
+   }
     else{
         print("select box value error.");
     }
-    mysqli_stmt_close($stmt);
+    
     mysqli_close($dblink);
 
     /*

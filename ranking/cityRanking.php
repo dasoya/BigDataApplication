@@ -7,8 +7,7 @@
         exit();
     }
     else{
-        //Query 내용은 아래 서술
-        $sql = "SELECT c.id, c.name, c.info, c.latitude, c.longitude, t.cou,l.img landmarkImgUrl ,RANK() OVER (ORDER BY t.cou DESC) AS rank
+        $sql = "SELECT c.id, c.name, c.info, c.latitude, c.longitude, t.cou, l.img landmarkImgUrl ,RANK() OVER (ORDER BY t.cou DESC) AS rank
                 FROM (SELECT city_id, COUNT(*) cou
                         FROM trip
                         GROUP BY city_id
@@ -17,7 +16,6 @@
                 JOIN city AS c ON c.id = t.city_id 
                 JOIN landmark As l ON c.id = l.city_id;";
         
-        //데이터를 가져오기만 하면 되는거라 bind_param 사용 안하였음.
         $result = mysqli_query($dblink, $sql);
         $cityRanking = array();
         while ($row = mysqli_fetch_assoc($result)) {
