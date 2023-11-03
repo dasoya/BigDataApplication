@@ -1,4 +1,4 @@
--- 10/30 카톡 내용 반영
+-- 11/01 카톡 내용 반영
 CREATE TABLE `user` (
   `id` integer PRIMARY KEY,
   `email` varchar(255) UNIQUE COMMENT '회원가입 및 로그인에 사용',
@@ -98,8 +98,8 @@ CREATE TABLE `continent` (
 
 CREATE TABLE `feedback` (
   `user_id` integer PRIMARY KEY,
-  `rate` integer,
-  `text` text
+  `rating` integer NOT NULL,
+  `message` text
 );
 
 ALTER TABLE `airport` ADD FOREIGN KEY (`city_id`) REFERENCES `city` (`id`);
