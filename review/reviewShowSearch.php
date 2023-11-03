@@ -1,5 +1,5 @@
 <?php
-    $dblink = mysqli_connect("localhost", 'root', '', 'dbName');
+    $dblink = mysqli_connect("localhost", 'root', '', 'bibibig');
     
     if (mysqli_connect_errno()) {
         printf('', mysqli_connect_error());
@@ -11,9 +11,10 @@
 
         //이렇게 해도 되는건가? 다른 방법은 없나?
         mysqli_stmt_bind_param($stmt,"ss", $keyword, $keyword);
-        
-        //post? request?
-        $keyword = $_POST['keyword'];
+
+        //url에 보여도 상관 없으니 get으로 가져오고
+        $keyword = $_GET['keyword'];
+
     
         if (mysqli_stmt_execute($stmt)) {
             // 결과 받기
