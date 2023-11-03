@@ -529,9 +529,6 @@ INSERT INTO landmark VALUES(2025, 'Wat Phnom', 'https://files.intocambodia.org/c
 INSERT INTO landmark VALUES(2026, 'Acropolis', 'https://cdn-imgix.headout.com/microbrands-banner-image/image/b698f96a3bf7e35418940973f33c4708-The%20Acropolis%20of%20Athens.jpeg', 'Ancient temple in Athens',1026);
 INSERT INTO landmark VALUES(2027, 'Sky Tower', 'https://upload.wikimedia.org/wikipedia/commons/f/f8/01_Auckland_New_Zealand-1000137.jpg', 'Observation tower in Auckland',1027);
 
-
--- airport DB
-
 INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('BQH', 'EGKB', 'Biggin Hill Airport', 'GB', 1001);
 INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('LGW', 'EGKK', 'Gatwick Airport', 'GB', 1001);
 INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('LHR', 'EGLL', 'Heathrow Airport', 'GB', 1001);
@@ -548,7 +545,7 @@ INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VA
 INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('CHS', 'KCHS', 'Charleston International Airport', 'US', 1006);
 INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('ORY', 'LFPO', 'Orly Airport', 'FR', 1006);
 INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('SYD', 'YSSY', 'Kingsford Smith Airport', 'AU', 1007);
-INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('RIO', 'ERIO', 'metropolitan area2', 'BR', 1008);
+INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('RIO', 'ARIO', 'metropolitan area2', 'BR', 1008);
 INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('GIG', 'SBGL', 'Rio de Janeiro International Airport', 'BR', 1008);
 INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('SDU', 'SBRJ', 'Santos Dumont Regional Airport', 'BR', 1008);
 INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('AMS', 'EHAM', 'Schiphol Airport', 'NL', 1009);
@@ -558,7 +555,7 @@ INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VA
 INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('BCN', 'LEBL', 'Barcelona International Airport', 'ES', 1012);
 INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('HNL', 'PHNL', 'Honolulu International Airport', 'US', 1013);
 INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('BER', 'EDDB', 'Berlin Brandenburg Airport', 'DE', 1014);
-INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('SXF', 'QSXF', 'Schoenefeld International Airport', 'DE', 1014);
+INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('SXF', 'SDXB', 'Schoenefeld International Airport', 'DE', 1014);
 INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('TXL', 'EDDT', 'Tegel International Airport', 'DE', 1014);
 INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('RAK', 'GMMX', 'Menara Airport', 'MA', 1015);
 INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('EDI', 'EGPH', 'Edinburgh Airport', 'GB', 1016);
