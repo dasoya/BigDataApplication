@@ -6,8 +6,6 @@
         printf('', mysqli_connect_error());
         exit();
     }
-    // 랭킹 순으로 정리한 테이블에 where문 추가
-    //만약에 city면 이거 수행하고 
 
     $sql_city = "WITH RankedCities AS (
                     SELECT c.id, c.name, t.cou, RANK() OVER (ORDER BY t.cou DESC) AS rank
@@ -22,8 +20,10 @@
                 FROM RankedCities
                 WHERE name = ?;";
         
-
-    //country면 아래 수행하고? 
+    //TODO 
+    //3개의 테이블을 조인해서 한번에 가져오기 vs 쿼리로 줄인 테이블 조인해서 가져오기 
+    //중 어떤게 더 빠른지.
+    //일단 다른 기능을 먼저 다 구현한 뒤에 알아보기 
     $sql_country = "WITH RankedCountries AS (
                         SELECT  country.name, flag, total, RANK() OVER (ORDER BY total DESC) AS rank
                         FROM (
@@ -42,12 +42,12 @@
                     FROM RankedCountries
                     WHERE name = ?;";
 
-    //if(isset($_GET['select'])!=true){
+    if(isset($_GET['select'])!=true){
 
-    //    $searchResult=null;
-    //}*/
+        $searchResult=null;
+    }
 
-    if(/*select box 값이 city일 경우*/$_GET["select"] == "city") {
+    elseif(/*select box 값이 city일 경우*/$_GET["select"] == "city") {
         if($stmt = mysqli_prepare($dblink, $sql_city)) {
 
             mysqli_stmt_bind_param($stmt,"s", $keyword);
