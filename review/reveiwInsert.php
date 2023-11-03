@@ -3,7 +3,7 @@
     $dblink = mysqli_connect("localhost", 'root', '', 'dbName');
     
     if (mysqli_connect_errno()) {
-        printf('', mysqli_connect_error());
+        printf('%s', mysqli_connect_error());
         exit();
     }
 
@@ -19,24 +19,23 @@
       );
     */
     
-    $sql = "INSERT INTO review (id, title, body, created_at, img, user_id, city_id ) VALUES (?, ?, ?, ?, ?, ?, ?);";    
-      
+    $sql = "INSERT INTO review (id, title, body, created_at, img, user_id) VALUES (?, ?, ?, ?, ?, ?);";    
+    
     if($stmt = mysqli_prepare($dblink, $sql)) {
         
-        mysqli_stmt_bind_param($stmt,"issssss", $id, $title, $body, $created_at, $img, $user_id, $city_id); //데이터 구조 보고 수정
+        mysqli_stmt_bind_param($stmt,"isssss", $id, $title, $body, $created_at, $img, $user_id); //데이터 구조 보고 수정
         
-        //post? request?
-
-        $id = $_REQUEST['id'];
-        $title = $_REQUEST['title'];
-        $body = $_REQUEST['body'];
-        $created_at = $_REQUEST['created_at'];
-        $img= $_REQUEST['img'];
-        $user_id= $_REQUEST['user_id'];
-        $city_id= $_REQUEST['city'];
+        $id = $_POST['id'];
+        $title = $_POST['title'];
+        $body = $_POST['body'];
+        $created_at = $_POST['created_at'];
+        $img= $_POST['img'];
+        $user_id= $_POST['user_id'];
+        //$city_id= $_POST['city'];
 
         // TODO
         // 성공, 실패 한 후에 페이지에 결과를 어떻게 띄울지 고민해보기
+        // 바로 내가 쓴 리뷰 페이지 보여주기? 
 
         if(mysqli_stmt_execute($stmt)){
 
@@ -45,11 +44,11 @@
         }
         else {
             //실패한 경우
-            printf("", mysqli_error($dblink));
+            printf("%s", mysqli_error($dblink));
         }
     }
     else{ //prepare 실패
-        printf("", mysqli_error($dblink));
+        printf("%s", mysqli_error($dblink));
     }
     
     mysqli_stmt_close($stmt);

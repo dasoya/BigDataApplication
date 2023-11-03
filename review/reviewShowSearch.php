@@ -13,7 +13,7 @@
         mysqli_stmt_bind_param($stmt,"ss", $keyword, $keyword);
         
         //post? request?
-        $keyword = $_REQUEST['keyword'];
+        $keyword = $_POST['keyword'];
     
         if (mysqli_stmt_execute($stmt)) {
             // 결과 받기
