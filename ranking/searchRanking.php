@@ -20,7 +20,7 @@
                 FROM RankedCities
                 WHERE name = ?;";
         
-    //TODO 
+    //TODO (후순위)
     //3개의 테이블을 조인해서 한번에 가져오기 vs 쿼리로 줄인 테이블 조인해서 가져오기 
     //중 어떤게 더 빠른지.
     //일단 다른 기능을 먼저 다 구현한 뒤에 알아보기 
@@ -100,7 +100,8 @@
             printf("", mysqli_error($dblink));
         }
    }
-    else{
+    elseif($_GET ["select"] == "null"){
+        $searchResult=null;
         print("select box value error.");
     }
     
