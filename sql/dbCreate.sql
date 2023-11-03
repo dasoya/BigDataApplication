@@ -52,7 +52,7 @@ CREATE TABLE `country` (
 );
 
 CREATE TABLE `review` (
-  `id` integer PRIMARY KEY,
+  `id` integer AUTO_INCREMENT PRIMARY KEY,
   `title` VARCHAR(255) NOT NULL,
   `body` text COMMENT '리뷰 내용',
   `created_at` timestamp COMMENT '업로드한 날짜 ',
