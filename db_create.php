@@ -11,8 +11,8 @@ if (!$conn) {
 }
 echo"Connection successfull";
 
-// $sqlScript = file_get_contents("dbCreate_final.sql");
-$sqlScript = file_get_contents("dbInsert_really_final.sql");
+$sqlScript = file_get_contents("dbCreate_final.sql");
+// $sqlScript = file_get_contents("dbInsert_really_final.sql");
 // $sqlScript = file_get_contents("rename.sql");
 if ($conn->multi_query($sqlScript)){
     echo "Successfull\n";
