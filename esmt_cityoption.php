@@ -16,19 +16,17 @@ if (mysqli_connect_errno()) {
 else{
 
     // 도시 목록 가져오기
-    $query = "SELECT name FROM city";
+    $query = "SELECT name, id FROM city";
     $result = mysqli_query($conn,$query);
 
-    if($result === TRUE){
-        while ($row = mysqli_fetch_assoc($result)) {
-            echo '<option value="' . $row['name'] . '">' . $row['name'] . '</option>';
+    if($result){
+        while ($row = mysqli_fetch_array($result)) {
+            echo '<option value="' . $row['id'] . '">' . $row['name'] . '</option>';
         }
-
-       
     } 
     else {
-        #echo '<option value="">None</option>';
-        printf("error: %s \n",mysqli_error($conn));
+        echo '<option value="">Fail to load city list</option>';
+        printf("Error %s \n",mysqli_error($conn));
     }
     #echo '<option value="">Null</option>';
     mysqli_free_result($result);
