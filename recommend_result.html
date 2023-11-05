@@ -70,9 +70,10 @@
 
                     <div class="col-lg-8 col-12 mx-auto">
                         <h1 class="text-white text-center" style="font-size : 35px" >Get recommendations of your destination based on the available price range</h1>
+                        <form method="post" class="custom-form mt-4 pt-2 mb-lg-0 mb-5" action="get_price_range.php"></form>
                         <div class="input-group input-group-lg">
                         <span class="input-group-text price-insert" id="basic-addon1"></span>
-                        <form method="post" class="custom-form mt-4 pt-2 mb-lg-0 mb-5" action="get_price_range.php">
+                        
                             <?php
                                 $html = '<input type="text" size="20" style="font-size : 15px" class="form-control" name="min-val" value="' . $min_val . '">';
                                 $html .= '<input type="text" size="20" style="font-size : 15px" class="form-control" name="max-val" value="' . $max_val . '">';
