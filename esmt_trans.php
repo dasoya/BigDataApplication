@@ -18,10 +18,6 @@ else{
     
 
     if(!session_id()) {
-        // id가 없을 경우 세션 시작
-        // $transType = 'Bus';
-        // $cityId ='1001';
-        // $duration ='1';
         return;
     }
     
@@ -36,9 +32,6 @@ else{
     $cityId = $_SESSION['cityId']; 
     $duration = $_SESSION['duration']; 
 
-    // echo $transType;
-    // echo $cityId."   ";
-    // echo $duration;
     // 1.나라와 교통 종류가 동일한 조건의 가격 고려
     // 2. 종류가 없다면 교통 종류가 동일한 조건의 가격 고려
     // 3. duration으로 나눠서 AVG 

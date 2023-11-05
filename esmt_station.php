@@ -23,8 +23,8 @@ if ($_SESSION['transType'] == 'Train') {
 } else if ($_SESSION['transType'] == 'Airplane') {
     $sql = "SELECT airport_name, icao_code FROM airport WHERE city_id = '".$_SESSION['cityId']."'";
 } else {
-    echo "<h1>".$_SESSION['transType']."</h1>";
-    exit;
+   
+    return;
 }
 
 // 쿼리 실행
