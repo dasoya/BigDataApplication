@@ -6,7 +6,7 @@ if (isset($_GET["page"])) {
     $page = 1;
 }
 
-$page_num = 15;
+$page_num = 5;
 $limit_page = ($page - 1) * $page_num;
 $total = 1;
 
@@ -14,6 +14,7 @@ $url = strtok($_SERVER['REQUEST_URI'], "?")."?page=";
 
 $sql_review = "SELECT * FROM review ORDER BY created_at DESC LIMIT " . $limit_page . "," . $page_num . ";";
 $sql_total = "SELECT count(*) as total FROM review; ";
+
 
 
 $dblink = mysqli_connect("localhost", 'root', '', 'bibibig');
@@ -29,9 +30,11 @@ if (mysqli_connect_errno()) {
 
         while ($row = mysqli_fetch_assoc($result_total)) {
             $total = $row['total'];
-
+            
         }
-        $total_cnt  = ceil($total[0] / $page_num);
+         
+        $total_cnt  = ceil($total / $page_num);
+
         while ($review = mysqli_fetch_assoc($result_review)) {
             //어떤 format으로 보여줄지 고민해보기
             //게시판 형으로 갈거라면 이대로

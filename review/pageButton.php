@@ -39,6 +39,7 @@
                                     </li> 
 */
 function createPagingButton($numOfReviews, $current, $total, $url) {
+    
     $str = "";
     if ($current > 1) {
         $str .= "<li class='page-item'>
@@ -46,7 +47,6 @@ function createPagingButton($numOfReviews, $current, $total, $url) {
                 <span aria-hidden='true'>Prev</span>
             </a>
         </li>";
-        //$str .= "<a href='" . $url . ($cur_page-1) . "' class='pre'>이전</a>";
     } else {
         $str .= "";
     }
@@ -58,16 +58,16 @@ function createPagingButton($numOfReviews, $current, $total, $url) {
     if ($total > 1) {
         for ($i=$start_page;$i<=$end_page;$i++) {
             if(($current-2) <= $i  && $i < ($current+3)) {
-                $str .= "<li class='page-item'>
+                
+                if ($current == $i) { 
+                    $str .="<li class='page-item'>
+                                <a class='page-link' href='".$url.$i."#section_review' style='color: #000000;'><strong>".$i."</strong></a>
+                            </li>";
+                } else {
+                    $str .= "<li class='page-item'>
                             <a class='page-link' href='".$url.$i."#section_review'>".$i."</a>
                         </li>";
-                // if ($current != $i) { 
-                //     $str .="<li class='page-item'>
-                //                 <a class='page-link' href='".$url.$i."#section_review'>".$i."</a>
-                //             </li>";
-                // } else {
-                //     $str .= "<strong>$i</strong>"; 
-                // }
+                }
             }
         }
     }

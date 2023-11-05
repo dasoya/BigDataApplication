@@ -31,8 +31,6 @@ function getNewReviewId($db, $id)
   return $review_id;
 }
 
-
-
 $dblink = mysqli_connect("localhost", 'root', '', 'bibibig');
 
 if (mysqli_connect_errno()) {
@@ -115,7 +113,7 @@ else {
 header("Location: " . $redirect_url);
   // 리뷰 보여주는 페이지로 이동
 
-  // 문제. 포스트 하고나서 review_id를 바로 가져올 수 있을까?
+// 문제. 포스트 하고나서 review_id를 바로 가져올 수 있을까?
 // sql을 하나 더 넣어서, 방금 생성한 거를 가져오는거지.
 // 1) 유저 아이디를 기준으로 검색해서 
 // 2) 날짜순(내림차순? 최신순)으로 정렬하고
