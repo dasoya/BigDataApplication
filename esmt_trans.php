@@ -19,9 +19,10 @@ else{
 
     if(!session_id()) {
         // id가 없을 경우 세션 시작
-        $transType = 'Bus';
-        $cityId ='1001';
-        $duration ='1';
+        // $transType = 'Bus';
+        // $cityId ='1001';
+        // $duration ='1';
+        return;
     }
     
     
@@ -35,9 +36,9 @@ else{
     $cityId = $_SESSION['cityId']; 
     $duration = $_SESSION['duration']; 
 
-    echo $transType;
-    echo $cityId."   ";
-    echo $duration;
+    // echo $transType;
+    // echo $cityId."   ";
+    // echo $duration;
     // 1.나라와 교통 종류가 동일한 조건의 가격 고려
     // 2. 종류가 없다면 교통 종류가 동일한 조건의 가격 고려
     // 3. duration으로 나눠서 AVG 
@@ -52,8 +53,8 @@ else{
             $estimatedCost = round($avgDayCost * $duration, 0);
             
             if(!is_null($avgDayCost)) {
-                echo "<h4 class='text-white'>Estimated".$transType."Cost: $" . $estimatedCost . "</h4>";
-
+                echo "<h4 class='text-white text-end'>Estimated ".$transType." Cost : $" . $estimatedCost . "</h4>";
+                $_SESSION['transCost'] = $estimatedCost;
                 mysqli_free_result($result);
                 mysqli_close($conn);
                 return;
@@ -68,14 +69,19 @@ else{
             $row = mysqli_fetch_array($result);
             $avgDayCost = $row['avgDayCost'];
             $estimatedCost = round($avgDayCost, 0);
-            echo "<h4 class='text-white'>Estimated".$transType."Cost: $" . $estimatedCost . "</h4>";
+            echo "<h4 class='text-white text-end'>Estimated ".$transType." Cost : $" . $estimatedCost . "</h4>";
+            $_SESSION['transCost'] = $estimatedCost;
         } else {
+            
             echo 'No data found for the given criteria';
+            $_SESSION['transCost'] = 0;
         }
         
         mysqli_free_result($result);
         mysqli_close($conn);
     }
+
+    
     
     
 }

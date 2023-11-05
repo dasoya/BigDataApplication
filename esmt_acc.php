@@ -36,10 +36,6 @@ else{
     $cityId = $_SESSION['cityId']; 
     $duration = $_SESSION['duration']; 
  
-    
-    echo $accType;
-    echo $cityId."   ";
-    echo $duration;
     // 1.나라와 숙박 종류가 동일한 조건의 가격 고려
     // 2. 종류가 없다면 숙박 종류가 동일한 조건의 가격 고려
     // 3. duration으로 나눠서 AVG 
@@ -50,8 +46,6 @@ else{
 
     if ($result && mysqli_num_rows($result) > 0){
     
-        echo "num_row: ".mysqli_num_rows($result);
-    
         $row = mysqli_fetch_array($result);
         $avgDayCost = $row['avgDayCost'];
         $cityName = $row['name'];
@@ -59,9 +53,9 @@ else{
         if(!is_null($avgDayCost)) {
             $estimatedCost = round($avgDayCost * $duration, 0);
             
-            echo "cost:".$cost."du:".$row;
-            echo "<h4 class = 'text-white';>Estimated ".$accType." Cost for in ".$cityName." For ".$duration." Nights : ".$estimatedCost."$</h4>";
-            
+           
+            echo "<h4 class = 'text-white text-end';>Estimated ".$accType." Cost<br> For in ".$cityName." For ".$duration." Nights : $".$estimatedCost."</h4>";
+            $_SESSION['accCost'] = $estimatedCost;
             mysqli_free_result($result);
             mysqli_close($conn);
     
@@ -77,10 +71,12 @@ else{
         $row = mysqli_fetch_array($result);
         $avgDayCost = $row['avgDayCost'];
         $estimatedCost = round($avgDayCost * $duration,0);
-        echo "<h4 class = 'text-white';>Estimated ".$accType." Cost For ".$duration." Nights  : $".$estimatedCost."</h4>";
+        echo "<h4 class = 'text-white text-end';>Estimated ".$accType." Cost<br> For ".$duration." Nights  : $".$estimatedCost."</h4>";
+        $_SESSION['accCost'] = $estimatedCost;
         }
         else {
             echo 'No data found for the given criteria';
+            $_SESSION['accCost'] = 0;
         }
     }
 

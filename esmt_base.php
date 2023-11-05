@@ -32,14 +32,14 @@ body, html {
 	<main class="hero-section d-flex align-items-center">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-8 col-12 mx-auto">
+				<div class="col-lg-6 d-flex justify-content-center align-items-center mx-auto">
 					<div class="estimate-form">
 
 						<form method="POST">
                             			<?php session_start(); ?>
 
 							<div class="mb-3">
-								<h1 class="text-white text-center">Which city do you want to
+								<h1 class="text-white text-left">Which city do you want to
 									travel?</h1>
 								<h6 class="text-left">Choose a city to find out the travel cost</h6>
 
@@ -60,7 +60,7 @@ body, html {
 								<h6 class="text-white text-left">What accommodation will you
 									stay at?</h6>
 								<select class="form-control" name="accType" id="accType"
-									onchange="submitForm('accType')" required>
+									 required>
 									<option disabled="disabled" selected value="">Accommodation
 										Type</option>
 									<option value="Hotel">Hotel</option>
@@ -73,17 +73,15 @@ body, html {
 								</select>
 							</div>
 
-							<div class="mb-3">  <?php include 'esmt_acc.php';?> </div>
+							
 
 							<div class="mb-3">
-								<h6 class="text-white text-left">Which mode of transportation do
-									you prefer?</h6>
+								<h6 class="text-white text-left">Which mode of transportation will you take for your trip?</h6>
 								<select class="form-control" name="transType" id="transType"
-									onchange="submitForm('transType')" required>
+									 required>
 									<option disabled="disabled" selected value="">Transportation
 										Type</option>
 									<option value="Airplane">Airplane</option>
-									<option value="Airbnb">Airbnb</option>
 									<option value="Bus">Bus</option>
 									<option value="Car">Car</option>
 									<option value="Car rental">Car rental</option>
@@ -93,16 +91,15 @@ body, html {
 								</select>
 							</div>
 
-							<div class="mb-3">  </div>
+					
 							<button type="submit" class="btn btn-primary">Submit</button>
-										<?php include 'esmt_trans.php';?>
+										
 										
 										<?php
 
-                                if (! session_id()) {
-                                    // id가 없을 경우 세션 시작
+                               
                                     session_start();
-                                }
+                                
                         
                                 $_SESSION['cityId'] = $_POST['cityId'];
                                 $_SESSION['accType'] = $_POST['accType'];
@@ -115,12 +112,21 @@ body, html {
                             </form>
 					</div>
 
-					<div class="estimate-result">
-
-							<?php include 'esmt_total.php';?>
+				
 						
-						</div>
 
+
+				</div>
+
+
+				<div class="col-lg-6 d-flex justify-content-end align-items-end">
+					<div class="col-lg-12 justify-content-end text-end">	
+					<?php include 'esmt_acc.php';
+					include 'esmt_trans.php';
+					?> 
+					<div style='color: var(--bs-gray-dark);' class="col-lg-12 justify-content-end"> <?php include 'esmt_station.php';?></div>
+					<?php include 'esmt_total.php'; ?>
+				</div>
 
 				</div>
 
