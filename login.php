@@ -27,6 +27,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         // 로그인 실패
         $error = "Invalid email or password.";
+        if (isset($error) && !empty($error)) {
+            echo "<div class='alert alert-danger mt-3'>$error</div>";
+        }
     }
 }
 ?>
