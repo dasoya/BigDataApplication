@@ -17,21 +17,25 @@ if (mysqli_connect_errno()) {
 }
 else{
   
-    $query =
-    #'SELECT city_id, accommodation_type, duration, AVG(accommodation_cost / duration) AS avgDayCost FROM `trip` WHERE city_id = '.$cityId.' AND accommodation_type ='.$accType."'";
-    $result = mysqli_query($conn,$query);
+   
+   
+   // 발급된 세션 id가 있다면 세션의 id를, 없다면 false 반환
+   if(!session_id()) {
+       // id가 없을 경우 세션 시작
+       session_start();
+   }
+   
+   $cityId = $_SESSION['cityId'];
+   $accType = $_SESSION['accType'];
+   $duration = $_SESSION['duration'];
+   $transType = $_SESSION['transType'];
+   
+   echo $cityId."  ".$accType."  ".$duration."  ".$transType;
 
-    if($result){
-    
-        $row = mysqli_fetch_array($result);
-        $avgDayCost = $row['avgDayCost'];
-        $estimatedCost = round($avgDayCost * $duration,0);
-        echo "<h4 class = 'text-white';>Estimated Accommodation Cost : ".$estimatedCost."$</h4>";
-     
-    }
-    mysqli_free_result($result);
-    mysqli_close($conn);
-    
+
+
+   
 }
+
 ?>
 
