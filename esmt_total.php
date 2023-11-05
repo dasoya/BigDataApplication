@@ -38,6 +38,17 @@ else{
    $totalCost = $accCost + $transCost;
    echo "<h2 style='color: var(--bs-yellow);' class='text-end'>Total Cost : $".$totalCost."</h2>";
 
+   //prediction 테이블에 저장
+
+    $currentTime = date('Y-m-d H:i:s');
+
+    $query = "INSERT INTO prediction (city_id,duration,created_at,user_id,transportation_type, accommodation_type, transportation_cost, accommodation_cost) VALUES (".$_SESSION['cityId'].",".$_SESSION['duration'].",".$currentTime.",".$_SESSION['userId'].",".$_SESSION['transType'].",".$_SESSION['accType'].",".$transCost.",".$accCost.")";
+    $result = mysqli_query($conn, $query);
+    if ($result) {
+       printf("History saved");
+    } else {
+         printf("Error %s \n",mysqli_error($conn));
+    }
    session_destroy();
    
 }
