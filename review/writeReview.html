@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -99,11 +103,19 @@
                 <div class="">
 
                     <div class="">
-                        <h3 class="mb-4 pb-2">We'd love to hear from you</h3>
+                        <h3 class="mb-4 pb-2">We'd love to hear from you
+                            <?php
+                            
+                            $id = $_SESSION['id'];
+
+                            // 세션 변수 사용
+                            echo "사용자 이름: " . $id;
+                            ?>
+                        </h3>
                     </div>
 
                     <div class="col-lg-12 col-12">
-                        <form action="#" method="post" class="custom-form contact-form" role="form">
+                        <form action="reviewInsert.php" method="post" class="custom-form contact-form" role="form">
                             <!-- php로 보내서, redirect해야하나? -->
 
                             <div class="col-lg-12 col-12">
@@ -125,11 +137,8 @@
                             <div class="col-lg-4 col-12 ms-auto">
                                 <button type="submit" class="form-control">Post</button>
                             </div>
-
+                        </form>
                     </div>
-                    </form>
-
-
                 </div>
             </div>
         </section>
@@ -202,9 +211,7 @@
                     <p class="copyright-text mt-lg-5 mt-4">Copyright © 2048 Topic Listing Center. All rights reserved.
                         <br><br>Design: <a rel="nofollow" href="https://templatemo.com" target="_blank">TemplateMo</a>
                     </p>
-
                 </div>
-
             </div>
         </div>
     </footer>

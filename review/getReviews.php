@@ -6,7 +6,7 @@ if (isset($_GET["page"])) {
     $page = 1;
 }
 
-$page_num = 2;
+$page_num = 15;
 $limit_page = ($page - 1) * $page_num;
 $total = 1;
 

@@ -28,7 +28,8 @@ $dblink = mysqli_connect("localhost", 'root', '', 'bibibig');
 					//변수에 열저장
 					$result = mysqli_stmt_get_result($stmt);
 					$review =  mysqli_fetch_array($result);
-						
+					
+					echo ''. $review[0]['id'] .''. $review[0]['title'];
 					//이제 $review['title'] 이런식으로 접근 가능할 것.
 					//방법1. 만약에 접근 안되었는데 html에서 출력하려고 하면 -> 에러 출력하거나
 					//방법2. 여기서 출력시켜버리기 <- 만약에 이렇게 한다고 하면 ranking쪽 코드도 좀 다듬어야할 듯
