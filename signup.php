@@ -19,21 +19,38 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST["username"];
     $age = $_POST["age"];
     $sex = $_POST["sex"];
-    
-    // 마지막 튜플의 id 조회
-    $sql = "SELECT MAX(id) as last_id FROM user";
-    $result = $conn->query($sql);
-    $row = $result->fetch_assoc();
-    $new_id = $row['last_id'] + 1;
 
-    // 새로운 사용자 정보 삽입
-    $stmt = $conn->prepare("INSERT INTO user (id, email, pw, username, age, sex) VALUES (?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("isssis", $new_id, $email, $password, $username, $age, $sex);
+    // 이메일 중복 확인
+    $check_email_sql = "SELECT * FROM user WHERE email = ?";
+    $stmt = $conn->prepare($check_email_sql);
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
-    if ($stmt->execute()) {
-        header("location: login.html");
+    if ($result->num_rows > 0) {
+        // 중복된 이메일 존재
+        $error = "중복된 이메일입니다.";
+        
+        if (!empty($error)):
+            echo "<div class='alert alert-danger'>$error</div>";
+
+        endif;
     } else {
-        echo "Error: " . $stmt->error;
+        // 마지막 튜플의 id 조회
+        $sql = "SELECT MAX(id) as last_id FROM user";
+        $result = $conn->query($sql);
+        $row = $result->fetch_assoc();
+        $new_id = $row['last_id'] + 1;
+
+        // 새로운 사용자 정보 삽입
+        $stmt = $conn->prepare("INSERT INTO user (id, email, pw, username, age, sex) VALUES (?, ?, ?, ?, ?, ?)");
+        $stmt->bind_param("isssis", $new_id, $email, $password, $username, $age, $sex);
+
+        if ($stmt->execute()) {
+            header("location: login.html");
+        } else {
+            echo "Error: " . $stmt->error;
+        }
     }
 
     $stmt->close();
