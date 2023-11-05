@@ -12,12 +12,16 @@ function getNewReviewId($db, $id)
 
   if ($stmtRe = mysqli_prepare($db, $sqlRe)) {
 
-    mysqli_stmt_bind_param($stmtRe, "s", $id);
+    mysqli_stmt_bind_param($stmtRe, "i", $user_id);
 
     $user_id = $id;
 
     if (mysqli_stmt_execute($stmtRe)) {
-      $user_id = mysqli_insert_id($db);
+      $result = mysqli_stmt_get_result($stmtRe);
+      $review = mysqli_fetch_array($result);
+      $review_id = $review['id'];
+
+      mysqli_free_result($result);
     } else {
       //실패한 경우
       printf("%s", mysqli_error($db));
@@ -30,6 +34,8 @@ function getNewReviewId($db, $id)
 
   return $review_id;
 }
+
+$reviewId = null;
 
 $dblink = mysqli_connect("localhost", 'root', '', 'bibibig');
 
@@ -78,11 +84,11 @@ if ($stmt = mysqli_prepare($dblink, $sql)) {
   if (mysqli_stmt_execute($stmt)) {
 
     $reviewId = getNewReviewId($dblink, $user_id);
-
+   
     echo 'upload success';
   } else {
 
-    $reviewId = 0;
+    
     //실패한 경우
     printf("%s", mysqli_error($dblink));
   }
@@ -101,9 +107,9 @@ mysqli_close($dblink);
 // 세션에 담아뒀다가 로그인 페이지로 이동 시키고
 // 로그인 하면 다시 돌아와서 입력. <-- 어떻게 다시 돌아오게 할거임?
 
-if ($reviewId > 0) {
+if ($reviewId != null) {
   // 리뷰 보여주는 페이지로 이동
-  $redirect_url = "show.php?reviewId=" . $reviewId;
+  $redirect_url = "detail.html?reviewId=" . $reviewId;
 }
 else {
   $redirect_url = "reviews.html";
