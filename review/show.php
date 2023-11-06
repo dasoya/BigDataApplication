@@ -6,8 +6,8 @@
 //근데 또 생각해보면 그냥 변수명만 넣는게 나을지도? 
 
 if (!isset($_GET["reviewId"])) { 
-
-	header("Location: reviews.html");
+	$title = "No result";
+	$body =	"No result";
 }
 
 
@@ -40,6 +40,10 @@ if ($stmt = mysqli_prepare($dblink, $sql)) {
 		$result = mysqli_stmt_get_result($stmt);
 		$review = mysqli_fetch_array($result);
 
+		//echo '' . $review['id'] . '' . $review['title'];
+		//이제 $review['title'] 이런식으로 접근 가능할 것.
+		//방법1. 만약에 접근 안되었는데 html에서 출력하려고 하면 -> 에러 출력하거나
+		//방법2. 여기서 출력시켜버리기 <- 만약에 이렇게 한다고 하면 ranking쪽 코드도 좀 다듬어야할 듯
 
 		mysqli_free_result($result);
 	} else {
