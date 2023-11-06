@@ -24,10 +24,7 @@ $dblink = mysqli_connect($server_name, $db_username , $db_password, $db_name);
                 FROM RankedCities
                 WHERE name = ?;";
         
-    //TODO (후순위)
-    //3개의 테이블을 조인해서 한번에 가져오기 vs 쿼리로 줄인 테이블 조인해서 가져오기 
-    //중 어떤게 더 빠른지.
-    //일단 다른 기능을 먼저 다 구현한 뒤에 알아보기 
+
     $sql_country = "WITH RankedCountries AS (
                         SELECT  country.name, flag, total, RANK() OVER (ORDER BY total DESC) AS rank
                         FROM (
@@ -90,8 +87,7 @@ $dblink = mysqli_connect($server_name, $db_username , $db_password, $db_name);
                 $searchResult = [];
                 while($row = mysqli_fetch_assoc($result)) {
                     $searchResult[] = $row;
-                    //TODO
-                    //만약에 결과가 없다면 어떤 값을 보내줄건지.
+
                 }
                 mysqli_free_result($result);
             }
@@ -111,19 +107,5 @@ $dblink = mysqli_connect($server_name, $db_username , $db_password, $db_name);
     
     mysqli_close($dblink);
 
-    /*
-    1. 서브쿼리 
-    SELECT city_id, count(*) cou
-    FROM trip
-    GROUP BY city_id
-    ORDER BY cou DESC
 
-    2. 메인 쿼리 -> city 테이블에 join하고, 정렬해서 rank붙이기
-    SELECT c.id, c.name, t.cou, RANK() OVER (ORDER BY t.cou DESC) AS rank
-    FROM (SELECT city_id, COUNT(*) cou
-            FROM trip
-            GROUP BY city_id
-            ORDER BY cou DESC) AS t
-    JOIN city AS c ON c.id = t.city_id;    
-    */
 ?>

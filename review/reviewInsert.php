@@ -38,7 +38,6 @@ function getNewReviewId($db, $id)
 $reviewId = null;
 
 
-
 $server_name = "localhost";
 $db_username = "team02";
 $db_password = "team02";

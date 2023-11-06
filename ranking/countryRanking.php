@@ -16,9 +16,9 @@ $dblink = mysqli_connect($server_name, $db_username , $db_password, $db_name);
                         FROM (SELECT city_id, count(*) cou
                                 FROM trip
                                 GROUP BY city_id) as t
-                        JOIN city on city.id = t.city_id
+                        LEFT JOIN city on city.id = t.city_id
                         GROUP By country_id) as city
-                    JOIN country on country.iso_code2 = city.country_id;";
+                    LEFT JOIN country on country.iso_code2 = city.country_id;";
         
         $result = mysqli_query($dblink, $sql);
         $countryRanking = array();
@@ -32,16 +32,6 @@ $dblink = mysqli_connect($server_name, $db_username , $db_password, $db_name);
 
      
     /* 나라별 순위 쿼리
-    
-    SELECT name, flag, total
-    FROM (SELECT country_id, sum(cou) as total
-        FROM (SELECT city_id, count(*) cou
-                FROM trip
-                GROUP BY city_id) as t
-        JOIN city on city.id = t.city_id
-        GROUP By country_id) as city
-    JOIN country on country.iso_code2 = city.country_id
-    ORDER by total DESC
 
     (문제점) 
     - 현재 데이터셋으로는 city랭킹이랑 비슷한 결과가 나옴 

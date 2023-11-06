@@ -22,7 +22,6 @@ $sql_review = "SELECT * FROM review ORDER BY created_at DESC LIMIT " . $limit_pa
 $sql_total = "SELECT count(*) as total FROM review; ";
 
 
-
 $dblink = mysqli_connect($server_name, $db_username , $db_password, $db_name);
 
 if (mysqli_connect_errno()) {
