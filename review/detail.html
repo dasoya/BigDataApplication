@@ -1,3 +1,10 @@
+<?php
+if (!isset($_GET['reviewId'])) {
+    header('Location: reviews.html'); 
+    exit(); 
+}
+?>    
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -14,9 +21,8 @@
 
     </head>
   <body id="top">
+
     <main>
-
-
         <nav class="navbar navbar-expand-lg">
             <div class="container">
                 <a class="navbar-brand" href="base.html">
@@ -41,11 +47,11 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link click-scroll" href="ranking/rankingShow10.html">RANKING</a>
+                            <a class="nav-link click-scroll" href="../ranking/rankingShow10.html">RANKING</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link click-scroll" href="review/reviews.html">REVIEWS</a>
+                            <a class="nav-link click-scroll" href="reviews.html">REVIEWS</a>
                         </li>
 
                         <li class="nav-item">
