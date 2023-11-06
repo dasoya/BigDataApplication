@@ -10,7 +10,13 @@ if (!isset($_GET["reviewId"])) {
 	$body =	"No result";
 }
 
-$dblink = mysqli_connect("localhost", 'root', '', 'bibibig');
+
+$server_name = "localhost";
+$db_username = "team02";
+$db_password = "team02";
+$db_name = "team02";
+
+$dblink = mysqli_connect($server_name, $db_username , $db_password, $db_name);
 
 if (mysqli_connect_errno()) {
 	printf('%s', mysqli_connect_error());

@@ -1,5 +1,11 @@
 <?php
 
+$server_name = "localhost";
+$db_username = "team02";
+$db_password = "team02";
+$db_name = "team02";
+
+
 if (isset($_GET["page"])) {
     $page = $_GET["page"];
 } else {
@@ -17,7 +23,7 @@ $sql_total = "SELECT count(*) as total FROM review; ";
 
 
 
-$dblink = mysqli_connect("localhost", 'root', '', 'bibibig');
+$dblink = mysqli_connect($server_name, $db_username , $db_password, $db_name);
 
 if (mysqli_connect_errno()) {
     printf('', mysqli_connect_error());
