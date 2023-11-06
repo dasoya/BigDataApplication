@@ -36,15 +36,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         endif;
     } else {
-        // 마지막 튜플의 id 조회
-        $sql = "SELECT MAX(id) as last_id FROM user";
-        $result = $conn->query($sql);
-        $row = $result->fetch_assoc();
-        $new_id = $row['last_id'] + 1;
 
         // 새로운 사용자 정보 삽입
-        $stmt = $conn->prepare("INSERT INTO user (id, email, pw, username, age, sex) VALUES (?, ?, ?, ?, ?, ?)");
-        $stmt->bind_param("isssis", $new_id, $email, $password, $username, $age, $sex);
+        $stmt = $conn->prepare("INSERT INTO user (email, pw, username, age, sex) VALUES (?, ?, ?, ?, ?)");
+        $stmt->bind_param("sssis", $email, $password, $username, $age, $sex);
+
 
         if ($stmt->execute()) {
             header("location: login.html");
