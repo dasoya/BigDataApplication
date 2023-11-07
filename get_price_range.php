@@ -5,12 +5,9 @@
         session_start();
     };
 
-    $hostname = "localhost";
-    $username = "team02";
-    $password = "team02";
-    $database = "team02";
-    // (1) connect to database //
-    $connection = mysqli_connect($hostname, $username, $password, $database);
+    require("dbconfig.php");
+
+    $connection = mysqli_connect($server_name, $db_username, $db_password, $db_name);
     if ($connection === false){
         die("ERROR: Could not connect. " . mysqli_connect_error());
     }

@@ -1,11 +1,11 @@
 <?php
-$server_name="localhost";
-$database="bibibig_final";
-$username="root";
-$password="";
+//TODO
+//사용하시는 건지 여쭤보기
+
+require("dbconfig.php");
 
 // Create connection //
-$conn = mysqli_connect($server_name, $username, $password, $database);
+$conn = mysqli_connect($server_name, $db_username, $db_password, $db_name);
 if (!$conn) {
     die("Connection failed: " . mysqli_error($conn));
 }

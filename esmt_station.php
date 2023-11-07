@@ -1,12 +1,10 @@
 <?php
 
 // 데이터베이스 연결
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "team02";
+require("dbconfig.php");
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+// Create connection //
+$conn = mysqli_connect($server_name, $db_username, $db_password, $db_name);
 
 // 연결 확인
 if ($conn->connect_error) {

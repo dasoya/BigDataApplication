@@ -2,6 +2,7 @@
     if (!session_id()){
         session_start();
     }
+    header("recommend_base.html");
     // session_start();
     header("Cache-Control: no-cache"); // POST로 검색 후에 ERR_CACHE_MISS 에러가 뜰 때 no-cache만 추가해 주면 제대로 동작한다. //
 ?> 
@@ -118,6 +119,7 @@
                                         }
                                         $html .= '</div>';
                                         echo($html);
+                                        
                                     };
                             ?>
                         </body>

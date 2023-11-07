@@ -12,10 +12,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 $id = $_SESSION["id"];
 
 // 데이터베이스 연결 설정
-$server_name = "localhost"; 
-$db_username = "root";
-$db_password = "erica0529J!";
-$db_name = "team02";
+require("dbconfig.php");
 
 $conn = new mysqli($server_name, $db_username, $db_password, $db_name);
 if ($conn->connect_error) {
