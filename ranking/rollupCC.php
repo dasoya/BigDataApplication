@@ -22,6 +22,8 @@ if (mysqli_connect_errno()) {
     // 초기화 변수
     $prev_country = "";
 
+    //todo
+    //로직은 구현했으니 스타일 어떻게 할지 고민해보기
  
     while ($row = mysqli_fetch_assoc($result)) {
         echo "<tr>";
@@ -39,6 +41,8 @@ if (mysqli_connect_errno()) {
             echo "<td></td>";
         }
 
+        
+
         // 도시 이름 출력
         if (!empty($row['city_name'])) {
             echo "<td>" . $row['city_name'] . "</td>";
@@ -46,10 +50,14 @@ if (mysqli_connect_errno()) {
             echo "<td></td>";
         }
 
+        if($row["city_name"]== null) {
+            echo "<td>".$row['country_name']." total: ". $row['num_of_visitor']. "</td>";
+        } else {
         // 방문자 수 출력
         echo "<td>" . $row['num_of_visitor'] . "</td>";
-
+        }
         echo "</tr>";
+        
     }
 
     mysqli_free_result($result);

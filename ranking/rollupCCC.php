@@ -6,6 +6,8 @@ $db_password = "team02";
 $db_name = "team02";
 
 
+//todo
+//rollupCC와 마찬가지로 스타일 어떻게 할지 고민해보기
 
 $dblink = mysqli_connect($server_name, $db_username, $db_password, $db_name);
 

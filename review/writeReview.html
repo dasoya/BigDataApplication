@@ -1,6 +1,17 @@
 <?php
     session_start();
+    if(isset($_SESSION['id'])){
+        $id = $_SESSION['id'];
+   
+    // 세션 변수 사용
+    echo "사용자 이름: " . $id;
+    }
+    else{
+        header("Location: /BigDataApplication/login.html");
+        exit();        
+    }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -106,13 +117,7 @@
 
                     <div class="">
                         <h3 class="mb-4 pb-2">We'd love to hear from you
-                            <?php
-                            
-                            $id = $_SESSION['id'];
 
-                            // 세션 변수 사용
-                            echo "사용자 이름: " . $id;
-                            ?>
                         </h3>
                     </div>
 
