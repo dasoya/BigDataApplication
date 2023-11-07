@@ -180,6 +180,9 @@ $liked_result = $liked_stmt->get_result();
                             <form action="accountdeletion.php" method="post">
                                 <button type="submit" class="btn btn-primary me-2">Account Deletion</button>
                             </form>
+                            <form action="logout.php" method="post">
+                                <button type="submit" class="btn btn-primary me-2">Account <br> Logout</button>
+                            </form>
                         </div>
                     </div>
                 </div>
