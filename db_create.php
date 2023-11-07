@@ -2,10 +2,7 @@
 //TODO
 //사용하시는 건지 여쭤보기
 
-$server_name="localhost";
-$database="bibibig_final";
-$username="root";
-$password="";
+require("../dbconfig.php");
 
 // Create connection //
 $conn = mysqli_connect($server_name, $username, $password, $database);

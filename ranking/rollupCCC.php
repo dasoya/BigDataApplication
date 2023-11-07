@@ -1,9 +1,6 @@
 <?php
 // 데이터베이스 연결 설정
-$server_name = "localhost";
-$db_username = "team02";
-$db_password = "team02";
-$db_name = "team02";
+require("../dbconfig.php");
 
 
 //todo

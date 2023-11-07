@@ -1,13 +1,10 @@
 <?php
 
 // DB 연결 설정
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "team02";
+require("dbconfig.php");
 
 
-$conn = mysqli_connect($servername, $username, $password, $dbname);
+$conn = mysqli_connect($server_name, $db_username, $db_password, $db_name);
 if (mysqli_connect_errno()) {
 
     printf("Connection failed: %s\n" , mysqli_connect_error());

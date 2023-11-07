@@ -1,8 +1,5 @@
 <?php
-$server_name = "localhost";
-$db_username = "root";
-$db_password = "erica0529J!";
-$db_name = "team02";
+require("dbconfig.php");
 
 // 연결
 $conn = new mysqli($server_name, $db_username, $db_password, $db_name);
