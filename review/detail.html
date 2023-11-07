@@ -6,6 +6,7 @@ if(!isset($_GET['reviewId'])){
 }
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -19,6 +20,7 @@ if(!isset($_GET['reviewId'])){
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/bootstrap-icons.css" rel="stylesheet">
         <link href="../css/templatemo-topic-listing.css" rel="stylesheet">  
+        <link href="review.css" rel="stylesheet">
 
     </head>
   <body id="top">
@@ -113,7 +115,7 @@ if(!isset($_GET['reviewId'])){
                         </div>
                         <div class="mt-lg-0">
                             <?php
-                             echo "user_id: " .$review['user_id'] ."/ created_at: ". $review['created_at'];
+                             echo "<div class='col-lg-5 col-5 text-left>'><i class='text-gray'> user_id: " .$review['user_id'] ."/ created_at: ". date("Y-m-d", strtotime($review["created_at"]) )."</i> </div>";
                             ?>
                         </div>
 
@@ -136,8 +138,9 @@ if(!isset($_GET['reviewId'])){
 
                     </div>
                 </div>
-                <div class="col-lg-2 col-12 ">
-                    <button type="submit" class="form-control">Post</button>
+                <div class="col-lg-2 col-12 ms-auto">
+                    <button type="submit" class="btn">Next </button>
+                    <button type="submit" class="btn">Prev</button>
                 </div>
                 <!-- TODO -->
                 <!-- 이전 리뷰, 다음 리뷰, 목록 으로 돌아가는 버튼 만들기 -->
