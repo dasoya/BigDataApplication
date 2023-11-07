@@ -9,7 +9,7 @@ CREATE TABLE `user` (
 );
 
 CREATE TABLE `prediction` (
-  `id` integer PRIMARY KEY,
+  `id` integer PRIMARY KEY AUTO_INCREMENT,
   `duration` integer,
   `created_at` timestamp COMMENT '기록에 추가한 날짜. 나중에 정렬할 때 사용하면 좋을 듯.',
   `transportation_type` varchar(255),
