@@ -1,6 +1,10 @@
 <?php
-    session_start();
-?> /* 이렇게 해야 $_SESSION 변수에서 사용자 ID를 받아 올 수 있다. 
+    if (!session_id()){
+        session_start();
+    }
+    // session_start();
+    header("Cache-Control: no-cache"); // POST로 검색 후에 ERR_CACHE_MISS 에러가 뜰 때 no-cache만 추가해 주면 제대로 동작한다. //
+?> 
 
 <!DOCTYPE html>
 <html lang="en">
@@ -39,7 +43,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link click-scroll" href="./recommend_base.html">RECOMEND</a>
+                            <a class="nav-link click-scroll" href="recommend_base.html">RECOMEND</a>
                         </li>
 
                         <li class="nav-item">
@@ -74,11 +78,11 @@
 
                     <div class="col-lg-8 col-12 mx-auto">
                         <h1 class="text-white text-center" style="font-size : 35px" >Get recommendations of your destination based on the available price range</h1>
-                        <form method="post" class="custom-form mt-4 pt-2 mb-lg-0 mb-5" action="./recommend_base.php">
+                        <form method="post" class="custom-form mt-4 pt-2 mb-lg-0 mb-5" action="recommend_base.php">
                         <div class="input-group input-group-lg">
                         <span class="input-group-text price-insert" id="basic-addon1"></span>
-                            <input name="min-val" type="text" class="form-control" id="min-val" placeholder="min val (eg. 90000)" style="font-size : 15px">
-                            <input name="max-val" type="text" class="form-control" id="max-val" placeholder="max val (eg. 100000)" style="font-size : 15px">
+                        <input name="min-val" type="text" class="form-control" id="min-val" placeholder="min val (eg. 100)" value="100" style="font-size : 15px">
+                                <input name="max-val" type="text" class="form-control" id="max-val" placeholder="max val (eg. 1000)" value="1000" style="font-size : 15px">
                             <select name="dropdown" class="form-control">
                                 <option value="option1">Sort By: 숙박</option>
                                 <option value="option2">Sort By: 교통</option>
@@ -101,12 +105,13 @@
                                         while ($row = mysqli_fetch_assoc($result)){
                                             $html .= '<div class="destination">';
                                             // $html .= '<h3>' . $idx . ' CITY NAME : ' .  $row['name2'] . '</h3>';
-                                            $html .= '<h3><a href="recommend/city_detail.php?city=' . $row['name2'] . '">' . $row['name2'] . '</a></h3>'; 
+                                            $html .= '<h3><a href="city_detail.php?city=' . $row['name2'] . '">' . $row['name2'] . '</a></h3>'; 
                                             $html .= '<p>CITY INFO : ' . $row['info2'] . '</p>';
-                                            $html .= '<h6>LANDMARK NAME : ' . $row['name2'] . '</h3>';
+                                            $html .= '<h6>LANDMARK NAME : ' . $row['name1'] . '</h3>';
                                             $html .= '<img class="landmark-img" width="100" height="100" src="' . $row['img1'] . '" alt="' . $row['name1'] . '">';
                                             $html .= '<p>LANDMARK INFO : ' . $row['info1'] . '</p>';
                                             $html .= '<div class="country-name">'. $row['country_name'] . '</div>';
+                                            // $html .= '<img class="flag-img" src="' . $row['flag'] . 'alt="No Flag Img" width="50" height="30"';
                                             $html .= '<img class="flag-img" src="' . $row['flag'] . '" alt="No Flag Img" width="50" height="30">';
                                             $html .= '</div>';
                                             $idx++;

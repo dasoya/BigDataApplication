@@ -74,11 +74,13 @@
                         <div class="input-group input-group-lg">
                         <span class="input-group-text price-insert" id="basic-addon1"></span>
                         
-                            <?php
+                            <!-- <?php
                                 $html = '<input type="text" size="20" style="font-size : 15px" class="form-control" name="min-val" value="' . $min_val . '">';
                                 $html .= '<input type="text" size="20" style="font-size : 15px" class="form-control" name="max-val" value="' . $max_val . '">';
                                 echo($html);
-                            ?>
+                            ?> -->
+                            <input name="min-val" type="text" class="form-control" id="min-val" placeholder="min val (eg. 90000)" style="font-size : 15px">
+                            <input name="max-val" type="text" class="form-control" id="max-val" placeholder="max val (eg. 100000)" style="font-size : 15px">
                             <select name="dropdown" class="form-control">
                                 <option value="option1">Sort By: 숙박</option>
                                 <option value="option2">Sort By: 교통</option>
