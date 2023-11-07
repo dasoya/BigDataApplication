@@ -102,6 +102,8 @@ CREATE TABLE `feedback` (
   `message` text
 );
 
+ALTER TABLE user AUTO_INCREMENT=5001;
+
 ALTER TABLE `airport` ADD FOREIGN KEY (`city_id`) REFERENCES `city` (`id`);
 
 ALTER TABLE `prediction` ADD FOREIGN KEY (`user_id`) REFERENCES `user` (`id`);
