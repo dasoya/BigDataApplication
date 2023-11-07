@@ -1,6 +1,6 @@
 <?php
 
-
+include "../dbconfig.php";
 $dblink = mysqli_connect($server_name, $db_username, $db_password, $db_name);
 
 if (mysqli_connect_errno()) {
@@ -21,10 +21,10 @@ if (mysqli_connect_errno()) {
 
     //todo
     //로직은 구현했으니 스타일 어떻게 할지 고민해보기
+   
  
     while ($row = mysqli_fetch_assoc($result)) {
         echo "<tr>";
-        
         
         // 국가 이름 출력 (한 번만)
 

@@ -1,7 +1,9 @@
 <?php
     session_start();
+
+    
     if(isset($_SESSION['id'])){
-        $id = $_SESSION['id'];
+        $user_id = $_SESSION['id'];
    
     // 세션 변수 사용
     }
@@ -9,7 +11,21 @@
         header("Location: /BigDataApplication/login.html");
         exit();        
     }
+    
+    if(isset($_GET['reviewId'])){
+        $reviewId = $_GET['reviewId'];
+    }
+    //else{
+    //    header("Location: /BigDataApplication/review/reviews.html");
+    //    exit();  
+    //}
+
     include "../dbconfig.php";
+    include "getWriterId.php";
+    include "show.php";
+
+
+
 ?>
 
 
@@ -114,41 +130,39 @@
         <section class="section-padding section-bg">
             <div class="container">
                 <div class="">
-
+        
                     <div class="">
-                        <h3 class="mb-4 pb-2">We'd love to hear from you
-
-                        </h3>
+                        <h3 class="mb-4 pb-2">Edit your post</h3>
                     </div>
-
+        
                     <div class="col-lg-12 col-12">
-                        <form action="reviewInsert.php" method="post" class="custom-form contact-form" role="form">
-                            <!-- php로 보내서, redirect해야하나? -->
+                        <form action="updatePost.php" method="post" class="custom-form contact-form" role="form">
+                            <input type="hidden" name="reviewId" value="<?php echo $review['id']; ?>">
 
+        
                             <div class="col-lg-12 col-12">
                                 <div class="form-floating">
-                                    <input type="text" name="title" id="name" class="form-control" placeholder="Name"
-                                        required="">
-
-                                    <label for="floatingInput">title</label>
+                                    <textarea class="form-control text-left" id="message" name="title" placeholder="Tell me about the project" style="resize: none; height: inherit;"><?php echo trim($review['title']);?></textarea>
+                                    <label for="title">Title</label>
                                 </div>
-
+                                
                                 <div class="form-floating">
-                                    <textarea class="form-control" id="message" name="body"
-                                        placeholder="Tell me about the project"></textarea>
-
-                                    <label for="floatingTextarea">Tell me about your trip !</label>
+                                    <textarea class="form-control text-left" id="message" name="body" placeholder="Tell me about the project" rows="6"><?php echo trim($review['body']);?></textarea>
+                                    <label for="message">Tell me about your trip!</label>
                                 </div>
                             </div>
-
+                            
+        
                             <div class="col-lg-4 col-12 ms-auto">
-                                <button type="submit" class="form-control">Post</button>
+                                <button type="submit" class="form-control">Update</button>
                             </div>
                         </form>
                     </div>
                 </div>
             </div>
         </section>
+        
+        
     </main>
 
     <footer class="site-footer section-padding">

@@ -65,11 +65,11 @@ $sql = "INSERT INTO review (title, body, user_id) VALUES (?, ?, ?);";
 
 if ($stmt = mysqli_prepare($dblink, $sql)) {
 
-  mysqli_stmt_bind_param($stmt, "ssi", $title, $body, $user_id); // 데이터 구조 보고 수정
+  mysqli_stmt_bind_param($stmt, "ssi", $title, $body, $writer_id); // 데이터 구조 보고 수정
 
   $title = $_POST['title'];
   $body = $_POST['body'];
-  $user_id = $_SESSION['id'];
+  $writer_id = $_SESSION['id'];
 
   //이메일로 가져오는게 맞을까? primary key가 id인데... 이것도 논의해보자
 
@@ -85,7 +85,7 @@ if ($stmt = mysqli_prepare($dblink, $sql)) {
 
   if (mysqli_stmt_execute($stmt)) {
 
-    $reviewId = getNewReviewId($dblink, $user_id);
+    $reviewId = getNewReviewId($dblink, $writer_id);
    
     echo 'upload success';
   } else {
