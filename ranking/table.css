@@ -1,3 +1,9 @@
+
+.text-gray{
+    font-style: italic;
+    color: #959a99;
+}
+
 .styled-table {
     border-collapse: collapse;
     margin: 25px 0;
@@ -35,5 +41,8 @@
     font-weight: bold;
     color: #009893;
 }
+
+
+
 
 /* 출처 https://dev.to/dcodeyt/creating-beautiful-html-tables-with-css-428l */
