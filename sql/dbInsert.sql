@@ -209,33 +209,34 @@ INSERT INTO trip (id, travelerName, travelerAge, travelerSex, start_date, end_da
 INSERT INTO trip (id, travelerName, travelerAge, travelerSex, start_date, end_date, duration, transportation_type, transportation_cost, accommodation_type, accommodation_cost, city_id) VALUES ('139', 'William Brown', '39', 'Male', '2023-10-01', '2023-10-08', '7', 'Flight', '753', 'Resort', '1521', '1027');
 
 
-INSERT INTO landmark VALUES(2001, 'Big Ben', 'https://www.thetrainline.com/cms/media/5743/uk-london-big-ben.jpg?mode=crop&width=660&height=440&quality=70', 'London''s clock tower',1001);
-INSERT INTO landmark VALUES(2002, 'Patong Beach', 'https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcQL3n6rfg8_wFwPHgF7CPU2f7n-qp1DYijHBwrcOxmsFvba8JL7pxpelV7fgwuabQkvMCgju2WZHiKXjfqcVrfl6zWpp-ft', 'Popular beach in Phuket',1002);
-INSERT INTO landmark VALUES(2003, 'Jalan Legian', 'https://upload.wikimedia.org/wikipedia/commons/7/7e/Jalan_Legian_Hariadhi.jpg', 'Tourism and entertainment strip',1003);
-INSERT INTO landmark VALUES(2004, 'Statue of Liberty', 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.lonelyplanet.com%2Farticles%2Fstatue-of-liberty-facts&psig=AOvVaw2D-s6DZQLZ51CHmQxj8pmO&ust=1697691144283000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCNiPv8Hm_oEDFQAAAAAdAAAAABAE', 'Iconic statue in New York Harbor',1004);
-INSERT INTO landmark VALUES(2005, 'Tokyo Tower', 'https://upload.wikimedia.org/wikipedia/commons/5/58/Tokyo_Tower_2023.jpg', 'Radio transmission tower in Tokyo',1005);
-INSERT INTO landmark VALUES(2006, 'Eiffel Tower', 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Tour_Eiffel_Wikimedia_Commons_%28cropped%29.jpg/250px-Tour_Eiffel_Wikimedia_Commons_%28cropped%29.jpg', 'Iron tower in Paris',1006);
-INSERT INTO landmark VALUES(2007, 'Sydney Opera House', 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Sydney_Australia._%2821339175489%29.jpg', 'Music and theater venue in Sydney',1007);
-INSERT INTO landmark VALUES(2008, 'Christ the Redeemer', 'https://cdn.britannica.com/54/150754-050-5B93A950/statue-Christ-the-Redeemer-Rio-de-Janeiro.jpg','Christ the Redeemer is a towering Art Deco statue of Jesus Christ perched atop the Corcovado mountain in Rio de Janeiro, Brazil, serving as an iconic symbol of both the city and Christianity.',1008);
-INSERT INTO landmark VALUES(2009, 'Anne Frank House', 'https://images.app.goo.gl/Y5xE66hapa4erQpR7', 'Anne Frank''s hiding place in Amsterdam',1009);
-INSERT INTO landmark VALUES(2010, 'Burj Al Arab', 'https://images.app.goo.gl/NEjS9rQGhU9Dgq2N6', '7-star hotel in Dubai',1010);
-INSERT INTO landmark VALUES(2011, 'Cancun Beach', 'https://images.app.goo.gl/ZEGadUa8hhHg2hpM6', 'Beach with turquoise waters in Mexico',1011);
-INSERT INTO landmark VALUES(2012, 'Sagrada Familia', 'https://images.app.goo.gl/fPJWUGWgU939pyt57', 'Gaudi''s architectural masterpiece in Barcelona',1012);
-INSERT INTO landmark VALUES(2013, 'Diamond Head', 'https://images.app.goo.gl/bsBySx86Ma8VRdVj9', 'Volcanic crater in Hawaii',1013);
-INSERT INTO landmark VALUES(2014, 'Brandenburg Gate', 'https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcRjnxHvL_WLcxDolBIKn2fcUtspSbZVJI1rFEitdp9eHNlobDqkNuHvfnyzWpdjmvRXbXsLmu5y83Qv_YKQdBo3coSmsqBX', 'Baroque-style gate in Berlin',1014);
-INSERT INTO landmark VALUES(2015, 'Jemaa El-Fnaa Square', 'https://images.app.goo.gl/wFVPqkTmFxcYDZhm6', 'Central square in Marrakech',1015);
-INSERT INTO landmark VALUES(2016, 'Royal Mile', 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/High_Street%2C_Edinburgh.JPG/1920px-High_Street%2C_Edinburgh.JPG', 'Historic street in Edinburgh',1016);
-INSERT INTO landmark VALUES(2017, 'Colosseum', 'https://www.artandobject.com/sites/default/files/styles/gallery_item/public/figure-1_0.jpeg?itok=RSQ7TxFQ', 'Famous ancient Roman arena in Rome',1017);
-INSERT INTO landmark VALUES(2018, 'Wat Arun', 'https://a.cdn-hotels.com/gdcs/production50/d1634/bbe337ad-02fe-49d6-b761-02cab15d54f9.jpg?impolicy=fcrop&w=800&h=533&q=medium', 'Beautiful temple in Bangkok',1018);
-INSERT INTO landmark VALUES(2019, 'Oia', 'https://a.cdn-hotels.com/gdcs/production33/d759/a6d5efb2-4232-43e1-b01e-6cef8b899bb0.jpg?impolicy=fcrop&w=1600&h=1066&q=medium', 'Beautiful village in Santorini',1019);
-INSERT INTO landmark VALUES(2020, 'Giza Pyramids', 'https://media.architecturaldigest.com/photos/58e2a407c0e88d1a6a20066b/16:9/w_1280,c_limit/Pyramid%20of%20Giza%201.jpg', 'Historic astronomical site in Cairo',1020);
-INSERT INTO landmark VALUES(2021, 'Stanley Park', 'https://www.hachettebookgroup.com/wp-content/uploads/2019/01/Vancouver_StanleyParkSeawall_jamesvancouver-iStock-520298306.jpg', 'Large urban park in Vancouver',1021);
-INSERT INTO landmark VALUES(2022, 'Gyeongbokgung Palace', 'https://www.korea.net/upload/content/editImage/20230329144152690_2V3S9BMD.jpg', 'Palace in Seoul',1022);
-INSERT INTO landmark VALUES(2023, 'Hollywood Sign', 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Hollywood_Sign_%28Zuschnitt%29.jpg/800px-Hollywood_Sign_%28Zuschnitt%29.jpg', 'Famous sign in Los Angeles',1023);
-INSERT INTO landmark VALUES(2024, 'Table Mountain', 'https://cdn.britannica.com/41/75841-050-FAAE44F0/Table-Mountain-Cape-Town-Western-Bay-South.jpg', 'Mountain in Cape Town',1024);
-INSERT INTO landmark VALUES(2025, 'Wat Phnom', 'https://files.intocambodia.org/content/small/adfb128d97ca55fe045fd0dc2af2c285.jpg', 'Temple in Phnom Penh',1025);
-INSERT INTO landmark VALUES(2026, 'Acropolis', 'https://cdn-imgix.headout.com/microbrands-banner-image/image/b698f96a3bf7e35418940973f33c4708-The%20Acropolis%20of%20Athens.jpeg', 'Ancient temple in Athens',1026);
-INSERT INTO landmark VALUES(2027, 'Sky Tower', 'https://upload.wikimedia.org/wikipedia/commons/f/f8/01_Auckland_New_Zealand-1000137.jpg', 'Observation tower in Auckland',1027);
+INSERT INTO landmark VALUES(2001, "Big Ben", "https://www.thetrainline.com/cms/media/5743/uk-london-big-ben.jpg?mode=crop&width=660&height=440&quality=70", "London's clock tower", 1001);
+INSERT INTO landmark VALUES(2002, "Patong Beach", "https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcQL3n6rfg8_wFwPHgF7CPU2f7n-qp1DYijHBwrcOxmsFvba8JL7pxpelV7fgwuabQkvMCgju2WZHiKXjfqcVrfl6zWpp-ft", "Popular beach in Phuket", 1002);
+INSERT INTO landmark VALUES(2003, "Jalan Legian", "https://upload.wikimedia.org/wikipedia/commons/7/7e/Jalan_Legian_Hariadhi.jpg", "Tourism and entertainment strip", 1003);
+INSERT INTO landmark VALUES(2004, "Statue of Liberty", "https://cdn.britannica.com/82/183382-050-D832EC3A/Detail-head-crown-Statue-of-Liberty-New.jpg", "Iconic statue in New York Harbor", 1004);
+INSERT INTO landmark VALUES(2005, "Tokyo Tower", "https://upload.wikimedia.org/wikipedia/commons/5/58/Tokyo_Tower_2023.jpg", "Radio transmission tower in Tokyo", 1005);
+INSERT INTO landmark VALUES(2006, "Eiffel Tower", "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Tour_Eiffel_Wikimedia_Commons_%28cropped%29.jpg/250px-Tour_Eiffel_Wikimedia_Commons_%28cropped%29.jpg", "Iron tower in Paris", 1006);
+INSERT INTO landmark VALUES(2007, "Sydney Opera House", "https://upload.wikimedia.org/wikipedia/commons/a/a0/Sydney_Australia._%2821339175489%29.jpg", "Music and theater venue in Sydney", 1007);
+INSERT INTO landmark VALUES(2008, "Christ the Redeemer", "https://cdn.britannica.com/54/150754-050-5B93A950/statue-Christ-the-Redeemer-Rio-de-Janeiro.jpg", "Christ the Redeemer is a towering Art Deco statue of Jesus Christ perched atop the Corcovado mountain in Rio de Janeiro, Brazil, serving as an iconic symbol of both the city and Christianity.", 1008);
+INSERT INTO landmark VALUES(2009, "Anne Frank House", "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Amsterdam_%28NL%29%2C_Anne-Frank-Huis_--_2015_--_7185.jpg/1920px-Amsterdam_%28NL%29%2C_Anne-Frank-Huis_--_2015_--_7185.jpg", "Anne Frank's hiding place in Amsterdam", 1009);
+INSERT INTO landmark VALUES(2010, "Burj Al Arab", "https://upload.wikimedia.org/wikipedia/en/thumb/2/2a/Burj_Al_Arab%2C_Dubai%2C_by_Joi_Ito_Dec2007.jpg/500px-Burj_Al_Arab%2C_Dubai%2C_by_Joi_Ito_Dec2007.jpg", "7-star hotel in Dubai", 1010);
+INSERT INTO landmark VALUES(2011, "Cancun Beach", "https://www.livedreamdiscover.com/wp-content/uploads/2018/11/Cancun-5.jpg", "Beach with turquoise waters in Mexico", 1011);
+INSERT INTO landmark VALUES(2012, "Sagrada Familia", "https://i.namu.wiki/i/j67-iKR3Hx769TT9hdBzLHwM0z5Ng2C-irZQfJbcO-bCZWFgVc08JQpEQzPJLa-mBhOz7d0GphRz5vLjxl3PYA.webp", "Gaudi's architectural masterpiece in Barcelona", 1012);
+INSERT INTO landmark VALUES(2013, "Diamond Head", "https://loveoahu.org/wp-content/uploads/diamond-head-1.jpg", "Volcanic crater in Hawaii", 1013);
+INSERT INTO landmark VALUES(2014, "Brandenburg Gate", "https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcRjnxHvL_WLcxDolBIKn2fcUtspSbZVJI1rFEitdp9eHNlobDqkNuHvfnyzWpdjmvRXbXsLmu5y83Qv_YKQdBo3coSmsqBX", "Baroque-style gate in Berlin", 1014);
+INSERT INTO landmark VALUES(2015, "Jemaa El-Fnaa Square", "https://www.lesjardinsdelamedina.com/blog/wp-content/uploads/2020/07/jama-el-fnaa-678x381.jpg", "Central square in Marrakech", 1015);
+INSERT INTO landmark VALUES(2016, "Royal Mile", "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/High_Street%2C_Edinburgh.JPG/1920px-High_Street%2C_Edinburgh.JPG", "Historic street in Edinburgh", 1016);
+INSERT INTO landmark VALUES(2017, "Colosseum", "https://www.artandobject.com/sites/default/files/styles/gallery_item/public/figure-1_0.jpeg?itok=RSQ7TxFQ", "Famous ancient Roman arena in Rome", 1017);
+INSERT INTO landmark VALUES(2018, "Wat Arun", "https://a.cdn-hotels.com/gdcs/production50/d1634/bbe337ad-02fe-49d6-b761-02cab15d54f9.jpg?impolicy=fcrop&w=800&h=533&q=medium", "Beautiful temple in Bangkok", 1018);
+INSERT INTO landmark VALUES(2019, "Oia", "https://a.cdn-hotels.com/gdcs/production33/d759/a6d5efb2-4232-43e1-b01e-6cef8b899bb0.jpg?impolicy=fcrop&w=1600&h=1066&q=medium", "Beautiful village in Santorini", 1019);
+INSERT INTO landmark VALUES(2020, "Giza Pyramids", "https://media.architecturaldigest.com/photos/58e2a407c0e88d1a6a20066b/16:9/w_1280,c_limit/Pyramid%20of%20Giza%201.jpg", "Historic astronomical site in Cairo", 1020);
+INSERT INTO landmark VALUES(2021, "Stanley Park", "https://www.hachettebookgroup.com/wp-content/uploads/2019/01/Vancouver_StanleyParkSeawall_jamesvancouver-iStock-520298306.jpg", "Large urban park in Vancouver", 1021);
+INSERT INTO landmark VALUES(2022, "Gyeongbokgung Palace", "https://www.korea.net/upload/content/editImage/20230329144152690_2V3S9BMD.jpg", "Palace in Seoul", 1022);
+INSERT INTO landmark VALUES(2023, "Hollywood Sign", "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Hollywood_Sign_%28Zuschnitt%29.jpg/800px-Hollywood_Sign_%28Zuschnitt%29.jpg", "Famous sign in Los Angeles", 1023);
+INSERT INTO landmark VALUES(2024, "Table Mountain", "https://cdn.britannica.com/41/75841-050-FAAE44F0/Table-Mountain-Cape-Town-Western-Bay-South.jpg", "Mountain in Cape Town", 1024);
+INSERT INTO landmark VALUES(2025, "Wat Phnom", "https://files.intocambodia.org/content/small/adfb128d97ca55fe045fd0dc2af2c285.jpg", "Temple in Phnom Penh", 1025);
+INSERT INTO landmark VALUES(2026, "Acropolis", "https://cdn-imgix.headout.com/microbrands-banner-image/image/b698f96a3bf7e35418940973f33c4708-The%20Acropolis%20of%20Athens.jpeg", "Ancient temple in Athens", 1026);
+INSERT INTO landmark VALUES(2027, "Sky Tower", "https://upload.wikimedia.org/wikipedia/commons/f/f8/01_Auckland_New_Zealand-1000137.jpg", "Observation tower in Auckland", 1027);
+
 
 
 -- airport DB
