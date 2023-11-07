@@ -109,11 +109,15 @@ $conn->close();
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link click-scroll" href="#section_3">RANKING</a>
+                            <a class="nav-link click-scroll" href="ranking/rankingShow10.html">RANKING</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link click-scroll" href="#section_4">FEEDBACK</a>
+                            <a class="nav-link click-scroll" href="review/reviews.html">REVIEWS</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="">FEEDBACK</a>
                         </li>
 
                         <li class="nav-item dropdown">
