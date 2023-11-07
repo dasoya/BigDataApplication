@@ -41,12 +41,12 @@ if (mysqli_num_rows($result) > 0) {
     } else if ($_SESSION['transType'] == 'Airplane') {
         echo "+ Airports in the city <br>";
         while($row = $result->fetch_assoc()) {
-            echo"&bull; ".$row["airport_name"]. "(".$row['icao_code'].")<br>";
+            echo"&bull; ".$row["airport_name"]. " (".$row['icao_code'].")<br>";
         }
     } 
 
 } else {
-   echo "There is no station in the city";
+  // echo "There is no station in the city";
 }
 
 $result->free_result();

@@ -36,7 +36,11 @@ body, html {
 					<div class="estimate-form">
 
 						<form method="POST">
-                            			<?php session_start(); ?>
+						<?php
+
+							if(!session_id()) {
+								session_start();
+							} ?>
 
 							<div class="mb-3">
 								<h1 class="text-white text-left">Which city do you want to
@@ -97,9 +101,9 @@ body, html {
 										
 										<?php
 
-                               
+								if(!session_id()) {
                                     session_start();
-                                
+								}
                         
                                 $_SESSION['cityId'] = $_POST['cityId'];
                                 $_SESSION['accType'] = $_POST['accType'];
@@ -111,10 +115,6 @@ body, html {
 										
                             </form>
 					</div>
-
-				
-						
-
 
 				</div>
 
