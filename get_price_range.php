@@ -4,10 +4,10 @@
         // id가 없을 경우 세션 시작
         session_start();
     };
-    
+
     require("dbconfig.php");
 
-    mysqli_connect($server_name, $db_username, $db_password, $db_name);
+    $connection = mysqli_connect($server_name, $db_username, $db_password, $db_name);
     if ($connection === false){
         die("ERROR: Could not connect. " . mysqli_connect_error());
     }
