@@ -7,7 +7,7 @@ session_start();
 $user_id = $_SESSION["id"];
 
 // 데이터베이스 연결 설정
-require("../dbconfig.php");
+require("dbconfig.php");
 
 // 연결
 $conn = new mysqli($server_name, $db_username, $db_password, $db_name);
