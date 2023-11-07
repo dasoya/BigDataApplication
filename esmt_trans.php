@@ -18,7 +18,7 @@ else{
     
 
     if(!session_id()) {
-        return;
+        session_start();
     }
     
     
@@ -43,7 +43,7 @@ else{
         
             $row = mysqli_fetch_array($result);
             $avgDayCost = $row['avgDayCost'];
-            $estimatedCost = round($avgDayCost * $duration, 0);
+            $estimatedCost = round($avgDayCost, 0);
             
             if(!is_null($avgDayCost)) {
                 echo "<h4 class='text-white text-end'>Estimated ".$transType." Cost : $" . $estimatedCost . "</h4>";

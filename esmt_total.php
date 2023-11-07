@@ -22,7 +22,7 @@ else{
    // 발급된 세션 id가 있다면 세션의 id를, 없다면 false 반환
    if(!session_id()) {
        // id가 없을 경우 세션 시작
-       exit();
+       session_start();
    }
 
    if (!isset($_SESSION['accCost']) || !isset($_SESSION['transCost'])) {
@@ -42,15 +42,24 @@ else{
 
     $currentTime = date('Y-m-d H:i:s');
 
-    $query = "INSERT INTO prediction (city_id,duration,created_at,user_id,transportation_type, accommodation_type, transportation_cost, accommodation_cost) VALUES (".$_SESSION['cityId'].",".$_SESSION['duration'].",".$currentTime.",".$_SESSION['userId'].",".$_SESSION['transType'].",".$_SESSION['accType'].",".$transCost.",".$accCost.")";
+    if(!isset($_SESSION['userId'])) {
+       return;
+    }
+    $query = "INSERT INTO prediction (city_id,duration,created_at,user_id,transportation_type, accommodation_type, transportation_cost, accommodation_cost) VALUES (".$_SESSION['cityId'].",".$_SESSION['duration'].",'".$currentTime."',".$_SESSION['userId'].",'".$_SESSION['transType']."','".$_SESSION['accType']."',".$transCost.",".$accCost.")";
     $result = mysqli_query($conn, $query);
     if ($result) {
-       printf("History saved");
+       // echo "History saved";
+    // printf("New Record has id %d.\n", mysqli_insert_id($conn));
     } else {
          printf("Error %s \n",mysqli_error($conn));
     }
-   session_destroy();
-   
+    //session_destroy();
+    $_SESSION['duration'] = null;
+    $_SESSION['cityId'] = null;
+    $_SESSION['accType'] = null;
+    $_SESSION['transType'] = null;
+    $_SESSION['accCost'] = null;
+    $_SESSION['transCost'] = null;
 }
 
 ?>
