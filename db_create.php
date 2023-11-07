@@ -1,4 +1,7 @@
 <?php
+//TODO
+//사용하시는 건지 여쭤보기
+
 $server_name="localhost";
 $database="bibibig_final";
 $username="root";
