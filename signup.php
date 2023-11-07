@@ -35,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
 
         // 새로운 사용자 정보 삽입
-        $stmt = $conn->prepare("INSERT INTO user (email, pw, username, age, sex) VALUES (?, ?, ?, ?, ?)");
+        $stmt = $conn->prepare("INSERT INTO user (email, pw, name, age, sex) VALUES (?, ?, ?, ?, ?)");
         $stmt->bind_param("sssis", $email, $password, $username, $age, $sex);
 
 

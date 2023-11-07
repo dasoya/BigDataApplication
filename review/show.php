@@ -11,10 +11,6 @@ if (!isset($_GET["reviewId"])) {
 }
 
 
-$server_name = "localhost";
-$db_username = "team02";
-$db_password = "team02";
-$db_name = "team02";
 
 $dblink = mysqli_connect($server_name, $db_username , $db_password, $db_name);
 
