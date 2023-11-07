@@ -13,10 +13,13 @@
         <link href="../css/templatemo-topic-listing.css" rel="stylesheet">  
     </head>
   <body id="top">
-
+<!-- 여기서 부터  -->
     <?php
         include "cityRanking.php";
         include "countryRanking.php";
+        //추후에 base..html에 넣을때 아래 주석 처리 된 코드로 변경해야함.
+        //include "ranking/cityRanking.php";
+        //include "ranking/countryRanking.php";
     ?>
    
         <section class="explore-section section-padding" id="section_2">
@@ -173,6 +176,10 @@
             </div>
         </section>
 
+        <!-- 여기까지 삽입 -->
+
+
+
         <!-- base.html의 footer 복사 및 js 경로 수정-->
         <footer class="site-footer section-padding">
             <div class="container">
@@ -244,6 +251,8 @@
 
                 </div>
             </div>
+     
+
 
 
 
