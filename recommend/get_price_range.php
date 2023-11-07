@@ -18,7 +18,7 @@
 
     if ($sort == 'option1'){
         // 추천1 : accommodation이 싼 곳
-        $sql_1 = "SELECT DISTINCT (city.name) as name2, landmark.name as name1, landmark.info as info1, landmark.img as img1, city.info as info2, country.name as country_name, country.flag as flag\n"
+        $sql_1 = "SELECT DISTINCT landmark.name as name1, landmark.info as info1, landmark.img as img1, city.name as name2, city.info as info2, country.name as country_name, country.flag as flag\n"
         . "        FROM landmark \n"
         . "        INNER JOIN city ON city.id = landmark.city_id \n"
         . "        INNER JOIN trip ON trip.city_id = city.id \n"
@@ -29,7 +29,7 @@
         $result = mysqli_query($connection, $sql_1);
     }elseif ($sort == 'option2'){
         // 추천2 : transportation이 싼 곳 순으로 정렬 //
-        $sql_2 = "SELECT DISTINCT (city.name) as name2, landmark.name as name1, landmark.info as info1, landmark.img as img1, city.info as info2,country.name as country_name, country.flag as flag\n"
+        $sql_2 = "SELECT DISTINCT landmark.name as name1, landmark.info as info1, landmark.img as img1, city.name as name2, city.info as info2,country.name as country_name, country.flag as flag\n"
         . "        FROM landmark \n"
         . "        INNER JOIN city ON city.id = landmark.city_id \n"
         . "        INNER JOIN trip ON trip.city_id = city.id \n"
@@ -40,7 +40,7 @@
         $result = mysqli_query($connection, $sql_2);
     }elseif ($sort == "option3"){
         // 추천3 : accommodation + transportation 가격이 모두 싼 곳 순으로 정렬 //
-        $sql_3 =  "SELECT DISTINCT (city.name) as name2, landmark.name as name1, landmark.info as info1, landmark.img as img1, city.info as info2, trip.accommodation_cost as ac, trip.transportation_cost as tc, country.name as country_name, country.flag as flag \n"
+        $sql_3 =  "SELECT DISTINCT landmark.name as name1, landmark.info as info1, landmark.img as img1, city.name as name2, city.info as info2, trip.accommodation_cost as ac, trip.transportation_cost as tc, country.name as country_name, country.flag as flag \n"
         . "FROM landmark  \n"
         . "INNER JOIN city ON city.id = landmark.city_id  \n"
         . "INNER JOIN trip ON trip.city_id = city.id  \n"
