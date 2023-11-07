@@ -5,6 +5,7 @@ if(!isset($_GET['reviewId'])){
     exit();
 }
 
+include "../dbconfig.php";
 ?>
 
 <!DOCTYPE html>
@@ -43,11 +44,11 @@ if(!isset($_GET['reviewId'])){
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-lg-5 me-lg-auto">
                         <li class="nav-item">
-                            <a class="nav-link click-scroll" href="#section_1">ESTIMATE</a>
+                            <a class="nav-link click-scroll" href="../base.html">ESTIMATE</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link click-scroll" href="#section_2">RECOMEND</a>
+                            <a class="nav-link click-scroll" href="../recommend_base.html">RECOMEND</a>
                         </li>
 
                         <li class="nav-item">
@@ -59,7 +60,7 @@ if(!isset($_GET['reviewId'])){
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link click-scroll" href="#section_4">FEEDBACK</a>
+                            <a class="nav-link click-scroll" href="../feedback.php">FEEDBACK</a>
                         </li>
 
                         <li class="nav-item dropdown">

@@ -96,9 +96,13 @@ $liked_result = $liked_stmt->get_result();
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link click-scroll" href="#section_3">RANKING</a>
+                            <a class="nav-link click-scroll" href="ranking/rankingShow10.php">RANKING</a>
                         </li>
 
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="review/reviews.html">REVIEWS</a>
+                        </li>
+                        
                         <li class="nav-item">
                             <a class="nav-link click-scroll" href="feedback.html">FEEDBACK</a>
                         </li>

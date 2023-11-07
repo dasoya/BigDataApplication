@@ -1,7 +1,4 @@
 <?php
-// 데이터베이스 연결 설정
-require("../dbconfig.php");
-
 
 //todo
 //rollupCC와 마찬가지로 스타일 어떻게 할지 고민해보기

@@ -46,11 +46,15 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link click-scroll" href="#section_3">RANKING</a>
+                            <a class="nav-link click-scroll" href="ranking/rankingShow10.php">RANKING</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link click-scroll" href="#section_4">FEEDBACK</a>
+                            <a class="nav-link click-scroll" href="review/reviews.html">REVIEWS</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="feedback.php">FEEDBACK</a>
                         </li>
 
                         <li class="nav-item dropdown">

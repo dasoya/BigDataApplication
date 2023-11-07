@@ -30,7 +30,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-lg-5 me-lg-auto">
                         <li class="nav-item">
-                            <a class="nav-link click-scroll" href="#section_1">ESTIMATE</a>
+                            <a class="nav-link click-scroll" href="">ESTIMATE</a>
                         </li>
 
                         <li class="nav-item">
@@ -38,11 +38,15 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link click-scroll" href="#section_3">RANKING</a>
+                            <a class="nav-link click-scroll" href="ranking/rankingShow10.html">RANKING</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link click-scroll" href="#section_4">FEEDBACK</a>
+                            <a class="nav-link click-scroll" href="review/reviews.html">REVIEWS</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="feedback.php">FEEDBACK</a>
                         </li>
 
                         <li class="nav-item dropdown">
@@ -69,9 +73,11 @@
 
         <!-- 여기서 부터  -->
     <?php
+    include "dbconfig.php";
     include "ranking/cityRanking.php";
     include "ranking/countryRanking.php";
-?>
+    
+    ?>
 
     <section class="explore-section section-padding" id="section_2">
         <div class="container">
@@ -222,7 +228,7 @@
         <div class="col-12 text-center mt-5">
             <p class="text-gray">
                 Want to see more?
-                <a href="rankingShow10.html" class="btn custom-btn custom-border-btn ms-3">Check out ranking</a>
+                <a href="ranking/rankingShow10.html" class="btn custom-btn custom-border-btn ms-3">Check out ranking</a>
             </p>
         </div>
     </section>
