@@ -9,8 +9,6 @@ CREATE TABLE `users` (
 
 CREATE TABLE `prediction` (
   `id` integer PRIMARY KEY,
-  `start_date` date NOT NULL,
-  `end_date` date,
   `duration` integer,
   `created_at` timestamp COMMENT '기록에 추가한 날짜. 나중에 정렬할 때 사용하면 좋을 듯.',
   `transportaion_type` varchar(255),
@@ -101,6 +99,8 @@ CREATE TABLE `feedback` (
   `rate` integer,
   `text` text
 );
+
+ALTER TABLE user AUTO_INCREMENT=5001;
 
 ALTER TABLE `prediction` ADD FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
 
