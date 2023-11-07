@@ -1,3 +1,8 @@
+
+
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -11,6 +16,7 @@
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/bootstrap-icons.css" rel="stylesheet">
         <link href="css/templatemo-topic-listing.css" rel="stylesheet">  
+        <link href="css/recommend_album.css" rel="stylesheet">
     </head>
   <body id="top">
     <main>
@@ -34,7 +40,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link click-scroll" href="recommend_base.html">RECOMEND</a>
+                            <a class="nav-link click-scroll" href="recommend_base.html">RECOMMEND</a>
                         </li>
 
                         <li class="nav-item">
@@ -63,8 +69,65 @@
             </div>
         </nav>
 
-        <section id="section_1">
-            <iframe width =100% height= "800px" src="esmt_base.php"></iframe>
+        <section class="hero-section d-flex justify-content-center align-items-center" id="section_1">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-8 col-12 mx-auto">
+                        <h1 class="text-white text-center">Explore Cities Around the World</h1>
+
+             
+
+                        <body>
+                           <?php include "./get_city_detail.php";
+                                
+                                // 도시 정보 보여주기 //
+                                $html = '<div class="city-like">';
+                                $html .= '<h1>[' . $cityName . ']</h1>';
+                                // 좋아요 버튼 추가 //
+                                // $uid = $_SESSION['user_id'];
+                                $uid ='dlwlgP';
+                                // $new_url = "'" . "like_city.php?city=" . $city_id . "&uid=" . $uid . "'";
+                                $new_url = "like_city.php?city=" . $city_id . "&uid=" . $uid;
+                                // $html .= '<button type="submit" id="likeButton" onclick="location.href=' . $new_url . '">👍🏻press like👍🏻</button></div>';
+                                $html .= '<form method="post" action="' . $new_url . '"> <button type="submit" id="likeButton" onclick="<?php echo pressLike($city_id, $uid); ?>">👍🏻press like👍🏻</button></div>
+                                            </form>';
+                                $html .= '<div class="city-info"> <p><h6>city info</h6>' . $city_info . '</p>';
+                                $html .= '<img src="' . $country_flag . '"></div>';
+                                echo($html);
+
+                                // landmark 정보들 보여주기 //
+                                $html = '<div class="landmark-detail">';
+                                $idx = 1;
+                                while ($row = mysqli_fetch_array($result_landmark)) {
+                                    $landmark_name = $row['name'];
+                                    $landmark_info = $row['info'];
+                                    $landmark_img = $row['img'];
+
+                                    $html .= '<h5>LANDMARK NAME ' . $idx .' : ' . $landmark_name. '</h1>';
+                                    $html .= '<p><h6>landmark info</h6>' . $landmark_info . '</p>';
+                                    $html .= '<img width="500px" height="500px" src="' . $landmark_img . '">';
+                                };
+                                echo($html);
+                            ?>
+                            <style>
+                                .city-like{
+                                    text-align: center;
+                                }
+                                .landmark-detail{
+                                    text-align: center;
+                                }
+                                .city-info{
+                                    text-align: center;
+                                }
+                            </style>
+                            
+                        </body>
+
+                    </div>
+
+                </div>
+            </div>
         </section>
 
        
@@ -152,4 +215,41 @@
 
     </main>
   </body>
+
+<!-- <script>
+    var likeButton=document.getElementByID("likeButton");
+    var isLiked=false;
+
+    likeButton.addEventListener("click", function(){
+        isLiked = !isLiked;
+        if (isLiked) {
+            likeButton.innerHTML = "👍🏻liked👍🏻";
+            likeButton.classList.add("liked");
+        }else{
+            likeButton.innerHTML = "👍🏻press like👍🏻";
+            likeButton.classList.remove("liked");
+            }
+        });
+</script> -->
+<style>
+    #likeButton{
+        background-color: transparent;
+        font-size: 24px;
+        cursor: pointer;
+        border: 2px solid #000; /* 테두리 스타일 및 색상 설정 */
+        padding: 5px 10px; /* 내부 여백 설정 */
+        border-radius: 0px; /* 테두리의 모서리를 둥글게 만듭니다. */
+        display: inline-block;
+        max-width: 1000px;
+    }
+    #likeButton:active {
+        transform: scale(0.95); /* 버튼 크기를 95%로 축소 */
+        border-color: #FF0000; /* 테두리 색상 변경 (예: 빨간색) */
+        background-color: red; /* 사용자가 좋아요를 눌렀을 때 색을 변경 */
+    }
+    #likeButton.liked {
+        transform: scale(0.95); /* 버튼 크기를 95%로 축소 */
+        background-color: red; /* 사용자가 좋아요를 눌렀을 때 색을 변경 */
+        color: white; /* 텍스트 색상 변경 */
+    }
 </html>

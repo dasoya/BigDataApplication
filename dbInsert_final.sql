@@ -1,5 +1,4 @@
-
--- Continent DB
+-- 11. Continent DB
 
 INSERT INTO continent (continent_name, id) VALUES ('Europe', '3001');
 INSERT INTO continent (continent_name, id) VALUES ('Asia', '3002');
@@ -9,7 +8,7 @@ INSERT INTO continent (continent_name, id) VALUES ('South America', '3005');
 INSERT INTO continent (continent_name, id) VALUES ('Africa', '3006');
 INSERT INTO continent (continent_name, id) VALUES ('Antarctica', '3007');
 
--- Country DB
+-- 5. Country DB
 
 INSERT INTO country (name, iso_number, iso_code3, iso_code2, continent_id, flag) VALUES ('UK', '826', 'GBR', 'GB', '3001', 'https://img.freepik.com/premium-vector/vector-image-of-the-british-flag-of-england-sign-of-the-kingdom-of-great-britain-lovely-london-badge_213497-1010.jpg');
 INSERT INTO country (name, iso_number, iso_code3, iso_code2, continent_id, flag) VALUES ('Thailand', '764', 'THA', 'TH', '3002', 'https://img.freepik.com/free-vector/illustration-of-thailand-flag_53876-27145.jpg');
@@ -66,10 +65,7 @@ INSERT INTO city VALUES(1025, 'Phnom Penh', 11.5564, 104.9282, 'The capital of C
 INSERT INTO city VALUES(1026, 'Athens', 37.9838, 23.7275, 'The capital of Greece, famous for its ancient ruins, historic sites, and Mediterranean cuisine.', 'GR');
 INSERT INTO city VALUES(1027, 'Auckland', -36.8485, 174.7633, 'The largest city in New Zealand, known for its natural beauty, harbor, and outdoor activities.', 'NZ');
 
-
-
-
--- trip table
+-- 3. trip table
 INSERT INTO trip VALUES(1, 'John Smith', 35, 'Male', '2023-05-01', '2023-05-08',7,'Airplane',2700 ,'Vacation rental',900,1001);
 INSERT INTO trip VALUES(2, 'Jane Doe', 28, 'Female', '2023-06-15', '2023-06-20',5,'Train',344 ,'Guesthouse',400,1002);
 INSERT INTO trip VALUES(3, 'David Lee', 45, 'Male', '2023-07-01', '2023-07-08',7,'Bus',70 ,'Guesthouse',400,1003);
@@ -209,6 +205,9 @@ INSERT INTO trip VALUES(138, 'Sofia Rodriguez', 25, 'Female', '2023-09-15', '202
 INSERT INTO trip VALUES(139, 'William Brown', 39, 'Male', '2023-10-01', '2023-10-08',7,'Flight',753 ,'Resort',1521,1027);
 
 
+
+
+--landmark DB
 INSERT INTO landmark VALUES(2001, 'Big Ben', 'https://www.thetrainline.com/cms/media/5743/uk-london-big-ben.jpg?mode=crop&width=660&height=440&quality=70', 'London''s clock tower',1001);
 INSERT INTO landmark VALUES(2002, 'Patong Beach', 'https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcQL3n6rfg8_wFwPHgF7CPU2f7n-qp1DYijHBwrcOxmsFvba8JL7pxpelV7fgwuabQkvMCgju2WZHiKXjfqcVrfl6zWpp-ft', 'Popular beach in Phuket',1002);
 INSERT INTO landmark VALUES(2003, 'Jalan Legian', 'https://upload.wikimedia.org/wikipedia/commons/7/7e/Jalan_Legian_Hariadhi.jpg', 'Tourism and entertainment strip',1003);
@@ -236,115 +235,115 @@ INSERT INTO landmark VALUES(2024, 'Table Mountain', 'https://cdn.britannica.com/
 INSERT INTO landmark VALUES(2025, 'Wat Phnom', 'https://files.intocambodia.org/content/small/adfb128d97ca55fe045fd0dc2af2c285.jpg', 'Temple in Phnom Penh',1025);
 INSERT INTO landmark VALUES(2026, 'Acropolis', 'https://cdn-imgix.headout.com/microbrands-banner-image/image/b698f96a3bf7e35418940973f33c4708-The%20Acropolis%20of%20Athens.jpeg', 'Ancient temple in Athens',1026);
 INSERT INTO landmark VALUES(2027, 'Sky Tower', 'https://upload.wikimedia.org/wikipedia/commons/f/f8/01_Auckland_New_Zealand-1000137.jpg', 'Observation tower in Auckland',1027);
-
-
 -- airport DB
 
-INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('BQH', 'EGKB', 'Biggin Hill Airport', 'GB', 1001);
-INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('LGW', 'EGKK', 'Gatwick Airport', 'GB', 1001);
-INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('LHR', 'EGLL', 'Heathrow Airport', 'GB', 1001);
-INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('LCY', 'EGLC', 'London City Airport', 'GB', 1001);
-INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('STN', 'EGSS', 'Stansted Airport', 'GB', 1001);
-INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('HKT', 'VTSP', 'Phuket International Airport', 'TH', 1002);
-INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('DPS', 'WADD', 'Ngurah Rai Airport', 'ID', 1003);
-INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('JFK', 'KJFK', 'John F Kennedy International Airport', 'US', 1004);
-INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('LGA', 'KLGA', 'La Guardia International Airport', 'US', 1004);
-INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('IAG', 'KIAG', 'Niagara Falls International Airport', 'US', 1004);
-INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('NRT', 'RJAA', 'Narita Airport', 'JP', 1005);
-INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('HND', 'RJTT', 'Tokyo International Airport', 'JP', 1005);
-INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('CDG', 'LFPG', 'Charles De Gaulle Airport', 'FR', 1006);
-INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('CHS', 'KCHS', 'Charleston International Airport', 'US', 1006);
-INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('ORY', 'LFPO', 'Orly Airport', 'FR', 1006);
-INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('SYD', 'YSSY', 'Kingsford Smith Airport', 'AU', 1007);
-INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('RIO', 'RIDO', 'metropolitan area2', 'BR', 1008);
-INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('GIG', 'SBGL', 'Rio de Janeiro International Airport', 'BR', 1008);
-INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('SDU', 'SBRJ', 'Santos Dumont Regional Airport', 'BR', 1008);
-INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('AMS', 'EHAM', 'Schiphol Airport', 'NL', 1009);
-INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('DWC', 'OMDW', 'Al Maktoum International Airport', 'AE', 1010);
-INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('DXB', 'OMDB', 'Dubai International Airport', 'AE', 1010);
-INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('CUN', 'MMUN', 'Cancun International Airport', 'MX', 1011);
-INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('BCN', 'LEBL', 'Barcelona International Airport', 'ES', 1012);
-INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('HNL', 'PHNL', 'Honolulu International Airport', 'US', 1013);
-INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('BER', 'EDDB', 'Berlin Brandenburg Airport', 'DE', 1014);
-INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('SXF', 'ESXB', 'Schoenefeld International Airport', 'DE', 1014);
-INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('TXL', 'EDDT', 'Tegel International Airport', 'DE', 1014);
-INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('RAK', 'GMMX', 'Menara Airport', 'MA', 1015);
-INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('EDI', 'EGPH', 'Edinburgh Airport', 'GB', 1016);
-INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('CIA', 'LIRA', 'Ciampino Airport', 'IT', 1017);
-INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('CVG', 'KCVG', 'Cincinnati/Northern Kentucky International Airport', 'US', 1017);
-INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('DMK', 'VTBD', 'Don Mueang International', 'TH', 1018);
-INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('BKK', 'VTBS', 'Suvarnabhumi International Airport', 'TH', 1018);
-INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('JTR', 'LGSR', 'Santorini National Airport', 'GR', 1019);
-INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('CAI', 'HECA', 'Cairo International Airport', 'EG', 1020);
-INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('YVR', 'CYVR', 'Vancouver International Airport', 'CA', 1021);
-INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('GMP', 'RKSS', 'Gimpo International Airport', 'KR', 1022);
-INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('BTR', 'KBTR', 'Baton Rouge Metropolitan Airport', 'US', 1023);
-INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('LFT', 'KLFT', 'Lafayette Regional Airport', 'US', 1023);
-INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('MSY', 'KMSY', 'Louis Armstrong International Airport', 'US', 1023);
-INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('MLU', 'KMLU', 'Malad City Airport', 'US', 1023);
-INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('SHV', 'KSHV', 'Shreveport Regional Airport', 'US', 1023);
-INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('CPT', 'FACT', 'Cape Town International Airport', 'ZA', 1024);
-INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('PNH', 'VDPP', 'Pochentong Airport', 'KH', 1025);
-INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('ATH', 'LGAV', 'Eleftherios Venizelos International Airport', 'GR', 1026);
-INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('AKL', 'NZAA', 'Auckland International Airport', 'NZ', 1027);
+INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('BQH', 'EGKB', 'Biggin Hill Airport', '826', '1001');
+INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('LGW', 'EGKK', 'Gatwick Airport', '826', '1001');
+INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('LHR', 'EGLL', 'Heathrow Airport', '826', '1001');
+INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('LCY', 'EGLC', 'London City Airport', '826', '1001');
+INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('STN', 'EGSS', 'Stansted Airport', '826', '1001');
+INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('HKT', 'VTSP', 'Phuket International Airport', '764', '1002');
+INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('DPS', 'WADD', 'Ngurah Rai Airport', '360', '1003');
+INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('JFK', 'KJFK', 'John F Kennedy International Airport', '840', '1004');
+INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('LGA', 'KLGA', 'La Guardia International Airport', '840', '1004');
+INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('IAG', 'KIAG', 'Niagara Falls International Airport', '840', '1004');
+INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('NRT', 'RJAA', 'Narita Airport', '392', '1005');
+INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('HND', 'RJTT', 'Tokyo International Airport', '392', '1005');
+INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('CDG', 'LFPG', 'Charles De Gaulle Airport', '250', '1006');
+INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('CHS', 'KCHS', 'Charleston International Airport', '840', '1006');
+INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('ORY', 'LFPO', 'Orly Airport', '250', '1006');
+INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('SYD', 'YSSY', 'Kingsford Smith Airport', '36', '1007');
+INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('RIO', '', 'metropolitan area2', '76', '1008');
+INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('GIG', 'SBGL', 'Rio de Janeiro International Airport', '76', '1008');
+INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('SDU', 'SBRJ', 'Santos Dumont Regional Airport', '76', '1008');
+INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('AMS', 'EHAM', 'Schiphol Airport', '528', '1009');
+INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('DWC', 'OMDW', 'Al Maktoum International Airport', '784', '1010');
+INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('DXB', 'OMDB', 'Dubai International Airport', '784', '1010');
+INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('CUN', 'MMUN', 'Cancun International Airport', '484', '1011');
+INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('BCN', 'LEBL', 'Barcelona International Airport', '724', '1012');
+INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('HNL', 'PHNL', 'Honolulu International Airport', '840', '1013');
+INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('BER', 'EDDB', 'Berlin Brandenburg Airport', '276', '1014');
+INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('SXF', 'EDDB', 'Schoenefeld International Airport', '276', '1014');
+INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('TXL', 'EDDT', 'Tegel International Airport', '276', '1014');
+INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('RAK', 'GMMX', 'Menara Airport', '504', '1015');
+INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('EDI', 'EGPH', 'Edinburgh Airport', '826', '1016');
+INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('CIA', 'LIRA', 'Ciampino Airport', '380', '1017');
+INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('CVG', 'KCVG', 'Cincinnati/Northern Kentucky International Airport', '840', '1017');
+INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('DMK', 'VTBD', 'Don Mueang International', '764', '1018');
+INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('BKK', 'VTBS', 'Suvarnabhumi International Airport', '764', '1018');
+INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('JTR', 'LGSR', 'Santorini National Airport', '300', '1019');
+INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('CAI', 'HECA', 'Cairo International Airport', '818', '1020');
+INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('YVR', 'CYVR', 'Vancouver International Airport', '124', '1021');
+INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('GMP', 'RKSS', 'Gimpo International Airport', '410', '1022');
+INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('BTR', 'KBTR', 'Baton Rouge Metropolitan Airport', '840', '1023');
+INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('LFT', 'KLFT', 'Lafayette Regional Airport', '840', '1023');
+INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('MSY', 'KMSY', 'Louis Armstrong International Airport', '840', '1023');
+INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('MLU', 'KMLU', 'Malad City Airport', '840', '1023');
+INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('SHV', 'KSHV', 'Shreveport Regional Airport', '840', '1023');
+INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('CPT', 'FACT', 'Cape Town International Airport', '710', '1024');
+INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('PNH', 'VDPP', 'Pochentong Airport', '116', '1025');
+INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('ATH', 'LGAV', 'Eleftherios Venizelos International Airport', '300', '1026');
+INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('AKL', 'NZAA', 'Auckland International Airport', '554', '1027');
+
+
 
 -- station DB
 
-INSERT INTO station (id, station_name, city_id) VALUES ('4001', 'Tokyo Train Station', '1005');
-INSERT INTO station (id, station_name, city_id) VALUES ('4002', 'Amsterdam Train Station', '1009');
-INSERT INTO station (id, station_name, city_id) VALUES ('4003', 'Barcelona Train Station', '1012');
-INSERT INTO station (id, station_name, city_id) VALUES ('4004', 'Edinburgh Train Station', '1016');
-INSERT INTO station (id, station_name, city_id) VALUES ('4005', 'Paris Plane Station', '1006');
-INSERT INTO station (id, station_name, city_id) VALUES ('4006', 'Bali Plane Station', '1003');
-INSERT INTO station (id, station_name, city_id) VALUES ('4007', 'London Train Station', '1001');
-INSERT INTO station (id, station_name, city_id) VALUES ('4008', 'Tokyo Plane Station', '1005');
-INSERT INTO station (id, station_name, city_id) VALUES ('4009', 'New York Bus Station', '1004');
-INSERT INTO station (id, station_name, city_id) VALUES ('4010', 'Sydney Plane Station', '1007');
-INSERT INTO station (id, station_name, city_id) VALUES ('4011', 'Rome Train Station', '1017');
-INSERT INTO station (id, station_name, city_id) VALUES ('4012', 'Bangkok Plane Station', '1018');
-INSERT INTO station (id, station_name, city_id) VALUES ('4013', 'Paris Train Station', '1006');
-INSERT INTO station (id, station_name, city_id) VALUES ('4014', 'Honolulu Plane Station', '1013');
-INSERT INTO station (id, station_name, city_id) VALUES ('4015', 'Phuket Train Station', '1002');
-INSERT INTO station (id, station_name, city_id) VALUES ('4016', 'Paris Car rental Station', '1006');
-INSERT INTO station (id, station_name, city_id) VALUES ('4017', 'Sydney Car rental Station', '1007');
-INSERT INTO station (id, station_name, city_id) VALUES ('4018', 'Rio de Janeiro Bus Station', '1008');
-INSERT INTO station (id, station_name, city_id) VALUES ('4019', 'Santorini Plane Station', '1019');
-INSERT INTO station (id, station_name, city_id) VALUES ('4020', 'Cairo Train Station', '1020');
-INSERT INTO station (id, station_name, city_id) VALUES ('4021', 'Cancun Plane Station', '1011');
-INSERT INTO station (id, station_name, city_id) VALUES ('4022', 'Barcelona Car rental Station', '1012');
-INSERT INTO station (id, station_name, city_id) VALUES ('4023', 'Vancouver Bus Station', '1021');
-INSERT INTO station (id, station_name, city_id) VALUES ('4024', 'Sydney Train Station', '1007');
-INSERT INTO station (id, station_name, city_id) VALUES ('4025', 'Rio de Janeiro Plane Station', '1008');
-INSERT INTO station (id, station_name, city_id) VALUES ('4026', 'Barcelona Plane Station', '1012');
-INSERT INTO station (id, station_name, city_id) VALUES ('4027', 'New York Plane Station', '1004');
-INSERT INTO station (id, station_name, city_id) VALUES ('4028', 'Bangkok Bus Station', '1018');
-INSERT INTO station (id, station_name, city_id) VALUES ('4029', 'Vancouver Train Station', '1021');
-INSERT INTO station (id, station_name, city_id) VALUES ('4030', 'Amsterdam Plane Station', '1009');
-INSERT INTO station (id, station_name, city_id) VALUES ('4031', 'Tokyo Bus Station', '1005');
-INSERT INTO station (id, station_name, city_id) VALUES ('4032', 'Rio de Janeiro Train Station', '1008');
-INSERT INTO station (id, station_name, city_id) VALUES ('4033', 'Seoul Subway Station', '1022');
-INSERT INTO station (id, station_name, city_id) VALUES ('4034', 'Los Angeles Car rental Station', '1023');
-INSERT INTO station (id, station_name, city_id) VALUES ('4035', 'Cape Town Car rental Station', '1024');
-INSERT INTO station (id, station_name, city_id) VALUES ('4036', 'Cape Town Car Station', '1024');
-INSERT INTO station (id, station_name, city_id) VALUES ('4037', 'Phuket Plane Station', '1002');
-INSERT INTO station (id, station_name, city_id) VALUES ('4038', 'Rome nan Station', '1017');
-INSERT INTO station (id, station_name, city_id) VALUES ('4039', 'New York Car rental Station', '1004');
-INSERT INTO station (id, station_name, city_id) VALUES ('4040', 'London Plane Station', '1001');
-INSERT INTO station (id, station_name, city_id) VALUES ('4041', 'Dubai Plane Station', '1010');
-INSERT INTO station (id, station_name, city_id) VALUES ('4042', 'Bangkok Train Station', '1018');
-INSERT INTO station (id, station_name, city_id) VALUES ('4043', 'Rome Plane Station', '1017');
-INSERT INTO station (id, station_name, city_id) VALUES ('4044', 'Bali Car rental Station', '1003');
-INSERT INTO station (id, station_name, city_id) VALUES ('4045', 'Seoul Train Station', '1022');
-INSERT INTO station (id, station_name, city_id) VALUES ('4046', 'Cape Town Plane Station', '1024');
-INSERT INTO station (id, station_name, city_id) VALUES ('4047', 'Rio de Janeiro Car rental Station', '1008');
-INSERT INTO station (id, station_name, city_id) VALUES ('4048', 'Santorini Ferry Station', '1019');
-INSERT INTO station (id, station_name, city_id) VALUES ('4049', 'Dubai Car rental Station', '1010');
-INSERT INTO station (id, station_name, city_id) VALUES ('4050', 'Phnom Penh Plane Station', '1025');
-INSERT INTO station (id, station_name, city_id) VALUES ('4051', 'Athens Plane Station', '1026');
-INSERT INTO station (id, station_name, city_id) VALUES ('4052', 'Paris Airplane Station', '1006');
-INSERT INTO station (id, station_name, city_id) VALUES ('4053', 'Sydney Airplane Station', '1007');
-INSERT INTO station (id, station_name, city_id) VALUES ('4054', 'New York Airplane Station', '1004');
-INSERT INTO station (id, station_name, city_id) VALUES ('4055', 'Rio de Janeiro Car Station', '1008');
-INSERT INTO station (id, station_name, city_id) VALUES ('4056', 'Vancouver Airplane Station', '1021');
-INSERT INTO station (id, station_name, city_id) VALUES ('4057', 'Barcelona Airplane Station', '1012');
-INSERT INTO station (id, station_name, city_id) VALUES ('4058', 'Auckland Train Station', '1027');
+INSERT INTO station (stationID, stationName, cityid) VALUES ('4001', 'Tokyo Train Station', '1005');
+INSERT INTO station (stationID, stationName, cityid) VALUES ('4002', 'Amsterdam Train Station', '1009');
+INSERT INTO station (stationID, stationName, cityid) VALUES ('4003', 'Barcelona Train Station', '1012');
+INSERT INTO station (stationID, stationName, cityid) VALUES ('4004', 'Edinburgh Train Station', '1016');
+INSERT INTO station (stationID, stationName, cityid) VALUES ('4005', 'Paris Plane Station', '1006');
+INSERT INTO station (stationID, stationName, cityid) VALUES ('4006', 'Bali Plane Station', '1003');
+INSERT INTO station (stationID, stationName, cityid) VALUES ('4007', 'London Train Station', '1001');
+INSERT INTO station (stationID, stationName, cityid) VALUES ('4008', 'Tokyo Plane Station', '1005');
+INSERT INTO station (stationID, stationName, cityid) VALUES ('4009', 'New York Bus Station', '1004');
+INSERT INTO station (stationID, stationName, cityid) VALUES ('4010', 'Sydney Plane Station', '1007');
+INSERT INTO station (stationID, stationName, cityid) VALUES ('4011', 'Rome Train Station', '1017');
+INSERT INTO station (stationID, stationName, cityid) VALUES ('4012', 'Bangkok Plane Station', '1018');
+INSERT INTO station (stationID, stationName, cityid) VALUES ('4013', 'Paris Train Station', '1006');
+INSERT INTO station (stationID, stationName, cityid) VALUES ('4014', 'Honolulu Plane Station', '1013');
+INSERT INTO station (stationID, stationName, cityid) VALUES ('4015', 'Phuket Train Station', '1002');
+INSERT INTO station (stationID, stationName, cityid) VALUES ('4016', 'Paris Car rental Station', '1006');
+INSERT INTO station (stationID, stationName, cityid) VALUES ('4017', 'Sydney Car rental Station', '1007');
+INSERT INTO station (stationID, stationName, cityid) VALUES ('4018', 'Rio de Janeiro Bus Station', '1008');
+INSERT INTO station (stationID, stationName, cityid) VALUES ('4019', 'Santorini Plane Station', '1019');
+INSERT INTO station (stationID, stationName, cityid) VALUES ('4020', 'Cairo Train Station', '1020');
+INSERT INTO station (stationID, stationName, cityid) VALUES ('4021', 'Cancun Plane Station', '1011');
+INSERT INTO station (stationID, stationName, cityid) VALUES ('4022', 'Barcelona Car rental Station', '1012');
+INSERT INTO station (stationID, stationName, cityid) VALUES ('4023', 'Vancouver Bus Station', '1021');
+INSERT INTO station (stationID, stationName, cityid) VALUES ('4024', 'Sydney Train Station', '1007');
+INSERT INTO station (stationID, stationName, cityid) VALUES ('4025', 'Rio de Janeiro Plane Station', '1008');
+INSERT INTO station (stationID, stationName, cityid) VALUES ('4026', 'Barcelona Plane Station', '1012');
+INSERT INTO station (stationID, stationName, cityid) VALUES ('4027', 'New York Plane Station', '1004');
+INSERT INTO station (stationID, stationName, cityid) VALUES ('4028', 'Bangkok Bus Station', '1018');
+INSERT INTO station (stationID, stationName, cityid) VALUES ('4029', 'Vancouver Train Station', '1021');
+INSERT INTO station (stationID, stationName, cityid) VALUES ('4030', 'Amsterdam Plane Station', '1009');
+INSERT INTO station (stationID, stationName, cityid) VALUES ('4031', 'Tokyo Bus Station', '1005');
+INSERT INTO station (stationID, stationName, cityid) VALUES ('4032', 'Rio de Janeiro Train Station', '1008');
+INSERT INTO station (stationID, stationName, cityid) VALUES ('4033', 'Seoul Subway Station', '1022');
+INSERT INTO station (stationID, stationName, cityid) VALUES ('4034', 'Los Angeles Car rental Station', '1023');
+INSERT INTO station (stationID, stationName, cityid) VALUES ('4035', 'Cape Town Car rental Station', '1024');
+INSERT INTO station (stationID, stationName, cityid) VALUES ('4036', 'Cape Town Car Station', '1024');
+INSERT INTO station (stationID, stationName, cityid) VALUES ('4037', 'Phuket Plane Station', '1002');
+INSERT INTO station (stationID, stationName, cityid) VALUES ('4038', 'Rome nan Station', '1017');
+INSERT INTO station (stationID, stationName, cityid) VALUES ('4039', 'New York Car rental Station', '1004');
+INSERT INTO station (stationID, stationName, cityid) VALUES ('4040', 'London Plane Station', '1001');
+INSERT INTO station (stationID, stationName, cityid) VALUES ('4041', 'Dubai Plane Station', '1010');
+INSERT INTO station (stationID, stationName, cityid) VALUES ('4042', 'Bangkok Train Station', '1018');
+INSERT INTO station (stationID, stationName, cityid) VALUES ('4043', 'Rome Plane Station', '1017');
+INSERT INTO station (stationID, stationName, cityid) VALUES ('4044', 'Bali Car rental Station', '1003');
+INSERT INTO station (stationID, stationName, cityid) VALUES ('4045', 'Seoul Train Station', '1022');
+INSERT INTO station (stationID, stationName, cityid) VALUES ('4046', 'Cape Town Plane Station', '1024');
+INSERT INTO station (stationID, stationName, cityid) VALUES ('4047', 'Rio de Janeiro Car rental Station', '1008');
+INSERT INTO station (stationID, stationName, cityid) VALUES ('4048', 'Santorini Ferry Station', '1019');
+INSERT INTO station (stationID, stationName, cityid) VALUES ('4049', 'Dubai Car rental Station', '1010');
+INSERT INTO station (stationID, stationName, cityid) VALUES ('4050', 'Phnom Penh Plane Station', '1025');
+INSERT INTO station (stationID, stationName, cityid) VALUES ('4051', 'Athens Plane Station', '1026');
+INSERT INTO station (stationID, stationName, cityid) VALUES ('4052', 'Paris Airplane Station', '1006');
+INSERT INTO station (stationID, stationName, cityid) VALUES ('4053', 'Sydney Airplane Station', '1007');
+INSERT INTO station (stationID, stationName, cityid) VALUES ('4054', 'New York Airplane Station', '1004');
+INSERT INTO station (stationID, stationName, cityid) VALUES ('4055', 'Rio de Janeiro Car Station', '1008');
+INSERT INTO station (stationID, stationName, cityid) VALUES ('4056', 'Vancouver Airplane Station', '1021');
+INSERT INTO station (stationID, stationName, cityid) VALUES ('4057', 'Barcelona Airplane Station', '1012');
+INSERT INTO station (stationID, stationName, cityid) VALUES ('4058', 'Auckland Train Station', '1027');
