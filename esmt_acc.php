@@ -50,8 +50,8 @@ else{
         if(!is_null($avgDayCost)) {
             $estimatedCost = round($avgDayCost * $duration, 0);
             
-           
-            echo "<h4 class = 'text-white text-end';>Estimated ".$accType." Cost<br> For in ".$cityName." For ".$duration." Nights : $".$estimatedCost."</h4>";
+          
+            echo "<h4 class = 'text-white text-end';>In ".$cityName."<br>Estimated ".$accType." Cost<br>  For ".$duration." Nights : $".$estimatedCost."</h4>";
             $_SESSION['accCost'] = $estimatedCost;
             mysqli_free_result($result);
             mysqli_close($conn);
@@ -60,7 +60,8 @@ else{
         }
     }
 
-    $query = "SELECT accommodation_type, duration, AVG(accommodation_cost / duration) AS avgDayCost FROM `trip` WHERE accommodation_type = '" .$accType . "'";
+    $query = "SELECT accommodation_type, duration, AVG(accommodation_cost / duration) AS avgDayCost 
+    FROM `trip` WHERE accommodation_type = '" .$accType . "'";
     $result = mysqli_query($conn,$query);
 
     if($result){

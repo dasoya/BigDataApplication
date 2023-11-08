@@ -67,13 +67,8 @@ body, html {
 									 required>
 									<option disabled="disabled" selected value="">Accommodation
 										Type</option>
-									<option value="Hotel">Hotel</option>
-									<option value="Guesthouse">Guesthouse</option>
-									<option value="Airbnb">Airbnb</option>
-									<option value="Riad">Riad</option>
-									<option value="Resort">Resort</option>
-									<option value="Vacation rental">Vacation rental</option>
-									<option value="Villa">Villa</option>
+										<?php include 'esmt_accoption.php'; ?>
+									
 								</select>
 							</div>
 
@@ -85,13 +80,8 @@ body, html {
 									 required>
 									<option disabled="disabled" selected value="">Transportation
 										Type</option>
-									<option value="Airplane">Airplane</option>
-									<option value="Bus">Bus</option>
-									<option value="Car">Car</option>
-									<option value="Car rental">Car rental</option>
-									<option value="Ferry">Ferry</option>
-									<option value="Subway">Subway</option>
-									<option value="Train">Train</option>
+										<?php include 'esmt_transoption.php'; ?>
+									
 								</select>
 							</div>
 
@@ -124,8 +114,12 @@ body, html {
 					<?php include 'esmt_acc.php';
 					include 'esmt_trans.php';
 					?> 
+					
 					<div style='color: var(--bs-gray-dark);' class="col-lg-12 justify-content-end"> <?php include 'esmt_station.php';?></div>
+				
 					<?php include 'esmt_total.php'; ?>
+					<?php include 'esmt_acc_rcm.php'; ?>
+					
 				</div>
 
 				</div>
