@@ -10,14 +10,9 @@ if (mysqli_connect_errno()) {
   exit();
 }
 
-//세션에 있는 user_id랑
-//review를 작성한 사람의 id가 같아야함!!! 
-// 같은 사람이면 아래 명령문 수행. 
-
 $sql = "UPDATE review
         SET title = ?, body = ?
         WHERE id = ? ;";
-
 
 if ($stmt = mysqli_prepare($dblink, $sql)) {
 
