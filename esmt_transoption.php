@@ -16,16 +16,16 @@ if (mysqli_connect_errno()) {
 else{
 
     // 도시 목록 가져오기
-    $query = "SELECT name, id FROM city ORDER BY name ASC";
+    $query = "SELECT DISTINCT transportation_type FROM trip ORDER BY transportation_type ASC";
     $result = mysqli_query($conn,$query);
 
     if($result){
         while ($row = mysqli_fetch_array($result)) {
-            echo '<option value="' . $row['id'] . '">' . $row['name'] . '</option>';
+            echo '<option value="' . $row['transportation_type'] . '">' . $row['transportation_type'] . '</option>';
         }
     } 
     else {
-        echo '<option value="">Fail to load city list</option>';
+        echo '<option value="">Fail to load list</option>';
         printf("Error %s \n",mysqli_error($conn));
     }
     #echo '<option value="">Null</option>';
