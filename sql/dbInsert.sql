@@ -1,3 +1,14 @@
+-- sample data for test
+
+INSERT INTO user VALUES (5001,'alice@naver.com','alice','alice',21,'Female');
+INSERT INTO prediction VALUES (6001, 7, '2023-11-05 12:13:12', 'Airplane', 2700, 'Vacation rental', 900, 5001, 1001);
+INSERT INTO prediction VALUES (6002, 5, '2023-11-07 10:45:11', 'Train', 344, 'Guesthouse', 400, 5001, 1002);
+INSERT INTO feedback VALUES (5001,4,'좋아요');
+INSERT INTO Userliked VALUES (5001,1001);
+INSERT INTO Userliked VALUES (5001,1002);
+INSERT INTO Userliked VALUES (5001,1003);
+INSERT INTO Userliked VALUES (5001,1004);
+INSERT INTO Userliked VALUES (5001,1005);
 
 -- Continent DB
 
@@ -208,6 +219,7 @@ INSERT INTO trip VALUES(137, 'Ryan Chen', 34, 'Male', '2023-09-01', '2023-09-08'
 INSERT INTO trip VALUES(138, 'Sofia Rodriguez', 25, 'Female', '2023-09-15', '2023-09-22',7,'Airplane',2700 ,'Airbnb',1181,1012);
 INSERT INTO trip VALUES(139, 'William Brown', 39, 'Male', '2023-10-01', '2023-10-08',7,'Flight',753 ,'Resort',1521,1027);
 
+-- landmark
 
 INSERT INTO landmark VALUES(2001, "Big Ben", "https://www.thetrainline.com/cms/media/5743/uk-london-big-ben.jpg?mode=crop&width=660&height=440&quality=70", "London's clock tower", 1001);
 INSERT INTO landmark VALUES(2002, "Patong Beach", "https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcQL3n6rfg8_wFwPHgF7CPU2f7n-qp1DYijHBwrcOxmsFvba8JL7pxpelV7fgwuabQkvMCgju2WZHiKXjfqcVrfl6zWpp-ft", "Popular beach in Phuket", 1002);
