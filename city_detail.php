@@ -91,8 +91,8 @@
                                 $html = '<div class="city-like">';
                                 $html .= '<h1>[' . $cityName . ']</h1>';
                                 // 좋아요 버튼 추가 //
-                                // $uid = $_SESSION['user_id'];
-                                $uid ='dlwlgP';
+                                $uid = $_SESSION['id'];
+                                // $uid ='dlwlgP';
                                 // $new_url = "'" . "like_city.php?city=" . $city_id . "&uid=" . $uid . "'";
                                 $new_url = "like_city.php?city=" . $city_id . "&uid=" . $uid;
                                 // $html .= '<button type="submit" id="likeButton" onclick="location.href=' . $new_url . '">👍🏻press like👍🏻</button></div>';
