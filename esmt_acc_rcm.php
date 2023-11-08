@@ -49,7 +49,7 @@ else{
         $avgDayCost = $row['mincost'];
         $minAcc = $row['minacc'];
         
-        if(!is_null($avgDayCost)) {
+        if(!is_null($avgDayCost)&& $_SESSION['accType'] != $minAcc) {
             $estimatedCost = round($avgDayCost * $duration, 0);
             
            //호텔 가격이 ~로 가장 싼 숙박 시설입니다. 
