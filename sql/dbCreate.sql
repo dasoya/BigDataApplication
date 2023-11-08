@@ -1,4 +1,4 @@
--- 11/01 카톡 내용 반영
+-- 11/08 카톡 내용 반영
 CREATE TABLE `user` (
   `id` integer PRIMARY KEY,
   `email` varchar(255) UNIQUE COMMENT '회원가입 및 로그인에 사용',
