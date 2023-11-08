@@ -9,7 +9,7 @@ CREATE TABLE `user` (
 );
 
 CREATE TABLE `prediction` (
-  `id` integer PRIMARY KEY AUTO_INCREMENT,
+  `id` integer PRIMARY KEY,
   `duration` integer,
   `created_at` timestamp COMMENT '기록에 추가한 날짜. 나중에 정렬할 때 사용하면 좋을 듯.',
   `transportation_type` varchar(255),
@@ -103,6 +103,8 @@ CREATE TABLE `feedback` (
 );
 
 ALTER TABLE user AUTO_INCREMENT=5001;
+
+ALTER TABLE prediction AUTO_INCREMENT=6001;
 
 ALTER TABLE `airport` ADD FOREIGN KEY (`city_id`) REFERENCES `city` (`id`);
 
