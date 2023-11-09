@@ -22,7 +22,7 @@ else{
        session_start();
    }
 
-   if (!isset($_SESSION['accCost']) || !isset($_SESSION['transCost'])) {
+   if (!isset($_SESSION['accCost']) || !isset($_SESSION['transCost'])|| !isset($_SESSION['total'])) {
     // 하나 이상의 세션 변수가 없는 경우
     exit(); // 또는 다른 처리를 수행하거나 에러 처리를 할 수 있습니다.
     }
@@ -30,7 +30,7 @@ else{
    
    $accCost = $_SESSION['accCost'];
    $transCost = $_SESSION['transCost'];
- 
+  
    $totalCost = $accCost + $transCost;
 
    if(!is_null($totalCost)){
@@ -58,6 +58,7 @@ else{
     $_SESSION['transType'] = null;
     $_SESSION['accCost'] = null;
     $_SESSION['transCost'] = null;
+    $_SESSION['total']  = null;
     $totalCost = null;
 }
 

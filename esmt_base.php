@@ -89,16 +89,27 @@ body, html {
 							<button type="submit" class="btn btn-primary">Submit</button>
 										
 										
-										<?php
+								<?php
 
 								if(!session_id()) {
                                     session_start();
 								}
+								
                         
-                                $_SESSION['cityId'] = $_POST['cityId'];
-                                $_SESSION['accType'] = $_POST['accType'];
-                                $_SESSION['duration'] = $_POST['duration'];
-                                $_SESSION['transType'] = $_POST['transType'];
+								if(isset($_POST['cityId']) && isset($_POST['accType']) && isset($_POST['duration']) && isset($_POST['transType'])) {
+									$_SESSION['cityId'] = $_POST['cityId'];
+									$_SESSION['accType'] = $_POST['accType'];
+									$_SESSION['duration'] = $_POST['duration'];
+									$_SESSION['transType'] = $_POST['transType'];
+									$_SESSION['total'] = True;
+								}else{
+									$_SESSION['cityId'] = NULL;
+									$_SESSION['accType'] = NULL;
+									$_SESSION['duration'] = NULL;
+									$_SESSION['transType'] = NULL;
+									$_SESSION['total'] = NULL;
+
+								}
                                 // echo $cityId." ".$accType." ".$duration." ".$transType;
                                 ?>
 								
