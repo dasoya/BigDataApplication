@@ -1,4 +1,4 @@
-CREATE DATABASE team02;
+--CREATE DATABASE team02;
 
 Use team02;
 
@@ -14,7 +14,7 @@ CREATE TABLE `user` (
 CREATE TABLE `prediction` (
   `id` integer PRIMARY KEY,
   `duration` integer,
-  `created_at` timestamp COMMENT '기록에 추가한 날짜. 나중에 정렬할 때 사용하면 좋을 듯.',
+  `created_at` timestamp COMMENT ,
   `transportation_type` varchar(255),
   `transportation_cost` integer,
   `accommodation_type` varchar(255),
