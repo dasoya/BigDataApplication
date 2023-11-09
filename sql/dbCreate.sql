@@ -3,7 +3,7 @@ CREATE DATABASE team02;
 Use team02;
 
 CREATE TABLE `user` (
-  `id` integer PRIMARY KEY,
+  `id` integer PRIMARY KEY NOT NULL AUTO_INCREMENT,
   `email` varchar(255) UNIQUE COMMENT '회원가입 및 로그인에 사용',
   `pw` varchar(255) NOT NULL,
   `name` varchar(255) NOT NULL,

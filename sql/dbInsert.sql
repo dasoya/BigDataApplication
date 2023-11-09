@@ -242,7 +242,6 @@ INSERT INTO landmark VALUES(2026, "Acropolis", "https://cdn-imgix.headout.com/mi
 INSERT INTO landmark VALUES(2027, "Sky Tower", "https://upload.wikimedia.org/wikipedia/commons/f/f8/01_Auckland_New_Zealand-1000137.jpg", "Observation tower in Auckland", 1027);
 
 
-
 -- airport DB
 
 INSERT INTO airport (IATA_code, ICAO_code, airport_name, country_id, city_id) VALUES ('BQH', 'EGKB', 'Biggin Hill Airport', 'GB', 1001);
