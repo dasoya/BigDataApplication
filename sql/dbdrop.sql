@@ -1,3 +1,5 @@
+use team02;
+
 DROP TABLE IF EXISTS airport;
 DROP TABLE IF EXISTS prediction;
 DROP TABLE IF EXISTS trip;
