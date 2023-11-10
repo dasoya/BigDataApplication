@@ -13,28 +13,26 @@ if (mysqli_connect_errno()) {
     exit();
 }
 else{
-  
-   
-   
    // 발급된 세션 id가 있다면 세션의 id를, 없다면 false 반환
    if(!session_id()) {
        // id가 없을 경우 세션 시작
        session_start();
    }
 
-   if (!isset($_SESSION['accCost']) || !isset($_SESSION['transCost'])) {
+   if (!isset($_SESSION['accCost']) || !isset($_SESSION['transCost'])|| !isset($_SESSION['total'])) {
     // 하나 이상의 세션 변수가 없는 경우
-    
-    return; // 또는 다른 처리를 수행하거나 에러 처리를 할 수 있습니다.
-}
+    exit(); // 또는 다른 처리를 수행하거나 에러 처리를 할 수 있습니다.
+    }
 
    
    $accCost = $_SESSION['accCost'];
    $transCost = $_SESSION['transCost'];
- 
+  
    $totalCost = $accCost + $transCost;
-   echo "<h2 style='color: var(--bs-yellow);' class='text-end'>Total Cost : $".$totalCost."</h2>";
 
+   if(!is_null($totalCost)){
+   echo "<h2 style='color: var(--bs-yellow);' class='text-end'>Total Cost : $".$totalCost."</h2>";
+   }
    //prediction 테이블에 저장
 
     $currentTime = date('Y-m-d H:i:s');
@@ -57,6 +55,8 @@ else{
     $_SESSION['transType'] = null;
     $_SESSION['accCost'] = null;
     $_SESSION['transCost'] = null;
+    $_SESSION['total']  = null;
+    $totalCost = null;
 }
 
 ?>

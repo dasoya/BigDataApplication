@@ -25,6 +25,8 @@ body, html {
 	width: 100%;
 	height: 100%;
 }
+
+  
 </style>
 </head>
 <body id="top">
@@ -67,13 +69,8 @@ body, html {
 									 required>
 									<option disabled="disabled" selected value="">Accommodation
 										Type</option>
-									<option value="Hotel">Hotel</option>
-									<option value="Guesthouse">Guesthouse</option>
-									<option value="Airbnb">Airbnb</option>
-									<option value="Riad">Riad</option>
-									<option value="Resort">Resort</option>
-									<option value="Vacation rental">Vacation rental</option>
-									<option value="Villa">Villa</option>
+										<?php include 'esmt_accoption.php'; ?>
+									
 								</select>
 							</div>
 
@@ -85,13 +82,8 @@ body, html {
 									 required>
 									<option disabled="disabled" selected value="">Transportation
 										Type</option>
-									<option value="Airplane">Airplane</option>
-									<option value="Bus">Bus</option>
-									<option value="Car">Car</option>
-									<option value="Car rental">Car rental</option>
-									<option value="Ferry">Ferry</option>
-									<option value="Subway">Subway</option>
-									<option value="Train">Train</option>
+										<?php include 'esmt_transoption.php'; ?>
+									
 								</select>
 							</div>
 
@@ -99,16 +91,27 @@ body, html {
 							<button type="submit" class="btn btn-primary">Submit</button>
 										
 										
-										<?php
+								<?php
 
 								if(!session_id()) {
                                     session_start();
 								}
+								
                         
-                                $_SESSION['cityId'] = $_POST['cityId'];
-                                $_SESSION['accType'] = $_POST['accType'];
-                                $_SESSION['duration'] = $_POST['duration'];
-                                $_SESSION['transType'] = $_POST['transType'];
+								if(isset($_POST['cityId']) && isset($_POST['accType']) && isset($_POST['duration']) && isset($_POST['transType'])) {
+									$_SESSION['cityId'] = $_POST['cityId'];
+									$_SESSION['accType'] = $_POST['accType'];
+									$_SESSION['duration'] = $_POST['duration'];
+									$_SESSION['transType'] = $_POST['transType'];
+									$_SESSION['total'] = True;
+								}else{
+									$_SESSION['cityId'] = NULL;
+									$_SESSION['accType'] = NULL;
+									$_SESSION['duration'] = NULL;
+									$_SESSION['transType'] = NULL;
+									$_SESSION['total'] = NULL;
+
+								}
                                 // echo $cityId." ".$accType." ".$duration." ".$transType;
                                 ?>
 								
@@ -124,8 +127,17 @@ body, html {
 					<?php include 'esmt_acc.php';
 					include 'esmt_trans.php';
 					?> 
-					<div style='color: var(--bs-gray-dark);' class="col-lg-12 justify-content-end"> <?php include 'esmt_station.php';?></div>
+					
+					<div style='color: var(--bs-gray-dark);' class="col-lg-12"> <?php include 'esmt_station.php';?></div>
+				
 					<?php include 'esmt_total.php'; ?>
+					<?php include 'esmt_acc_rcm.php'; ?>
+					<div>
+					<details>
+						<summary>Check the other travel options</summary>
+						<div class="col-lg-12 d-flex justify-content-end align-items-end"><?php include 'esmt_city_info.php'; ?></div>
+					</details>
+					</div>
 				</div>
 
 				</div>
