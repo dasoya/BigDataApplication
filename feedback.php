@@ -87,7 +87,7 @@ $conn->close();
     <main>
         <nav class="navbar navbar-expand-lg">
             <div class="container">
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="index.php">
                     <i class="bi-back"></i>
                     <span>Trip Planner</span>
                 </a>
@@ -101,7 +101,7 @@ $conn->close();
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-lg-5 me-lg-auto">
                         <li class="nav-ite.inactive">
-                            <a class="nav-link click-scroll" href="index.html">ESTIMATE</a>
+                            <a class="nav-link click-scroll" href="index.php">ESTIMATE</a>
                         </li>
 
                         <li class="nav-item.inactive">
@@ -109,11 +109,11 @@ $conn->close();
                         </li>
 
                         <li class="nav-item.inactive">
-                            <a class="nav-link click-scroll" href="ranking/rankingShow10.html">RANKING</a>
+                            <a class="nav-link click-scroll" href="ranking/rankingShow10.php">RANKING</a>
                         </li>
 
                         <li class="nav-item.inactive">
-                            <a class="nav-link click-scroll" href="review/reviews.html">REVIEWS</a>
+                            <a class="nav-link click-scroll" href="review/reviews.php">REVIEWS</a>
                         </li>
 
                         <li class="nav-item">
@@ -124,7 +124,7 @@ $conn->close();
                     </ul>
 
                     <div class="d-none d-lg-block">
-                        <a href="login.html" class="navbar-icon bi-person smoothscroll"></a>
+                        <a href="mypage.php" class="navbar-icon bi-person smoothscroll"></a>
                     </div>
                 </div>
             </div>

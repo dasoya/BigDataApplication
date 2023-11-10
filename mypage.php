@@ -20,7 +20,7 @@ if ($conn->connect_error) {
 }
 
 // SQL 쿼리 작성
-$sql = "SELECT c.city_name AS destination, 
+$sql = "SELECT c.name AS destination, 
                p.duration, 
                p.transportation_type, 
                p.transportation_cost, 
@@ -40,7 +40,7 @@ $stmt->execute();
 $result = $stmt->get_result();
 
 // 사용자가 좋아하는 도시와 랜드마크 가져오기
-$liked_sql = "SELECT city.city_name, landmark.img
+$liked_sql = "SELECT city.name, landmark.img
             FROM userliked
             INNER JOIN city ON userliked.city_id = city.id
             INNER JOIN landmark ON city.id = landmark.city_id
@@ -74,43 +74,42 @@ $liked_result = $liked_stmt->get_result();
     <main>
         <nav class="navbar navbar-expand-lg">
             <div class="container">
-                <a class="navbar-brand" href="mypage.html">
+                <a class="navbar-brand" href="index.php">
                     <i class="bi-back"></i>
                     <span>Trip Planner</span>
                 </a>
-                <div class="d-lg-none ms-auto me-4">
-                    <a href="login.html" class="navbar-icon bi-person smoothscroll"></a>
-                </div>
+              
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-lg-5 me-lg-auto">
-                        <li class="nav-item">
-                            <a class="nav-link click-scroll" href="#section_1">ESTIMATE</a>
+                        <li class="nav-item.inactive">
+                            <a class="nav-link" href="index.php">ESTIMATE</a>
                         </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link click-scroll" href="#section_2">RECOMEND</a>
+                        <li class="nav-item.inactive">
+                            <a class="nav-link click-scroll" href="recommend_base.html">RECOMMEND</a>
                         </li>
 
-                        <li class="nav-item">
+                        <li class="nav-item.inactive">
                             <a class="nav-link click-scroll" href="ranking/rankingShow10.php">RANKING</a>
                         </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link click-scroll" href="review/reviews.html">REVIEWS</a>
-                        </li>
-                        
-                        <li class="nav-item">
-                            <a class="nav-link click-scroll" href="feedback.html">FEEDBACK</a>
+                        <li class="nav-item.inactive">
+                            <a class="nav-link click-scroll" href="review/reviews.php">REVIEWS</a>
                         </li>
 
+                        <li class="nav-item.inactive">
+                            <a class="nav-link click-scroll" href="feedback.php">FEEDBACK</a>
+                        </li>
+
+                        
                     </ul>
 
                     <div class="d-none d-lg-block">
-                        <a href="login.html" class="navbar-icon bi-person smoothscroll"></a>
+                        <a href="mypage.php" class="navbar-icon bi-person smoothscroll"></a>
                     </div>
                 </div>
             </div>
@@ -155,7 +154,7 @@ $liked_result = $liked_stmt->get_result();
                             <?php while($liked_row = $liked_result->fetch_assoc()): ?>
                             <div class="col-lg-4 col-md-4 col-sm-12 text-center">
                                 <img src="<?php echo htmlspecialchars($liked_row['img']); ?>" class="img-fluid">
-                                <p class="mt-2" style="color: white;"><?php echo htmlspecialchars($liked_row['city_name']); ?></p>
+                                <p class="mt-2" style="color: white;"><?php echo htmlspecialchars($liked_row['name']); ?></p>
                             </div>
                             <?php endwhile; // while 루프 종료 ?>
                         </div>
@@ -171,6 +170,9 @@ $liked_result = $liked_stmt->get_result();
                         <div class="d-flex justify-content-center" style="margin-top: 100px !important;">
                             <form action="accountdeletion.php" method="post">
                                 <button type="submit" class="btn btn-primary me-2">Account Deletion</button>
+                            </form>
+                            <form action="logout.php" method="post">
+                                <button type="submit" class="btn btn-primary me-2">Account <br> Logout</button>
                             </form>
                         </div>
                     </div>

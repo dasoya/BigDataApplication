@@ -55,7 +55,7 @@ $dblink = mysqli_connect($server_name, $db_username , $db_password, $db_name);
             if(mysqli_stmt_execute($stmt)) { 
                 
                 $result = mysqli_stmt_get_result($stmt);
-                $searchResult = [];
+                $searchResult = array();
                 while($row = mysqli_fetch_assoc($result)) {
                     $searchResult[] = $row;
                 }
@@ -81,7 +81,7 @@ $dblink = mysqli_connect($server_name, $db_username , $db_password, $db_name);
             if(mysqli_stmt_execute($stmt)) { 
                 
                 $result = mysqli_stmt_get_result($stmt);
-                $searchResult = [];
+                $searchResult = array();
                 while($row = mysqli_fetch_assoc($result)) {
                     $searchResult[] = $row;
 

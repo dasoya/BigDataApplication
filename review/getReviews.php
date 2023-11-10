@@ -78,7 +78,7 @@ if (mysqli_connect_errno()) {
             while ($review = mysqli_fetch_assoc($result_review)){
                 echo "<tr>
                         <td>" . $review["review_id"] . "</td>
-                        <td><a href= 'detail.html?reviewId=". $review["review_id"] ."'>" . $review["title"] . "</a></td>
+                        <td><a href= 'detail.php?reviewId=". $review["review_id"] ."'>" . $review["title"] . "</a></td>
                         <td>" . date("Y-m-d", strtotime($review["created_at"]) ). "</td>
                         <td>" . $review["user_name"] . "</td>
                     </tr>";

@@ -38,10 +38,10 @@ mysqli_close($dblink);
 
 if ($reviewId != null) {
   // 리뷰 보여주는 페이지로 이동
-  $redirect_url = "detail.html?reviewId=" . $reviewId;
+  $redirect_url = "detail.php?reviewId=" . $reviewId;
 }
 else {
-  $redirect_url = "reviews.html";
+  $redirect_url = "reviews.php";
 }
 
 header("Location: " . $redirect_url);

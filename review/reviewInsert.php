@@ -94,10 +94,10 @@ mysqli_close($dblink);
 
 if ($reviewId != null) {
   // 리뷰 보여주는 페이지로 이동
-  $redirect_url = "detail.html?reviewId=" . $reviewId;
+  $redirect_url = "detail.php?reviewId=" . $reviewId;
 }
 else {
-  $redirect_url = "reviews.html";
+  $redirect_url = "reviews.php";
 }
 
 // 현재 페이지와 동일한 경로에서 리다이렉트
