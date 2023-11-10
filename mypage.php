@@ -23,7 +23,7 @@ if ($conn->connect_error) {
 }
 
 // SQL 쿼리 작성
-$sql = "SELECT c.city_name AS destination, 
+$sql = "SELECT c.name AS destination, 
                p.duration, 
                p.transportation_type, 
                p.transportation_cost, 
@@ -43,7 +43,7 @@ $stmt->execute();
 $result = $stmt->get_result();
 
 // 사용자가 좋아하는 도시와 랜드마크 가져오기
-$liked_sql = "SELECT city.city_name, landmark.img
+$liked_sql = "SELECT city.name, landmark.img
             FROM userliked
             INNER JOIN city ON userliked.city_id = city.id
             INNER JOIN landmark ON city.id = landmark.city_id
@@ -163,7 +163,7 @@ $liked_result = $liked_stmt->get_result();
                             <?php while($liked_row = $liked_result->fetch_assoc()): ?>
                             <div class="col-lg-4 col-md-4 col-sm-12 text-center">
                                 <img src="<?php echo htmlspecialchars($liked_row['img']); ?>" class="img-fluid">
-                                <p class="mt-2" style="color: white;"><?php echo htmlspecialchars($liked_row['city_name']); ?></p>
+                                <p class="mt-2" style="color: white;"><?php echo htmlspecialchars($liked_row['name']); ?></p>
                             </div>
                             <?php endwhile; // while 루프 종료 ?>
                         </div>
