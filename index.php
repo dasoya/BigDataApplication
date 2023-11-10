@@ -162,7 +162,6 @@
                                                     <div>
                                                         <h5 class="mb-2"><?php echo $countryRanking[0]['name']; ?></h5>
 
-                                                        <p class="mb-0">국가 정보? - </p>
                                                     </div>
 
                                                     <span class="badge bg-advertising rounded-pill ms-auto"><?php echo $countryRanking[0]['rank'];?></span>
@@ -180,7 +179,6 @@
                                                     <div>
                                                         <h5 class="mb-2"><?php echo $countryRanking[1]['name']; ?></h5>
 
-                                                        <p class="mb-0"> 검색링크?</p>
                                                     </div>
 
                                                     <span class="badge bg-advertising rounded-pill ms-auto"><?php echo $countryRanking[1]['rank'];?></span>
@@ -197,9 +195,7 @@
                                                 <div class="d-flex">
                                                     <div>
                                                         <h5 class="mb-2"><?php echo $countryRanking[2]['name']; ?></h5>
-                                                        <p class="mb-0">
-                                                           city 목록? 
-                                                        </p>
+                                                        
                                                     </div>
                                                     <span class="badge bg-advertising rounded-pill ms-auto"><?php echo $countryRanking[2]['rank'];?></span>
                                                 </div>
