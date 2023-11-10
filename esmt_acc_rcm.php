@@ -1,13 +1,9 @@
 <?php
 
-// DB 연결 설정
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "team02";
+require("dbconfig.php");
 
 
-$conn = mysqli_connect($servername, $username, $password, $dbname);
+$conn = mysqli_connect($server_name, $db_username, $db_password, $db_name);
 
 if (mysqli_connect_errno()) {
 
@@ -35,12 +31,16 @@ else{
     $duration = $_SESSION['duration']; 
  
     // 선택한 도시의 가장 싼 숙박 시설을 찾는 쿼리
-    $query = "SELECT city.name,trip.accommodation_type as minacc,(trip.accommodation_cost/trip.duration) as mincost
-    FROM trip, city
-    WHERE trip.city_id = city.id AND city.id = '".$cityId."' AND (trip.accommodation_cost/trip.duration) = 
-    (SELECT MIN(t.daycost) 
-               FROM (SELECT *, AVG(accommodation_cost/duration) as daycost FROM `trip` WHERE city_id = '".$cityId."' GROUP BY city_id, accommodation_type ) AS t);";
-   
+    $query="SELECT city.name,trip.accommodation_type as minacc,
+            (trip.accommodation_cost/trip.duration) as mincost
+            FROM trip, city
+            WHERE trip.city_id = city.id AND city.id = '".$cityId."'
+            AND (trip.accommodation_cost/trip.duration) = 
+                                                    (SELECT MIN(t.daycost) 
+                                                    FROM (SELECT *, AVG(accommodation_cost/duration) as daycost
+                                                        FROM `trip` WHERE city_id = '".$cityId."' 
+                                                        GROUP BY accommodation_type ) AS t);";
+                                                
     $result = mysqli_query($conn,$query);
  
     if ($result && mysqli_num_rows($result) > 0){
@@ -61,8 +61,8 @@ else{
             return;
         }
     } else{
-        echo "error";
-        printf("no result %s \n",mysqli_error($conn) );
+
+      //  printf("no result %s \n",mysqli_error($conn) );
     }
 
     mysqli_free_result($result);

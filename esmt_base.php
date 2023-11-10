@@ -25,6 +25,8 @@ body, html {
 	width: 100%;
 	height: 100%;
 }
+
+  
 </style>
 </head>
 <body id="top">
@@ -126,11 +128,16 @@ body, html {
 					include 'esmt_trans.php';
 					?> 
 					
-					<div style='color: var(--bs-gray-dark);' class="col-lg-12 justify-content-end"> <?php include 'esmt_station.php';?></div>
+					<div style='color: var(--bs-gray-dark);' class="col-lg-12"> <?php include 'esmt_station.php';?></div>
 				
 					<?php include 'esmt_total.php'; ?>
 					<?php include 'esmt_acc_rcm.php'; ?>
-					
+					<div>
+					<details>
+						<summary>Check the other travel options</summary>
+						<div class="col-lg-12 d-flex justify-content-end align-items-end"><?php include 'esmt_city_info.php'; ?></div>
+					</details>
+					</div>
 				</div>
 
 				</div>
