@@ -90,17 +90,14 @@
 
             <section class="section-padding-t50" id ="section_review">
                 <div class="container" >
-                        <div class="col-lg-3 col-3 text-left">
-                            <h3 class="mb-4">제목 뭐로하징</h3>
-                            <!-- 이거 이동하면서 섹션으로 바로 이동할때 굉장히 거슬린다.... ifram으로 빼거나 에니메이션? 없앨 방법 찾아보기 -->
-                        </div>
+
                         <div class="row d-flex">
                             <div class="col-lg-4 col-4">
                             <form action="reviews.html"  method="get">
                                 <div class="input-button-container d-flex">
                                 <input type="text" name="searchKeyword" class= "form-control" placeholder="input keywords" >
 
-                                <button type="submit" class="btn">Search</button>
+                                <button type="submit" class="btn" style="margin-left: 20px;">Search</button>
                                 </div>
                             </form>
                             
@@ -108,19 +105,19 @@
                             </div>
                             <?php
                             if (isset($_GET["searchKeyword"])){
-                                echo " <div class='col-lg-5 col-5 text-left>'><i class='text-gray'> Searh result of: '".$_GET['searchKeyword']."'</i> </div>";
+                                echo " <div class='col-lg-5 col-5 text-left>'><i class='text-gray'> Searh result of ' ".$_GET['searchKeyword']." '</i> </div>";
                             }
                             ?>
                             <div class="col-lg-3 col-3 ms-auto d-flex">
-                                <form action="writeReview.html" method="get">
+                                <form action="writeReview.html" method="get" >
                                     <button type="submit" class="btn" > New post 🖉 </button>
                                     <!-- 버튼 누르면 글쓰기 하는 곳(reviewInsert.html)로 이동하도록  -->
                                 </form>
-                                <!-- <form>
-                                    <button type="submit" class="btn" > Delete 🗑︎ </button>
-                                    삭제도 구현...? session에 있는 id랑 게시글의 id가 같으면 지우기? 
-                                        이것도 트렌젝션에 해당될까? 아닐듯. 그냥 게시글 테이블에서 지우기만 하면 됨 
-                                </form> -->
+                                <form>
+                                    <button type="submit" class="btn" style="margin-left: 20px;"> Delete 🗑︎ </button>
+                                    <!-- 삭제도 구현...? session에 있는 id랑 게시글의 id가 같으면 지우기?  -->
+                                        
+                                </form> 
                               
                             </div>
                             <div class = "row">

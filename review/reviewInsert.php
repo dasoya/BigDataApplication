@@ -62,42 +62,25 @@ CREATE TABLE `review` (
 
 $sql = "INSERT INTO review (title, body, user_id) VALUES (?, ?, ?);";
 
-
 if ($stmt = mysqli_prepare($dblink, $sql)) {
 
-  mysqli_stmt_bind_param($stmt, "ssi", $title, $body, $user_id); // 데이터 구조 보고 수정
+  mysqli_stmt_bind_param($stmt, "ssi", $title, $body, $writer_id); 
 
   $title = $_POST['title'];
   $body = $_POST['body'];
-  $user_id = $_SESSION['id'];
-
-  //이메일로 가져오는게 맞을까? primary key가 id인데... 이것도 논의해보자
-
-  //$created_at = $_POST['created_at'];
-  //$img= $_POST['img']; 
-  // 이미지는 만약에 넣게되면, 조건문으로 이미지가 있을 때와 없을 때를 구분해서 sql을 돌려야할듯.
-  //$user_id= $_POST['user_id'];
-  //$city_id= $_POST['city'];
-
-  // TODO
-  // 성공, 실패 한 후에 페이지에 결과를 어떻게 띄울지 고민해보기
-  // 바로 내가 쓴 리뷰 페이지 보여주기? 
+  $writer_id = $_SESSION['id'];
 
   if (mysqli_stmt_execute($stmt)) {
 
-    $reviewId = getNewReviewId($dblink, $user_id);
+    $reviewId = getNewReviewId($dblink, $writer_id);
    
     echo 'upload success';
-  } else {
-
-    
-    //실패한 경우
+  } else { //실패한 경우
     printf("%s", mysqli_error($dblink));
   }
 } else { //prepare 실패
   printf("%s", mysqli_error($dblink));
 }
-
 mysqli_stmt_close($stmt);
 mysqli_close($dblink);
 

@@ -4,6 +4,9 @@ if(!isset($_GET['reviewId'])){
     header("Location: reviews.html");
     exit();
 }
+else{
+    $reviewId= $_GET['reviewId'];
+}
 
 include "../dbconfig.php";
 ?>
@@ -122,6 +125,7 @@ include "../dbconfig.php";
                                     <div class="accordion-body">
                                         <?php
                                          echo $review['body'];
+                                
                                         ?>
                                     </div>
                                   
@@ -132,8 +136,8 @@ include "../dbconfig.php";
                     </div>
                 </div>
                 <div class="col-lg-2 col-12 ms-auto">
-                    <button type="submit" class="btn">Next </button>
-                    <button type="submit" class="btn">Prev</button>
+                    <a href = "updateReview.html?reviewId=<?php echo $reviewId; ?>" > Edit </a>
+                    
                 </div>
                 <!-- TODO -->
                 <!-- 이전 리뷰, 다음 리뷰, 목록 으로 돌아가는 버튼 만들기 -->
