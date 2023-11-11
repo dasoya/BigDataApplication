@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Trip Plan</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans&display=swap" rel="stylesheet">
+            
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/bootstrap-icons.css" rel="stylesheet">
+        <link href="../css/templatemo-topic-listing.css" rel="stylesheet">  
+        <link href="../css/recommend_album.css" rel="stylesheet">
+    </head>
+  <body id="top">
+    <main>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="../index.php">
+                    <i class="bi-back"></i>
+                    <span>Trip Planner</span>
+                </a>
+                <div class="d-lg-none ms-auto me-4">
+                    <a href="#top" class="navbar-icon bi-person smoothscroll"></a>
+                </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-lg-5 me-lg-auto">
+                        <li class="nav-item">
+                            <a class="nav-link.inactive click-scroll" href="../index.php">ESTIMATE</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="../recommend/recommend_base.html">RECOMEND</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="../ranking/rankingShow10.html">RANKING</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="../review/reviews.html">REVIEWS</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="../feedback.php">FEEDBACK</a>
+                        </li>
+
+                      
+                    </ul>
+
+                    <div class="d-none d-lg-block">
+                        <a href="../login.html" class="navbar-icon bi-person smoothscroll"></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <section class="hero-section d-flex justify-content-center align-items-center" id="recommend">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-8 col-12 mx-auto">
+                        <h1 class="text-white text-center" style="font-size : 35px" >Get recommendations of your destination based on the available price range</h1>
+                        <form method="post" class="custom-form mt-4 pt-2 mb-lg-0 mb-5" action="../recommend/get_price_range.php"></form>
+                        <div class="input-group input-group-lg">
+                        <span class="input-group-text price-insert" id="basic-addon1"></span>
+                        
+                            <!-- <?php
+                                $html = '<input type="text" size="20" style="font-size : 15px" class="form-control" name="min-val" value="' . $min_val . '">';
+                                $html .= '<input type="text" size="20" style="font-size : 15px" class="form-control" name="max-val" value="' . $max_val . '">';
+                                echo($html);
+                            ?> -->
+                            <input name="min-val" type="text" class="form-control" id="min-val" placeholder="min val (eg. 90000)" style="font-size : 15px">
+                            <input name="max-val" type="text" class="form-control" id="max-val" placeholder="max val (eg. 100000)" style="font-size : 15px">
+                            <select name="dropdown" class="form-control">
+                                <option value="option1">Sort By: 숙박</option>
+                                <option value="option2">Sort By: 교통</option>
+                                <option value="option3">Sort By: 숙박+교통</option>
+                            </select>
+                        </form>
+                        <button type="submit" class="form-control" style="font-size : 10px" >SORT</button>
+                        </div>
+                        <body>
+                            <?php 
+                                $html = '<div class="recommend_album">';
+                                    $idx = 1;
+                                    while ($row = mysqli_fetch_assoc($result)){
+                                        $html .= '<div class="destination">';
+                                        $html .= '<h3>' . $idx . ' CITY NAME : ' .  $row['name2'] . '</h3>';
+                                        $html .= '<p>CITY INFO : ' . $row['info2'] . '</p>';
+                                        $html .= '<h6>LANDMARK NAME : ' . $row['name2'] . '</h3>';
+                                        $html .= '<img class="landmark-img" src="' . $row['img1'] . '" alt="' . $row['name1'] . '">';
+                                        $html .= '<p>LANDMARK INFO : ' . $row['info1'] . '</p>';
+                                        $html .= '</div>';
+                                        $idx++;
+                                    }
+                                    $html .= '</div>';
+                                    echo($html);
+                            ?>
+                            
+                        </body>
+                    </div>
+                    
+                  
+                </div>
+            </div>
+        </section>
+
+       
+
+         <!-- JAVASCRIPT FILES -->
+         <script src="../js/jquery.min.js"></script>
+         <script src="../js/bootstrap.bundle.min.js"></script>
+         <script src="../js/jquery.sticky.js"></script>
+         <script src="../js/click-scroll.js"></script>
+         <script src="../js/custom.js"></script>
+
+
+
+    </main>
+  </body>
+</html>
