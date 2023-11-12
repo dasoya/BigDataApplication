@@ -1,0 +1,198 @@
+<?php
+// 세션 시작
+session_start();
+
+// 사용자가 로그인되어 있지 않으면 로그인 페이지로 리디렉션
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+    header("location: ../userPage/login.html");
+    exit;
+}
+
+// 로그인된 사용자의 ID 가져오기
+$id = $_SESSION["id"];
+
+// 데이터베이스 연결 설정
+require("../dbconfig.php");
+
+$conn = new mysqli($server_name, $db_username, $db_password, $db_name);
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// SQL 쿼리 작성
+$sql = "SELECT c.name AS destination, 
+               p.duration, 
+               p.transportation_type, 
+               p.transportation_cost, 
+               p.accommodation_type, 
+               p.accommodation_cost 
+        FROM prediction p 
+        INNER JOIN city c ON p.city_id = c.id 
+        WHERE p.user_id = $id";
+
+// PreparedStatement 준비 및 바인드
+$stmt = $conn->prepare($sql);
+
+// 쿼리 실행
+$stmt->execute();
+
+// 결과 바인딩 및 출력
+$result = $stmt->get_result();
+
+// 사용자가 좋아하는 도시와 랜드마크 가져오기
+$liked_sql = "SELECT city.name, landmark.img
+            FROM userliked
+            INNER JOIN city ON userliked.city_id = city.id
+            INNER JOIN landmark ON city.id = landmark.city_id
+            WHERE userliked.user_id = $id";
+
+// statement 준비
+$liked_stmt = $conn->prepare($liked_sql);
+
+// 쿼리 실행
+$liked_stmt->execute();
+
+// 결과 얻기
+$liked_result = $liked_stmt->get_result();
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Trip Plan</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans&display=swap" rel="stylesheet">
+            
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/bootstrap-icons.css" rel="stylesheet">
+        <link href="../css/templatemo-topic-listing.css" rel="stylesheet">  
+    </head>
+  <body id="top">
+    <main>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="../index.php">
+                    <i class="bi-back"></i>
+                    <span>Trip Planner</span>
+                </a>
+              
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-lg-5 me-lg-auto">
+                        <li class="nav-item.inactive">
+                            <a class="nav-link" href="../index.php">ESTIMATE</a>
+                        </li>
+
+                        <li class="nav-item.inactive">
+                            <a class="nav-link click-scroll" href="../recommend/recommend_base.html">RECOMMEND</a>
+                        </li>
+
+                        <li class="nav-item.inactive">
+                            <a class="nav-link click-scroll" href="../ranking/rankingShow10.php">RANKING</a>
+                        </li>
+
+                        <li class="nav-item.inactive">
+                            <a class="nav-link click-scroll" href="../review/reviews.php">REVIEWS</a>
+                        </li>
+
+                        <li class="nav-item.inactive">
+                            <a class="nav-link click-scroll" href="../userPage/feedback.php">FEEDBACK</a>
+                        </li>
+
+                        
+                    </ul>
+
+                    <div class="d-none d-lg-block">
+                        <a href="mypage.php" class="navbar-icon bi-person smoothscroll"></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <section class="hero-section d-flex justify-content-center align-items-center" id="section_1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-12 mx-auto">
+                        <h1 class="text-white text-center">Cost Prediction History</h1>
+                        <table class="table mt-4">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Destination</th>
+                                    <th scope="col">Duration</th>
+                                    <th scope="col">Transportation Type</th>
+                                    <th scope="col">Transportation Cost</th>
+                                    <th scope="col">Accommodation Type</th>
+                                    <th scope="col">Accommodation Cost</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            <?php
+                                while($row = $result->fetch_assoc()) {
+                                    echo "<tr>";
+                                    echo "<td>" . $row["destination"] . "</td>";
+                                    echo "<td>" . $row["duration"] . " days</td>";
+                                    echo "<td>" . $row["transportation_type"] . "</td>";
+                                    echo "<td>$" . $row["transportation_cost"] . "</td>";
+                                    echo "<td>" . $row["accommodation_type"] . "</td>";
+                                    echo "<td>$" . $row["accommodation_cost"] . "</td>";
+                                    echo "</tr>";
+                                }
+                            
+                            ?>
+                            </tbody>
+                        </table>
+                        <h1 class="text-white text-center mt-5" style="margin-top: 100px !important;">Liked Place</h1>
+
+
+                        <div class="row mt-4">
+                            <?php while($liked_row = $liked_result->fetch_assoc()): ?>
+                            <div class="col-lg-4 col-md-4 col-sm-12 text-center">
+                                <img src="<?php echo htmlspecialchars($liked_row['img']); ?>" class="img-fluid">
+                                <p class="mt-2" style="color: white;"><?php echo htmlspecialchars($liked_row['name']); ?></p>
+                            </div>
+                            <?php endwhile; // while 루프 종료 ?>
+                        </div>
+                        <?php 
+                        // 이제 모든 루프가 끝났으니 리소스를 해제하고 연결을 종료할 수 있습니다.
+                        $stmt->close();
+                        $liked_stmt->close();
+                        if ($conn) {
+                            $conn->close();
+                        }
+                        ?>
+                        <!-- Bootstrap을 사용하여 버튼을 가운데 정렬하기 -->
+                        <div class="d-flex justify-content-center" style="margin-top: 100px !important;">
+                            <form action="../userPage/accountdeletion.php" method="post">
+                                <button type="submit" class="btn btn-primary me-2">Account Deletion</button>
+                            </form>
+                            <form action="../userPage/logout.php" method="post">
+                                <button type="submit" class="btn btn-primary me-2">Account <br> Logout</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        
+
+       
+
+        <!-- JAVASCRIPT FILES -->
+        <script src="../js/jquery.min.js"></script>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script src="../js/jquery.sticky.js"></script>
+        <script src="../js/click-scroll.js"></script>
+        <script src="../js/custom.js"></script>
+
+
+
+   </main>
+ </body>
+</html>

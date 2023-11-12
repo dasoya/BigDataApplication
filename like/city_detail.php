@@ -29,7 +29,7 @@
                     <span>Trip Planner</span>
                 </a>
                 <div class="d-lg-none ms-auto me-4">
-                    <a href="../login.html" class="navbar-icon bi-person smoothscroll"></a>
+                    <a href="../userPage/login.html" class="navbar-icon bi-person smoothscroll"></a>
                 </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -54,14 +54,14 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link click-scroll" href="../feedback.php">FEEDBACK</a>
+                            <a class="nav-link click-scroll" href="../userPage/feedback.php">FEEDBACK</a>
                         </li>
 
                 
                     </ul>
 
                     <div class="d-none d-lg-block">
-                        <a href="../mypage.php" class="navbar-icon bi-person smoothscroll"></a>
+                        <a href="../userPage/mypage.php" class="navbar-icon bi-person smoothscroll"></a>
                     </div>
                 </div>
             </div>

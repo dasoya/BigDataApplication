@@ -28,11 +28,11 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-lg-5 me-lg-auto">
                         <li class="nav-item">
-                            <a class="nav-link click-scroll" href="index.php#section_1">ESTIMATE</a>
+                            <a class="nav-link click-scroll" href="index.php">ESTIMATE</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="recommend_base.html">RECOMMEND</a>
+                            <a class="nav-link" href="recommend/recommend_base.html">RECOMMEND</a>
                         </li>
 
                         <li class="nav-item">
@@ -44,21 +44,21 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link click-scroll" href="feedback.php">FEEDBACK</a>
+                            <a class="nav-link click-scroll" href="myPage/feedback.php">FEEDBACK</a>
                         </li>
 
                         
                     </ul>
 
                     <div class="d-none d-lg-block">
-                        <a href="mypage.php" class="navbar-icon bi-person smoothscroll"></a>
+                        <a href="userPage/mypage.php" class="navbar-icon bi-person smoothscroll"></a>
                     </div>
                 </div>
             </div>
         </nav>
 
         <section id="section_1">
-            <iframe width =100% height= "800px" src="esmt_base.php"></iframe>
+            <iframe width =100% height= "800px" src="estimation/esmt_base.php"></iframe>
         </section>
 
         <!-- 여기서 부터  -->
