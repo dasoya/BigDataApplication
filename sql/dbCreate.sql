@@ -12,7 +12,7 @@ CREATE TABLE `user` (
 );
 
 CREATE TABLE `prediction` (
-  `id` integer PRIMARY KEY,
+  `id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY,
   `duration` integer,
   `created_at` timestamp,
   `transportation_type` varchar(255),
