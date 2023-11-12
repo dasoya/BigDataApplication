@@ -84,7 +84,7 @@ include "../dbconfig.php";
                         <div class="col-lg-5 col-12">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="index.php">Reviews</a></li>
+                                    <li class="breadcrumb-item"><a href="../review/reviews.php">Reviews</a></li>
 
                                     <li class="breadcrumb-item active" aria-current="page">detail </li>
 

@@ -73,7 +73,7 @@
                         <div class="col-lg-5 col-12">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+                                    <li class="breadcrumb-item"><a href="../index.php">Home</a></li>
 
                                     <li class="breadcrumb-item active" aria-current="page">reviews</li>
                                 </ol>
@@ -109,7 +109,7 @@
                             }
                             ?>
                             <div class="col-lg-3 col-3 ms-auto d-flex">
-                                <form action="writeReview.php" method="get" >
+                                <form action="../review/writeReview.php" method="get" >
                                     <button type="submit" class="btn" > New post 🖉 </button>
                                     <!-- 버튼 누르면 글쓰기 하는 곳(reviewInsert.html)로 이동하도록  -->
                                 </form>
