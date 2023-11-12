@@ -44,7 +44,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link click-scroll" href="myPage/feedback.php">FEEDBACK</a>
+                            <a class="nav-link click-scroll" href="userPage/feedback.php">FEEDBACK</a>
                         </li>
 
                         
