@@ -1,5 +1,5 @@
 <?php
-require("dbconfig.php");
+require("../dbconfig.php");
 
 // 연결
 $conn = new mysqli($server_name, $db_username, $db_password, $db_name);
@@ -40,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
         if ($stmt->execute()) {
-            header("location: login.html");
+            header("location: ../userPage/login.html");
         } else {
             echo "Error: " . $stmt->error;
         }

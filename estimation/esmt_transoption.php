@@ -1,9 +1,6 @@
 <?php
 // DB 연결 설정
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "team02";
+require("../dbconfig.php");
 
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 

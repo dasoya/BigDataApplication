@@ -2,7 +2,7 @@
 <?php
 
 // DB 연결 설정
-require("dbconfig.php");
+require("../dbconfig.php");
 
 // Create connection //
 $conn = mysqli_connect($server_name, $db_username, $db_password, $db_name);
@@ -37,13 +37,15 @@ else{
 
     $currentTime = date('Y-m-d H:i:s');
 
-    if(!isset($_SESSION['userId'])) {
+    if(!isset($_SESSION['id'])) {
+        echo("NO USER ID");
        return;
     }
-    $query = "INSERT INTO prediction (city_id,duration,created_at,user_id,transportation_type, accommodation_type, transportation_cost, accommodation_cost) VALUES (".$_SESSION['cityId'].",".$_SESSION['duration'].",'".$currentTime."',".$_SESSION['userId'].",'".$_SESSION['transType']."','".$_SESSION['accType']."',".$transCost.",".$accCost.")";
+    $query = "INSERT INTO prediction (city_id,duration,created_at,user_id,transportation_type, accommodation_type, transportation_cost, accommodation_cost) 
+    VALUES (".$_SESSION['cityId'].",".$_SESSION['duration'].",'".$currentTime."',".$_SESSION['id'].",'".$_SESSION['transType']."','".$_SESSION['accType']."',".$transCost.",".$accCost.")";
     $result = mysqli_query($conn, $query);
     if ($result) {
-       // echo "History saved";
+       echo "History saved";
     // printf("New Record has id %d.\n", mysqli_insert_id($conn));
     } else {
          printf("Error %s \n",mysqli_error($conn));

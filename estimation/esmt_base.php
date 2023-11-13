@@ -11,9 +11,9 @@
 	href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans&display=swap"
 	rel="stylesheet">
 
-<link href="css/bootstrap.min.css" rel="stylesheet">
-<link href="css/bootstrap-icons.css" rel="stylesheet">
-<link href="css/templatemo-topic-listing.css" rel="stylesheet">
+<link href="../css/bootstrap.min.css" rel="stylesheet">
+<link href="../css/bootstrap-icons.css" rel="stylesheet">
+<link href="../css/templatemo-topic-listing.css" rel="stylesheet">
 
 <style>
 body, html {
@@ -51,7 +51,7 @@ body, html {
 
 								<select class="form-control" name="cityId" id="cityId" required>
 									<option disabled="disabled" selected="selected" value="">City</option>
-                                                <?php include 'esmt_cityoption.php'; ?>
+                                                <?php include '../estimation/esmt_cityoption.php'; ?>
 
                                             </select>
 							</div>
@@ -69,7 +69,7 @@ body, html {
 									 required>
 									<option disabled="disabled" selected value="">Accommodation
 										Type</option>
-										<?php include 'esmt_accoption.php'; ?>
+										<?php include '../estimation/esmt_accoption.php'; ?>
 									
 								</select>
 							</div>
@@ -82,7 +82,7 @@ body, html {
 									 required>
 									<option disabled="disabled" selected value="">Transportation
 										Type</option>
-										<?php include 'esmt_transoption.php'; ?>
+										<?php include '../estimation/esmt_transoption.php'; ?>
 									
 								</select>
 							</div>
@@ -124,18 +124,18 @@ body, html {
 
 				<div class="col-lg-6 d-flex justify-content-end align-items-end">
 					<div class="col-lg-12 justify-content-end text-end">	
-					<?php include 'esmt_acc.php';
-					include 'esmt_trans.php';
+					<?php include '../estimation/esmt_acc.php';
+					include '../estimation/esmt_trans.php';
 					?> 
 					
-					<div style='color: var(--bs-gray-dark);' class="col-lg-12"> <?php include 'esmt_station.php';?></div>
+					<div style='color: var(--bs-gray-dark);' class="col-lg-12"> <?php include '../estimation/esmt_station.php';?></div>
 				
-					<?php include 'esmt_total.php'; ?>
-					<?php include 'esmt_acc_rcm.php'; ?>
+					<?php include '../estimation/esmt_total.php'; ?>
+					<?php include '../estimation/esmt_acc_rcm.php'; ?>
 					<div>
 					<details>
 						<summary>Check the other travel options</summary>
-						<div class="col-lg-12 d-flex justify-content-end align-items-end"><?php include 'esmt_city_info.php'; ?></div>
+						<div class="col-lg-12 d-flex justify-content-end align-items-end"><?php include '../estimation/esmt_city_info.php'; ?></div>
 					</details>
 					</div>
 				</div>
@@ -149,12 +149,12 @@ body, html {
 
 	<!-- JAVASCRIPT FILES -->
 
-	<script src="js/jquery.min.js"></script>
-	<script src="js/bootstrap.bundle.min.js"></script>
-	<script src="js/jquery.sticky.js"></script>
-	<script src="js/click-scroll.js"></script>
-	<script src="js/custom.js"></script>
-	<script src="js/submit"></script>
+	<script src="../js/jquery.min.js"></script>
+	<script src="../js/bootstrap.bundle.min.js"></script>
+	<script src="../js/jquery.sticky.js"></script>
+	<script src="../js/click-scroll.js"></script>
+	<script src="../js/custom.js"></script>
+	<script src="../js/submit"></script>
 
 </body>
 </html>

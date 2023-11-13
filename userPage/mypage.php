@@ -4,7 +4,7 @@ session_start();
 
 // 사용자가 로그인되어 있지 않으면 로그인 페이지로 리디렉션
 if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-    header("location: login.html");
+    header("location: ../userPage/login.html");
     exit;
 }
 
@@ -12,7 +12,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 $id = $_SESSION["id"];
 
 // 데이터베이스 연결 설정
-require("dbconfig.php");
+require("../dbconfig.php");
 
 $conn = new mysqli($server_name, $db_username, $db_password, $db_name);
 if ($conn->connect_error) {
@@ -66,15 +66,15 @@ $liked_result = $liked_stmt->get_result();
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans&display=swap" rel="stylesheet">
             
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link href="css/bootstrap-icons.css" rel="stylesheet">
-        <link href="css/templatemo-topic-listing.css" rel="stylesheet">  
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/bootstrap-icons.css" rel="stylesheet">
+        <link href="../css/templatemo-topic-listing.css" rel="stylesheet">  
     </head>
   <body id="top">
     <main>
         <nav class="navbar navbar-expand-lg">
             <div class="container">
-                <a class="navbar-brand" href="index.php">
+                <a class="navbar-brand" href="../index.php">
                     <i class="bi-back"></i>
                     <span>Trip Planner</span>
                 </a>
@@ -86,23 +86,23 @@ $liked_result = $liked_stmt->get_result();
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-lg-5 me-lg-auto">
                         <li class="nav-item.inactive">
-                            <a class="nav-link" href="index.php">ESTIMATE</a>
+                            <a class="nav-link" href="../index.php">ESTIMATE</a>
                         </li>
 
                         <li class="nav-item.inactive">
-                            <a class="nav-link click-scroll" href="recommend_base.html">RECOMMEND</a>
+                            <a class="nav-link click-scroll" href="../recommend/recommend_base.html">RECOMMEND</a>
                         </li>
 
                         <li class="nav-item.inactive">
-                            <a class="nav-link click-scroll" href="ranking/rankingShow10.php">RANKING</a>
+                            <a class="nav-link click-scroll" href="../ranking/rankingShow10.php">RANKING</a>
                         </li>
 
                         <li class="nav-item.inactive">
-                            <a class="nav-link click-scroll" href="review/reviews.php">REVIEWS</a>
+                            <a class="nav-link click-scroll" href="../review/reviews.php">REVIEWS</a>
                         </li>
 
                         <li class="nav-item.inactive">
-                            <a class="nav-link click-scroll" href="feedback.php">FEEDBACK</a>
+                            <a class="nav-link click-scroll" href="../userPage/feedback.php">FEEDBACK</a>
                         </li>
 
                         
@@ -168,10 +168,10 @@ $liked_result = $liked_stmt->get_result();
                         ?>
                         <!-- Bootstrap을 사용하여 버튼을 가운데 정렬하기 -->
                         <div class="d-flex justify-content-center" style="margin-top: 100px !important;">
-                            <form action="accountdeletion.php" method="post">
+                            <form action="../userPage/accountdeletion.php" method="post">
                                 <button type="submit" class="btn btn-primary me-2">Account Deletion</button>
                             </form>
-                            <form action="logout.php" method="post">
+                            <form action="../userPage/logout.php" method="post">
                                 <button type="submit" class="btn btn-primary me-2">Account <br> Logout</button>
                             </form>
                         </div>
@@ -185,11 +185,11 @@ $liked_result = $liked_stmt->get_result();
        
 
         <!-- JAVASCRIPT FILES -->
-        <script src="js/jquery.min.js"></script>
-        <script src="js/bootstrap.bundle.min.js"></script>
-        <script src="js/jquery.sticky.js"></script>
-        <script src="js/click-scroll.js"></script>
-        <script src="js/custom.js"></script>
+        <script src="../js/jquery.min.js"></script>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script src="../js/jquery.sticky.js"></script>
+        <script src="../js/click-scroll.js"></script>
+        <script src="../js/custom.js"></script>
 
 
 

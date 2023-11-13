@@ -1,6 +1,6 @@
 <?php
     
-    require("dbconfig.php");
+    require("../dbconfig.php");
     // (1) connect to database //
    
     $connection = mysqli_connect($server_name, $db_username, $db_password, $db_name);
@@ -25,8 +25,8 @@
     $result_1 = mysqli_query($connection, $sql_1);
     $row = mysqli_fetch_array($result_1);
     $city_name = $row['name'];
-    echo("Location: ". './city_detail.php?city=' . $city_name);
-    header("Location: ". 'city_detail.php?city=' . $city_name);
+    echo("Location: ". '../like/city_detail.php?city=' . $city_name);
+    header("Location: ". '../like/city_detail.php?city=' . $city_name);
 
     // exit;
     // 도시 상세 정보를 데이터베이스에서 갖고 와야 함

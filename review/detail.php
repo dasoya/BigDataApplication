@@ -51,7 +51,7 @@ include "../dbconfig.php";
                         </li>
 
                         <li class="nav-item.inactive">
-                            <a class="nav-link click-scroll" href="../recommend_base.html">RECOMEND</a>
+                            <a class="nav-link click-scroll" href="../recommend/recommend_base.html">RECOMEND</a>
                         </li>
 
                         <li class="nav-item.inactive">
@@ -59,18 +59,18 @@ include "../dbconfig.php";
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link click-scroll" href="reviews.php">REVIEWS</a>
+                            <a class="nav-link click-scroll" href="../review/reviews.php">REVIEWS</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link click-scroll" href="../feedback.php">FEEDBACK</a>
+                            <a class="nav-link click-scroll" href="../userPage/feedback.php">FEEDBACK</a>
                         </li>
 
                         
                     </ul>
 
                     <div class="d-none d-lg-block">
-                        <a href="../login.html" class="navbar-icon bi-person smoothscroll"></a>
+                        <a href="../userPage/login.html" class="navbar-icon bi-person smoothscroll"></a>
                     </div>
                 </div>
             </div>
@@ -84,7 +84,7 @@ include "../dbconfig.php";
                         <div class="col-lg-5 col-12">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="index.php">Reviews</a></li>
+                                    <li class="breadcrumb-item"><a href="../review/reviews.php">Reviews</a></li>
 
                                     <li class="breadcrumb-item active" aria-current="page">detail </li>
 

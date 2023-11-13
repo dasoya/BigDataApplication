@@ -5,7 +5,7 @@
         session_start();
     };
 
-    require("dbconfig.php");
+    require("../dbconfig.php");
 
     $connection = mysqli_connect($server_name, $db_username, $db_password, $db_name);
     if ($connection === false){

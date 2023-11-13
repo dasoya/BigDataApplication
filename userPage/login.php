@@ -1,5 +1,5 @@
 <?php
-require("dbconfig.php");
+require("../dbconfig.php");
 
 // 연결
 $conn = new mysqli($server_name, $db_username, $db_password, $db_name);
@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION["loggedin"] = true;
         $_SESSION["email"] = $email;
         $_SESSION["id"] = $row['id'];
-        header("location: index.php");
+        header("location: ../index.php");
         exit;
     } else {
         // 이메일 또는 비밀번호가 불일치

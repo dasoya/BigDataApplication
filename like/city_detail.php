@@ -15,21 +15,21 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans&display=swap" rel="stylesheet">
             
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link href="css/bootstrap-icons.css" rel="stylesheet">
-        <link href="css/templatemo-topic-listing.css" rel="stylesheet">  
-        <link href="css/recommend_album.css" rel="stylesheet">
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/bootstrap-icons.css" rel="stylesheet">
+        <link href="../css/templatemo-topic-listing.css" rel="stylesheet">  
+        <link href="../css/recommend_album.css" rel="stylesheet">
     </head>
   <body id="top">
     <main>
         <nav class="navbar navbar-expand-lg">
             <div class="container">
-                <a class="navbar-brand" href="index.php">
+                <a class="navbar-brand" href="../index.php">
                     <i class="bi-back"></i>
                     <span>Trip Planner</span>
                 </a>
                 <div class="d-lg-none ms-auto me-4">
-                    <a href="login.html" class="navbar-icon bi-person smoothscroll"></a>
+                    <a href="../userPage/login.html" class="navbar-icon bi-person smoothscroll"></a>
                 </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -38,30 +38,30 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-lg-5 me-lg-auto">
                         <li class="nav-item">
-                            <a class="nav-link click-scroll" href="index.php#section_1">ESTIMATE</a>
+                            <a class="nav-link click-scroll" href="../index.php">ESTIMATE</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link click-scroll" href="recommend_base.html">RECOMMEND</a>
+                            <a class="nav-link click-scroll" href="../recommend/recommend_base.html">RECOMMEND</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link click-scroll" href="ranking/rankingShow10.php">RANKING</a>
+                            <a class="nav-link click-scroll" href="../ranking/rankingShow10.php">RANKING</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link click-scroll" href="review/reviews.php">REVIEWS</a>
+                            <a class="nav-link click-scroll" href="../review/reviews.php">REVIEWS</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link click-scroll" href="feedback.php">FEEDBACK</a>
+                            <a class="nav-link click-scroll" href="../userPage/feedback.php">FEEDBACK</a>
                         </li>
 
                 
                     </ul>
 
                     <div class="d-none d-lg-block">
-                        <a href="mypage.php" class="navbar-icon bi-person smoothscroll"></a>
+                        <a href="../userPage/mypage.php" class="navbar-icon bi-person smoothscroll"></a>
                     </div>
                 </div>
             </div>
@@ -77,7 +77,7 @@
              
 
                         <body>
-                           <?php include "./get_city_detail.php";
+                           <?php include "../like/get_city_detail.php";
                                 
                                 // 도시 정보 보여주기 //
                                 $html = '<div class="city-like">';
@@ -86,7 +86,7 @@
                                 $uid = $_SESSION['id'];
                                 // $uid ='dlwlgP';
                                 // $new_url = "'" . "like_city.php?city=" . $city_id . "&uid=" . $uid . "'";
-                                $new_url = "like_city.php?city=" . $city_id . "&uid=" . $uid;
+                                $new_url = "../like/like_city.php?city=" . $city_id . "&uid=" . $uid;
                                 // $html .= '<button type="submit" id="likeButton" onclick="location.href=' . $new_url . '">👍🏻press like👍🏻</button></div>';
                                 $html .= '<form method="post" action="' . $new_url . '"> <button type="submit" id="likeButton" onclick="<?php echo pressLike($city_id, $uid); ?>">👍🏻press like👍🏻</button></div>
                                             </form>';
@@ -132,11 +132,11 @@
         
 
          <!-- JAVASCRIPT FILES -->
-         <script src="js/jquery.min.js"></script>
-         <script src="js/bootstrap.bundle.min.js"></script>
-         <script src="js/jquery.sticky.js"></script>
-         <script src="js/click-scroll.js"></script>
-         <script src="js/custom.js"></script>
+         <script src="../js/jquery.min.js"></script>
+         <script src="../js/bootstrap.bundle.min.js"></script>
+         <script src="../js/jquery.sticky.js"></script>
+         <script src="../js/click-scroll.js"></script>
+         <script src="../js/custom.js"></script>
 
 
 

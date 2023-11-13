@@ -4,7 +4,7 @@ session_start();
 
 // 사용자가 로그인되어 있지 않으면 로그인 페이지로 리디렉션
 if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
-    header("location: login.html");
+    header("location: ../login.html");
     exit;
 }
 
@@ -12,7 +12,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 $id = $_SESSION["id"];
 
 // 데이터베이스 연결 설정
-require("dbconfig.php");
+require("../dbconfig.php");
 
 
 $conn = new mysqli($server_name, $db_username, $db_password, $db_name);
@@ -48,11 +48,15 @@ if (isset($rating)) {
     $stmt->bind_param("iis", $id, $rating, $message);
 
     // 쿼리 실행
-    if ($stmt->execute()) {
-        echo "피드백이 성공적으로 저장되었습니다!";
-    } else {
-        echo "이메일 당 하나의 피드백만 받습니다 :)";
+    try{
+        $res = $stmt->execute();
+    }catch(Exception $e){
+        echo "이메일 당 하나의 피드백만 받습니다.";
     }
+        // echo "피드백이 성공적으로 저장되었습니다!";
+    // } else {
+    //     echo "이메일 당 하나의 피드백만 받습니다 :)";
+    // }
     $stmt->close();
 }
 
@@ -68,14 +72,14 @@ $conn->close();
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans&display=swap" rel="stylesheet">
             
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link href="css/bootstrap-icons.css" rel="stylesheet">
-        <link href="css/templatemo-topic-listing.css" rel="stylesheet"> 
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/bootstrap-icons.css" rel="stylesheet">
+        <link href="../css/templatemo-topic-listing.css" rel="stylesheet"> 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
         <!-- FontAwesome CSS -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-        <link rel="stylesheet" href="css/feedback.css">
+        <link rel="stylesheet" href="../css/feedback.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
 
@@ -87,12 +91,12 @@ $conn->close();
     <main>
         <nav class="navbar navbar-expand-lg">
             <div class="container">
-            <a class="navbar-brand" href="index.php">
+            <a class="navbar-brand" href="../index.php">
                     <i class="bi-back"></i>
                     <span>Trip Planner</span>
                 </a>
                 <div class="d-lg-none ms-auto me-4">
-                    <a href="login.html" class="navbar-icon bi-person smoothscroll"></a>
+                    <a href="../userPage/login.html" class="navbar-icon bi-person smoothscroll"></a>
                 </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -101,19 +105,19 @@ $conn->close();
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-lg-5 me-lg-auto">
                         <li class="nav-ite.inactive">
-                            <a class="nav-link click-scroll" href="index.php">ESTIMATE</a>
+                            <a class="nav-link click-scroll" href="../index.php">ESTIMATE</a>
                         </li>
 
                         <li class="nav-item.inactive">
-                            <a class="nav-link click-scroll" href="recommend_base.html">RECOMEND</a>
+                            <a class="nav-link click-scroll" href="../recommend/recommend_base.html">RECOMEND</a>
                         </li>
 
                         <li class="nav-item.inactive">
-                            <a class="nav-link click-scroll" href="ranking/rankingShow10.php">RANKING</a>
+                            <a class="nav-link click-scroll" href="../ranking/rankingShow10.php">RANKING</a>
                         </li>
 
                         <li class="nav-item.inactive">
-                            <a class="nav-link click-scroll" href="review/reviews.php">REVIEWS</a>
+                            <a class="nav-link click-scroll" href="../review/reviews.php">REVIEWS</a>
                         </li>
 
                         <li class="nav-item">
@@ -124,7 +128,7 @@ $conn->close();
                     </ul>
 
                     <div class="d-none d-lg-block">
-                        <a href="mypage.php" class="navbar-icon bi-person smoothscroll"></a>
+                        <a href="../userPage/mypage.php" class="navbar-icon bi-person smoothscroll"></a>
                     </div>
                 </div>
             </div>
@@ -143,7 +147,7 @@ $conn->close();
 
                         </div>
 
-                        <form action="feedback.php" method="post">
+                        <form action="../userPage/feedback.php" method="post">
 
                         <!-- Rating Section-->
                         <div class="text-center my-3">
@@ -192,11 +196,11 @@ $conn->close();
         <!-- jQuery -->
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         
-        <script src="js/bootstrap.bundle.min.js"></script>
-        <script src="js/jquery.sticky.js"></script>
-        <script src="js/feedback.js"></script>
-        <script src="js/click-scroll.js"></script>
-        <script src="js/custom.js"></script>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script src="../js/jquery.sticky.js"></script>
+        <script src="../js/feedback.js"></script>
+        <script src="../js/click-scroll.js"></script>
+        <script src="../js/custom.js"></script>
          
 
 

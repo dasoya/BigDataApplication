@@ -2,7 +2,7 @@
 <?php
 
 // DB 연결 설정
-require("dbconfig.php");
+require("../dbconfig.php");
 
 // Create connection //
 $conn = mysqli_connect($server_name, $db_username, $db_password, $db_name);

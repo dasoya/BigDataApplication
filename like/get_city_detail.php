@@ -1,5 +1,5 @@
 <?php
-require("dbconfig.php");
+require("../dbconfig.php");
 
 
     // (1) connect to database //

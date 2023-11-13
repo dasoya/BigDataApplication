@@ -8,7 +8,7 @@
     // 세션 변수 사용
     }
     else{
-        header("Location: /BigDataApplication/login.html");
+        header("Location: ../userPage/login.html");
         exit();        
     }
     
@@ -21,8 +21,8 @@
     //}
 
     include "../dbconfig.php";
-    include "getWriterId.php";
-    include "show.php";
+    include "../review/getWriterId.php";
+    include "../review/show.php";
 
 
 
@@ -51,7 +51,7 @@
     <main>
         <nav class="navbar navbar-expand-lg">
             <div class="container">
-                <a class="navbar-brand" href="base.html">
+                <a class="navbar-brand" href="../index.php">
                     <i class="bi-back"></i>
                     <span>Trip Planner</span>
                 </a>
@@ -66,23 +66,23 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-lg-5 me-lg-auto">
                         <li class="nav-item">
-                            <a class="nav-link click-scroll" href="#section_1">ESTIMATE</a>
+                            <a class="nav-link click-scroll" href="../index.php">ESTIMATE</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link click-scroll" href="#section_2">RECOMEND</a>
+                            <a class="nav-link click-scroll" href="../recommend/recommend_base.html">RECOMEND</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link click-scroll" href="ranking/rankingShow10.php">RANKING</a>
+                            <a class="nav-link click-scroll" href="../ranking/rankingShow10.php">RANKING</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link click-scroll" href="review/reviews.php">REVIEWS</a>
+                            <a class="nav-link click-scroll" href="../review/reviews.php">REVIEWS</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link click-scroll" href="#section_4">FEEDBACK</a>
+                            <a class="nav-link click-scroll" href="../userPage/feedback.php">FEEDBACK</a>
                         </li>
 
 
