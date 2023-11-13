@@ -21,7 +21,8 @@ $dblink = mysqli_connect($server_name, $db_username , $db_password, $db_name);
                     FROM ContinentMaxTripCount
                     GROUP BY continent_name
                 )
-                SELECT cm.continent_name as cont_name, cmtc.country_name as country_name, cmtc.city_name as city_name ,cmtc.num_of_visiter as total
+                SELECT cm.continent_name as cont_name, cmtc.country_name as country_name, cmtc.city_name as city_name ,cmtc.num_of_visiter as total,
+                         RANK() OVER (ORDER BY total DESC) AS rank
                 FROM ContinentMax cm
                 INNER JOIN ContinentMaxTripCount cmtc ON cm.continent_name = cmtc.continent_name 
                         AND cm.max_count = cmtc.num_of_visiter;
