@@ -4,7 +4,7 @@ session_start();
 
 // 사용자가 로그인되어 있지 않으면 로그인 페이지로 리디렉션
 if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
-    header("location: ../login.html");
+    header("location: login.html");
     exit;
 }
 
