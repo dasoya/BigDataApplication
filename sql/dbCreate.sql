@@ -106,7 +106,6 @@ CREATE TABLE `feedback` (
 );
 
 CREATE UNIQUE INDEX id ON user(id);
-CREATE UNIQUE INDEX id ON prediction(id);
 CREATE UNIQUE INDEX id ON trip(id);
 CREATE UNIQUE INDEX id ON city(id);
 
