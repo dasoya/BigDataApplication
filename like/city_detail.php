@@ -83,6 +83,9 @@
                                 $html = '<div class="city-like">';
                                 $html .= '<h1>[' . $cityName . ']</h1>';
                                 // 좋아요 버튼 추가 //
+                                if (!isset($_SESSION['id'])){
+                                    header("Location: ../userPage/login.html");
+                                };
                                 $uid = $_SESSION['id'];
                                 // $uid ='dlwlgP';
                                 // $new_url = "'" . "like_city.php?city=" . $city_id . "&uid=" . $uid . "'";
