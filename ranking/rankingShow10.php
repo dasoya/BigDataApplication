@@ -192,9 +192,9 @@
                                                 foreach ($cityRanking as $city) {
                                                     echo "<tr>";
                                                         echo "<td>" . $city['rank'] . "</td>";
-                                                        echo "<td><strong>" . $city['name'] . "</strong></td>";
+                                                        echo "<td><strong> <a href='../like/city_detail.php?city=". $city['name']. "'>" . $city['name'] . "</a></strong></td>";
                                                         echo "<td>" . $city['cou'] . "</td>";
-                                                        echo "<td>" . $city['info'] . "</td>";
+                                                        echo "<td>" . $city['info'] . "</td>";  
                                                     echo "</tr>";
                                                 }
                                             ?>
@@ -266,7 +266,7 @@
                                                         echo "<td>" . $city_cont['rank'] . "</td>";
                                                         echo "<td>" . $city_cont['cont_name'] . "</td>";
                                                         echo "<td>" . $city_cont['country_name'] . "</td>";
-                                                        echo "<td><strong>" . $city_cont['city_name'] . "</strong></td>";
+                                                        echo "<td><strong><a href='../like/city_detail.php?city=". $city_cont['city_name']. "'>" . $city_cont['city_name'] . "</a></strong></td>";
                                                         echo "<td>" . $city_cont['total'] . "</td>";
                                                     echo "</tr>";
                                                 }
