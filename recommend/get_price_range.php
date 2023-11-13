@@ -18,8 +18,8 @@
         $_SESSION["min-val"] = $min_val;
         $_SESSION["max-val"] = $max_val;
         $sort = $_POST['dropdown'];
-        echo("Price Range : $min_val ~ $max_val");
-        echo("SORT : $sort");
+         //echo("Price Range : $min_val ~ $max_val");
+         //echo("SORT : $sort");
     }else{
         if (isset($_SESSION["min-val"]) && isset($_SESSION["max-val"])){
             $min_val = $_SESSION["min-val"];

@@ -69,7 +69,7 @@
             </div>
         </nav>
 
-        <section class="hero-section d-flex justify-content-center align-items-center" id="recommend">
+        <section class="hero-section d-flex justify-content-center align-items-center pb-2" id="recommend">
             <div class="container">
                 <div class="row">
 
@@ -88,37 +88,6 @@
                         <button type="submit" class="form-control" style="font-size : 10px">SORT</button>
                         </div>
                         </form>
-                        <body>
-                            <?php include "../recommend/get_price_range.php"; // 이걸 포함해서 get_price_range.php에서 sql 문을 실행시켜 정보를 가져오게 된다. 
-                                   
-                                    $html = '<div class="recommend_album">';
-                                    if (mysqli_num_rows($result) == 0){
-                                        $html .= "<h3> NO RECOMMENDATIONS VALID IN THE PRICE RANGE </h3>";
-                                        echo($html);
-                                        
-                                    }
-                                    else{
-                                        $idx = 1;
-                                        while ($row = mysqli_fetch_assoc($result)){
-                                            $html .= '<div class="destination">';
-                                            // $html .= '<h3>' . $idx . ' CITY NAME : ' .  $row['name2'] . '</h3>';
-                                            $html .= '<h3><a href="../like/city_detail.php?city=' . $row['name2'] . '">' . $row['name2'] . '</a></h3>'; 
-                                            $html .= '<p>CITY INFO : ' . $row['info2'] . '</p>';
-                                            $html .= '<h6>LANDMARK NAME : ' . $row['name1'] . '</h3>';
-                                            $html .= '<img class="landmark-img" width="100" height="100" src="' . $row['img1'] . '" alt="' . $row['name1'] . '">';
-                                            $html .= '<p>LANDMARK INFO : ' . $row['info1'] . '</p>';
-                                            $html .= '<div class="country-name">'. $row['country_name'] . '</div>';
-                                            // $html .= '<img class="flag-img" src="' . $row['flag'] . 'alt="No Flag Img" width="50" height="30"';
-                                            $html .= '<img class="flag-img" src="' . $row['flag'] . '" alt="No Flag Img" width="50" height="30">';
-                                            $html .= '</div>';
-                                            $idx++;
-                                        }
-                                        $html .= '</div>';
-                                        echo($html);
-                                        
-                                    };
-                            ?>
-                        </body>
                     </div>
                     
                   
@@ -126,6 +95,94 @@
             </div>
         </section>
 
+        <section class=" justify-content-center align-items-center pt-2 mt-3" id="recommend"  >
+        <div class="container mt-0">
+
+                    
+            
+                <?php include "../recommend/get_price_range.php"; // 이걸 포함해서 get_price_range.php에서 sql 문을 실행시켜 정보를 가져오게 된다. 
+
+                                   echo "<p class='text-gray'> Price Range: ".$min_val. "~ ".$max_val." |    Sort: ".$sort."</p>";
+
+                                   $html = "";
+
+                                   if (mysqli_num_rows($result) == 0){
+                                       $html .= "<h3> NO RECOMMENDATIONS VALID IN THE PRICE RANGE </h3>";
+                                       echo($html);
+                                       
+                                   }
+                                   else{
+                                       $idx = 1;
+                                       while ($row = mysqli_fetch_assoc($result)){
+                                           
+                                           $html.= '<div class="custom-block bg-white shadow-lg mb-3">';
+                                           $html.= '<a href="../like/city_detail.php?city=' . $row['name2'] . '">';
+                                        
+                                           
+                                           $html.= '<div class ="row">';
+                                           $html .= '<div class = "col-2"> <img class="landmark-img" width="200" height="200"  src="' . $row['img1'] . '" alt="' . $row['name1'] . '"></div>';
+
+                                           // $html .= '<h3>' . $idx . ' CITY NAME : ' .  $row['name2'] . '</h3>';
+                                           $html .= '<div class ="col-8" style="margin-left: 10px;"><h3>' . $row['name2'] . '</h3>'; 
+                                           $html .= '<p> : ' . $row['info2'] . '</p>';
+                                           
+                                           $html .= '  <h6>LANDMARK NAME : ' . $row['name1'] . '</h6>';
+                                           $html .= ' <p>LANDMARK INFO : ' . $row['info1'] . '</p></div>';
+
+                                           $html .= '<div class="col-1 ms-auto">'. $row['country_name']."<br>";
+                                           // $html .= '<img class="flag-img" src="' . $row['flag'] . 'alt="No Flag Img" width="50" height="30"';
+                                           $html .= '<img class="flag-img" src="' . $row['flag'] . '" alt="No Flag Img" width="50" height="30"></div>';
+                                           $html .= '</div>';
+                                           $html .= '</a></div>';
+                                           $idx++;
+                                       }
+                                       
+                                       echo($html);
+                                       
+                                   };
+                           ?>
+            </div>
+            </div>
+        </div>
+        
+        </section>
+
+        <footer class="site-footer section-padding">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-3 col-12 mb-4 pb-2">
+                    <a class="navbar-brand mb-2" href="index.php">
+                        <i class="bi-back"></i>
+                        <span>Trip Planner</span>
+                    </a>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-6">
+                    <h6 class="site-footer-title mb-3">DEVELOPED BY BIBIBIG</h6>
+
+                    <ul class="site-footer-links">
+                        <li class="site-footer-link-item">
+                            <a href="#" class="site-footer-link">정다소</a>
+                        </li>
+
+                        <li class="site-footer-link-item">
+                            <a href="#" class="site-footer-link">박유진</a>
+                        </li>
+
+                        <li class="site-footer-link-item">
+                            <a href="#" class="site-footer-link">정유리</a>
+                        </li>
+
+                        <li class="site-footer-link-item">
+                            <a href="#" class="site-footer-link">이지혜</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </footer>
 
          <!-- JAVASCRIPT FILES -->
          <script src="../js/jquery.min.js"></script>
