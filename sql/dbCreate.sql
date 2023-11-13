@@ -105,32 +105,24 @@ CREATE TABLE `feedback` (
   `message` text
 );
 
-ALTER TABLE user AUTO_INCREMENT=5001;
+CREATE UNIQUE INDEX id ON user(id);
+CREATE UNIQUE INDEX id ON prediction(id);
+CREATE UNIQUE INDEX id ON trip(id);
+CREATE UNIQUE INDEX id ON city(id);
 
+ALTER TABLE user AUTO_INCREMENT=5001;
 ALTER TABLE prediction AUTO_INCREMENT=6001;
 
 ALTER TABLE `airport` ADD FOREIGN KEY (`city_id`) REFERENCES `city` (`id`);
-
 ALTER TABLE `prediction` ADD FOREIGN KEY (`user_id`) REFERENCES `user` (`id`);
-
 ALTER TABLE `prediction` ADD FOREIGN KEY (`city_id`) REFERENCES `city` (`id`);
-
 ALTER TABLE `trip` ADD FOREIGN KEY (`city_id`) REFERENCES `city` (`id`);
-
 ALTER TABLE `Userliked` ADD FOREIGN KEY (`user_id`) REFERENCES `user` (`id`);
-
 ALTER TABLE `Userliked` ADD FOREIGN KEY (`city_id`) REFERENCES `city` (`id`);
-
 ALTER TABLE `country` ADD FOREIGN KEY (`continent_id`) REFERENCES `continent` (`id`);
-
 ALTER TABLE `review` ADD FOREIGN KEY (`user_id`) REFERENCES `user` (`id`);
-
 ALTER TABLE `airport` ADD FOREIGN KEY (`country_id`) REFERENCES `country` (`iso_code2`);
-
 ALTER TABLE `station` ADD FOREIGN KEY (`city_id`) REFERENCES `city` (`id`);
-
 ALTER TABLE `city` ADD FOREIGN KEY (`country_id`) REFERENCES `country` (`iso_code2`);
-
 ALTER TABLE `landmark` ADD FOREIGN KEY (`city_id`) REFERENCES `city` (`id`);
-
 ALTER TABLE `feedback` ADD FOREIGN KEY (`user_id`) REFERENCES `user` (`id`);
