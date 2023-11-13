@@ -13,18 +13,13 @@
         <link href="../css/templatemo-topic-listing.css" rel="stylesheet">  
     </head>
   <body id="top">
-<!-- 여기서 부터  -->
     <?php
         include "../dbconfig.php";
         include "cityRanking.php";
-        include "countryRanking.php";
-        //추후에 base..html에 넣을때 아래 주석 처리 된 코드로 변경해야함.
-        //include "ranking/cityRanking.php";
-        //include "ranking/countryRanking.php";
-       
+        include "countryRanking.php"; 
     ?>
    
-        <section class="explore-section section-padding" id="section_2">
+        <section class="explore-section section-padding pb-0 mb-0" id="section_2">
             <div class="container">
                 <div class="row">
 
@@ -57,7 +52,8 @@
                                 <div class="row">
                                     <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
                                         <div class="custom-block bg-white shadow-lg">
-                                            <a href="topics-detail.html">
+                                            <a href="../like/city_detail.php?city=<?php echo $cityRanking[0]['name'];?>">
+                    
                                                 <div class="d-flex">
                                                     <div>
                                                         <h5 class="mb-2"><?php echo $cityRanking[0]['name']; ?></h5>
@@ -73,7 +69,8 @@
 
                                     <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
                                         <div class="custom-block bg-white shadow-lg">
-                                            <a href="topics-detail.html">
+                                            <a href="../like/city_detail.php?city=<?php echo $cityRanking[1]['name'];?>">
+                    
                                                 <div class="d-flex">
                                                     <div>
                                                         <h5 class="mb-2"><?php echo $cityRanking[1]['name']; ?></h5>
@@ -91,7 +88,8 @@
 
                                     <div class="col-lg-4 col-md-6 col-12">
                                         <div class="custom-block bg-white shadow-lg">
-                                            <a href="topics-detail.html">
+                                            <a href="../like/city_detail.php?city=<?php echo $cityRanking[2]['name'];?>">
+                    
                                                 <div class="d-flex">
                                                     <div>
                                                         <h5 class="mb-2"><?php echo $cityRanking[2]['name']; ?></h5>
@@ -113,12 +111,12 @@
                                 <div class="row">
                                     <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-3">
                                             <div class="custom-block bg-white shadow-lg">
-                                                <a href="topics-detail.html">
+                                                
                                                     <div class="d-flex">
                                                         <div>
                                                             <h5 class="mb-2"><?php echo $countryRanking[0]['name']; ?></h5>
 
-                                                            <p class="mb-0">국가 정보? - </p>
+                                        
                                                         </div>
 
                                                         <span class="badge bg-advertising rounded-pill ms-auto"><?php echo $countryRanking[0]['rank'];?></span>
@@ -131,12 +129,11 @@
 
                                     <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-3">
                                             <div class="custom-block bg-white shadow-lg">
-                                                <a href="topics-detail.html">
+                        
                                                     <div class="d-flex">
                                                         <div>
                                                             <h5 class="mb-2"><?php echo $countryRanking[1]['name']; ?></h5>
 
-                                                            <p class="mb-0"> 검색링크?</p>
                                                         </div>
 
                                                         <span class="badge bg-advertising rounded-pill ms-auto"><?php echo $countryRanking[1]['rank'];?></span>
@@ -149,12 +146,11 @@
 
                                     <div class="col-lg-4 col-md-6 col-12  mb-4 mb-lg-3">
                                             <div class="custom-block bg-white shadow-lg">
-                                                <a href="topics-detail.html">
+                        
                                                     <div class="d-flex">
                                                         <div>
                                                             <h5 class="mb-2"><?php echo $countryRanking[2]['name']; ?></h5>
                                                             <p class="mb-0">
-                                                               city 목록? 
                                                             </p>
                                                         </div>
                                                         <span class="badge bg-advertising rounded-pill ms-auto"><?php echo $countryRanking[2]['rank'];?></span>
@@ -177,17 +173,11 @@
                 </p>
             </div>
         </section>
-
-        <!-- 여기까지 삽입 -->
-
-
-         <!-- JAVASCRIPT FILES -->
          <script src="../js/jquery.min.js"></script>
          <script src="../js/bootstrap.bundle.min.js"></script>
          <script src="../js/jquery.sticky.js"></script>
          <script src="../js/click-scroll.js"></script>
          <script src="../js/custom.js"></script>
-
 
 
     </main>

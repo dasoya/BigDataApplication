@@ -192,7 +192,7 @@
                                                 foreach ($cityRanking as $city) {
                                                     echo "<tr>";
                                                         echo "<td>" . $city['rank'] . "</td>";
-                                                        echo "<td>" . $city['name'] . "</td>";
+                                                        echo "<td><strong>" . $city['name'] . "</strong></td>";
                                                         echo "<td>" . $city['cou'] . "</td>";
                                                         echo "<td>" . $city['info'] . "</td>";
                                                     echo "</tr>";
@@ -218,7 +218,7 @@
                                                 foreach ($countryRanking as $country) {
                                                     echo "<tr>";
                                                         echo "<td>" . $country['rank'] . "</td>";
-                                                        echo "<td><img src=". $country['flag']." width='15' height='10'> " . $country['name'] . " </td>";
+                                                        echo "<td><img src=". $country['flag']." width='15' height='10'> <strong>" . $country['name'] . "</ strong> </td>";
                                                         echo "<td>" . $country['total'] . "</td>";
                                                     echo "</tr>";
                                                 }
@@ -252,6 +252,7 @@
                                     <table class="styled-table">
                                         <thead>
                                             <tr>
+                                                <th>Rank</th>
                                                 <th>Continent</th>
                                                 <th>Country</th>
                                                 <th>Hot City</th>
@@ -262,9 +263,10 @@
                                             <?php
                                                 foreach ($bestCityOfContinent as $city_cont) {
                                                     echo "<tr>";
+                                                        echo "<td>" . $city_cont['rank'] . "</td>";
                                                         echo "<td>" . $city_cont['cont_name'] . "</td>";
                                                         echo "<td>" . $city_cont['country_name'] . "</td>";
-                                                        echo "<td>" . $city_cont['city_name'] . "</td>";
+                                                        echo "<td><strong>" . $city_cont['city_name'] . "</strong></td>";
                                                         echo "<td>" . $city_cont['total'] . "</td>";
                                                     echo "</tr>";
                                                 }
