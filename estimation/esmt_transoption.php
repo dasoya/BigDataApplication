@@ -2,7 +2,7 @@
 // DB 연결 설정
 require("../dbconfig.php");
 
-$conn = mysqli_connect($servername, $username, $password, $dbname);
+$conn = mysqli_connect($server_name, $db_username, $db_password, $db_name);
 
 if (mysqli_connect_errno()) {
 
