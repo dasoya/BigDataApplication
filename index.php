@@ -218,7 +218,7 @@
             <div class="col-12 text-center mt-5">
                 <p class="text-gray">
                     Want to see more?
-                    <a href="rankingShow10.php" class="btn custom-btn custom-border-btn ms-3">Check out ranking</a>
+                    <a href="ranking/rankingShow10.php" class="btn custom-btn custom-border-btn ms-3">Check out ranking</a>
                 </p>
             </div>
         </section>
