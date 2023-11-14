@@ -83,7 +83,7 @@
                                 $html = '<div class="city-like">';
                                 $html .= '<h1>[' . $cityName . ']</h1>';
                                 // 좋아요 버튼 추가 //
-                                if (!isset($_SESSION['id'])){
+                                if (!isset($_SESSION['id'])){ // 사용자 로그인이 되어 있는 경우에만 가능 //
                                     header("Location: ../userPage/login.html");
                                 };
                                 $uid = $_SESSION['id'];
