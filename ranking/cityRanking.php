@@ -9,14 +9,16 @@ $dblink = mysqli_connect($server_name, $db_username , $db_password, $db_name);
         exit();
     }
     else{
-        $sql = "SELECT c.id, c.name, c.info, c.latitude, c.longitude, t.cou, l.img landmarkImgUrl ,RANK() OVER (ORDER BY t.cou DESC) AS rank
+        $sql = "SELECT c.id, c.name, c.info, c.latitude, c.longitude, t.cou, land.img as landmarkImgUrl ,RANK() OVER (ORDER BY t.cou DESC) AS rank
                 FROM (SELECT city_id, COUNT(*) cou
                         FROM trip
                         GROUP BY city_id
                         ORDER BY cou DESC
                         LIMIT 10) AS t
-                JOIN city AS c ON c.id = t.city_id 
-                JOIN landmark As l ON c.id = l.city_id;";
+                        JOIN city AS c ON c.id = t.city_id 
+                        JOIN landmark as land on land.city_id = c.id
+                GROUP by c.id
+                ORDER by rank";
         
         $result = mysqli_query($dblink, $sql);
         $cityRanking = array();
