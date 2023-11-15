@@ -70,9 +70,7 @@
         <section class="hero-section justify-content-center align-items-center pb-5">
             <div class="container">
                         <h6 class = "explore">Explore Cities Around the World !</h6><br>
-            
-            
-                    
+
                            <?php include "../like/get_city_detail.php";
                                 
                                 // 도시 정보 보여주기 //
@@ -82,7 +80,7 @@
                                 // 좋아요 버튼 추가 //
                                 if (!isset($_SESSION['id'])){ // 사용자 로그인이 되어 있는 경우에만 가능 //
                                     header("Location: ../userPage/login.html");
-                                };
+                                }
                                 $uid = $_SESSION['id'];
                                 // $uid ='dlwlgP';
                                 // $new_url = "'" . "like_city.php?city=" . $city_id . "&uid=" . $uid . "'";
