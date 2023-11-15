@@ -62,6 +62,7 @@ CREATE TABLE `city` (
   `info` text DEFAULT NULL COMMENT '도시 설명',
   `country_id` char(2) NOT NULL,
   PRIMARY KEY (`id`),
+  UNIQUE KEY `id` (`id`),
   KEY `country_id` (`country_id`),
   CONSTRAINT `city_ibfk_1` FOREIGN KEY (`country_id`) REFERENCES `country` (`iso_code2`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -129,7 +130,7 @@ CREATE TABLE `country` (
 
 LOCK TABLES `country` WRITE;
 /*!40000 ALTER TABLE `country` DISABLE KEYS */;
-INSERT INTO `country` VALUES (784,'ARE','AE','United Arab Emirates','https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Flag_of_the_United_Arab_Emirates.svg/255px-Flag_of_the_United_Arab_Emirates.svg.png',NULL,3002),(36,'AUS','AU','Australia','https://img.freepik.com/premium-vector/australia-flag-button-icon_147072-600.jpg',NULL,3004),(76,'BRA','BR','Brazil','https://i.namu.wiki/i/zp21MgQRhFJiasIohLO-MnI7LB2jDRlN9pEpiMSMy_KAXJxPUJfPzlNU3G8JzpNnJ0_JOUHvQVA_4viZGYbn5A.svg',NULL,3005),(124,'CAN','CA','Canada','https://img.freepik.com/premium-vector/canada-flag-official-colors-and-proportion-correctly-national-canada-flag_721791-960.jpg',NULL,3003),(276,'DEU','DE','Germany','https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Flag_of_West_Germany%3B_Flag_of_Germany_%281990%E2%80%931996%29.svg/220px-Flag_of_West_Germany%3B_Flag_of_Germany_%281990%E2%80%931996%29.svg.png',NULL,3001),(818,'EGY','EG','Egypt','https://img.freepik.com/free-vector/illustration-of-egypt-flag_53876-27140.jpg',NULL,3006),(724,'ESP','ES','Spain','https://img.freepik.com/free-vector/illustration-of-spain-flag_53876-18168.jpg?size=626&ext=jpg&ga=GA1.1.1413502914.1697155200&semt=ais',NULL,3001),(250,'FRA','FR','France','https://img.freepik.com/premium-vector/australia-flag-button-icon_147072-600.jpg',NULL,3001),(826,'GBR','GB','UK','https://img.freepik.com/premium-vector/vector-image-of-the-british-flag-of-england-sign-of-the-kingdom-of-great-britain-lovely-london-badge_213497-1010.jpg',NULL,3001),(300,'GRC','GR','Greece','https://img.freepik.com/premium-vector/flag-of-greece-vector-illustration_514344-273.jpg',NULL,3001),(360,'IDN','ID','Indonesia','https://img.freepik.com/free-vector/illustration-of-indonesia-flag_53876-27131.jpg',NULL,3002),(380,'ITA','IT','Italy','https://img.freepik.com/free-vector/illustration-of-italy-flag_53876-27098.jpg',NULL,3001),(392,'JPN','JP','Japan','https://img.freepik.com/premium-vector/japan-flag_855948-3.jpg',NULL,3002),(116,'KHM','KH','Cambodia','https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Flag_of_Cambodia.svg/510px-Flag_of_Cambodia.svg.png',NULL,3002),(410,'KOR','KR','South Korea','https://img.freepik.com/premium-vector/vector-south-korea-flag_1001513-6.jpg',NULL,3002),(504,'MAR','MA','Morocco','https://www.infomorocco.net/uploads/9/4/9/2/9492999/moro-flag_orig.jpg',NULL,3006),(484,'MEX','MX','Mexico','https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Flag_of_Mexico.svg/290px-Flag_of_Mexico.svg.png',NULL,3003),(528,'NLD','NL','Netherlands','https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Flag_of_the_Netherlands.svg/255px-Flag_of_the_Netherlands.svg.png',NULL,3001),(554,'NZL','NZ','New Zealand','https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Flag_of_New_Zealand.svg/1024px-Flag_of_New_Zealand.svg.png',NULL,3004),(764,'THA','TH','Thailand','https://img.freepik.com/free-vector/illustration-of-thailand-flag_53876-27145.jpg',NULL,3002),(840,'USA','US','USA','https://upload.wikimedia.org/wikipedia/commons/a/a9/Flag_of_the_United_States_%28DoS_ECA_Color_Standard%29.svg',NULL,3003),(710,'ZAF','ZA','South Africa','https://img.freepik.com/premium-vector/national-flag-of-south-africa-with-official-colors_445068-1821.jpg',NULL,3006);
+INSERT INTO `country` VALUES (784,'ARE','AE','United Arab Emirates','https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Flag_of_the_United_Arab_Emirates.svg/255px-Flag_of_the_United_Arab_Emirates.svg.png',NULL,3002),(36,'AUS','AU','Australia','https://img.freepik.com/premium-vector/australia-flag-button-icon_147072-600.jpg',NULL,3004),(76,'BRA','BR','Brazil','https://i.namu.wiki/i/zp21MgQRhFJiasIohLO-MnI7LB2jDRlN9pEpiMSMy_KAXJxPUJfPzlNU3G8JzpNnJ0_JOUHvQVA_4viZGYbn5A.svg',NULL,3005),(124,'CAN','CA','Canada','https://img.freepik.com/premium-vector/canada-flag-official-colors-and-proportion-correctly-national-canada-flag_721791-960.jpg',NULL,3003),(276,'DEU','DE','Germany','https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Flag_of_West_Germany%3B_Flag_of_Germany_%281990%E2%80%931996%29.svg/220px-Flag_of_West_Germany%3B_Flag_of_Germany_%281990%E2%80%931996%29.svg.png',NULL,3001),(818,'EGY','EG','Egypt','https://img.freepik.com/free-vector/illustration-of-egypt-flag_53876-27140.jpg',NULL,3006),(724,'ESP','ES','Spain','https://img.freepik.com/free-vector/illustration-of-spain-flag_53876-18168.jpg?size=626&ext=jpg&ga=GA1.1.1413502914.1697155200&semt=ais',NULL,3001),(250,'FRA','FR','France','https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Flag_of_France_%281794%E2%80%931815%2C_1830%E2%80%931974%29.svg/383px-Flag_of_France_%281794%E2%80%931815%2C_1830%E2%80%931974%29.svg.png',NULL,3001),(826,'GBR','GB','UK','https://img.freepik.com/premium-vector/vector-image-of-the-british-flag-of-england-sign-of-the-kingdom-of-great-britain-lovely-london-badge_213497-1010.jpg',NULL,3001),(300,'GRC','GR','Greece','https://img.freepik.com/premium-vector/flag-of-greece-vector-illustration_514344-273.jpg',NULL,3001),(360,'IDN','ID','Indonesia','https://img.freepik.com/free-vector/illustration-of-indonesia-flag_53876-27131.jpg',NULL,3002),(380,'ITA','IT','Italy','https://img.freepik.com/free-vector/illustration-of-italy-flag_53876-27098.jpg',NULL,3001),(392,'JPN','JP','Japan','https://img.freepik.com/premium-vector/japan-flag_855948-3.jpg',NULL,3002),(116,'KHM','KH','Cambodia','https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Flag_of_Cambodia.svg/510px-Flag_of_Cambodia.svg.png',NULL,3002),(410,'KOR','KR','South Korea','https://img.freepik.com/premium-vector/vector-south-korea-flag_1001513-6.jpg',NULL,3002),(504,'MAR','MA','Morocco','https://www.infomorocco.net/uploads/9/4/9/2/9492999/moro-flag_orig.jpg',NULL,3006),(484,'MEX','MX','Mexico','https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Flag_of_Mexico.svg/290px-Flag_of_Mexico.svg.png',NULL,3003),(528,'NLD','NL','Netherlands','https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Flag_of_the_Netherlands.svg/255px-Flag_of_the_Netherlands.svg.png',NULL,3001),(554,'NZL','NZ','New Zealand','https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Flag_of_New_Zealand.svg/1024px-Flag_of_New_Zealand.svg.png',NULL,3004),(764,'THA','TH','Thailand','https://img.freepik.com/free-vector/illustration-of-thailand-flag_53876-27145.jpg',NULL,3002),(840,'USA','US','USA','https://upload.wikimedia.org/wikipedia/commons/a/a9/Flag_of_the_United_States_%28DoS_ECA_Color_Standard%29.svg',NULL,3003),(710,'ZAF','ZA','South Africa','https://img.freepik.com/premium-vector/national-flag-of-south-africa-with-official-colors_445068-1821.jpg',NULL,3006);
 /*!40000 ALTER TABLE `country` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -196,9 +197,9 @@ DROP TABLE IF EXISTS `prediction`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `prediction` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `duration` int(11) DEFAULT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp() COMMENT '기록에 추가한 날짜. 나중에 정렬할 때 사용하면 좋을 듯.',
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `transportation_type` varchar(255) DEFAULT NULL,
   `transportation_cost` int(11) DEFAULT NULL,
   `accommodation_type` varchar(255) DEFAULT NULL,
@@ -210,7 +211,7 @@ CREATE TABLE `prediction` (
   KEY `city_id` (`city_id`),
   CONSTRAINT `prediction_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`),
   CONSTRAINT `prediction_ibfk_2` FOREIGN KEY (`city_id`) REFERENCES `city` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6003 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -300,6 +301,7 @@ CREATE TABLE `trip` (
   `accommodation_cost` int(11) DEFAULT NULL,
   `city_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
+  UNIQUE KEY `id` (`id`),
   KEY `city_id` (`city_id`),
   CONSTRAINT `trip_ibfk_1` FOREIGN KEY (`city_id`) REFERENCES `city` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -323,15 +325,16 @@ DROP TABLE IF EXISTS `user`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `user` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `email` varchar(255) DEFAULT NULL COMMENT '회원가입 및 로그인에 사용',
   `pw` varchar(255) NOT NULL,
   `name` varchar(255) NOT NULL,
   `age` tinyint(4) DEFAULT NULL,
   `sex` enum('Female','Male') DEFAULT NULL COMMENT 'Female / Male',
   PRIMARY KEY (`id`),
+  UNIQUE KEY `id` (`id`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5002 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -380,4 +383,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-11-09  9:47:32
+-- Dump completed on 2023-11-15 16:41:01
