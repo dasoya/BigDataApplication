@@ -67,21 +67,18 @@
             </div>
         </nav>
 
-        <section class="hero-section d-flex justify-content-center align-items-center" id="section_1">
+        <section class="hero-section justify-content-center align-items-center pb-5">
             <div class="container">
-                <div class="row">
-
-                    <div class="col-lg-8 col-12 mx-auto">
-                        <h1 class="text-white text-center">Explore Cities Around the World</h1>
-
-             
-
-                        <body>
+                        <h6 class = "explore">Explore Cities Around the World !</h6><br>
+            
+            
+                    
                            <?php include "../like/get_city_detail.php";
                                 
                                 // 도시 정보 보여주기 //
-                                $html = '<div class="city-like">';
-                                $html .= '<h1>[' . $cityName . ']</h1>';
+                                $html = '<div class="city-like d-flex">';
+                                $html .= '<img src="' . $country_flag . '" class ="flag">';
+                                $html .= '<div><div class ="d-flex city-name"> <h1 class = "text-white"> ' . $cityName . ' </h1>';
                                 // 좋아요 버튼 추가 //
                                 if (!isset($_SESSION['id'])){ // 사용자 로그인이 되어 있는 경우에만 가능 //
                                     header("Location: ../userPage/login.html");
@@ -91,47 +88,133 @@
                                 // $new_url = "'" . "like_city.php?city=" . $city_id . "&uid=" . $uid . "'";
                                 $new_url = "../like/like_city.php?city=" . $city_id . "&uid=" . $uid;
                                 // $html .= '<button type="submit" id="likeButton" onclick="location.href=' . $new_url . '">👍🏻press like👍🏻</button></div>';
-                                $html .= '<form method="post" action="' . $new_url . '"> <button type="submit" id="likeButton" onclick="<?php echo pressLike($city_id, $uid); ?>">👍🏻press like👍🏻</button></div>
-                                            </form>';
-                                $html .= '<div class="city-info"> <p><h6>city info</h6>' . $city_info . '</p>';
-                                $html .= '<img src="' . $country_flag . '"></div>';
+                                $html .= '<form method="post" action="' . $new_url . '"> <button type="submit" id="likeButton" onclick="<?php echo pressLike($city_id, $uid); ?>">👍🏻Press Like👍🏻</button>
+                                            </form></div>';
+                                $html .= ' <div class="city-info col-10"> <h5 class="text-blue">[ city info ]</h5><p class = "text-white"> : ' . $city_info . '</p></div> </div>';
+                                
+                                $html .= '</div></section><section>';
+                                $html .= '<div class ="container"><div class="row"> <div class="mt-5 col-12 col-lg-12 mb-2 "><h3 class= "text-blue">Landmarks</h3></div>';
+                                
                                 echo($html);
 
+                                
                                 // landmark 정보들 보여주기 //
-                                $html = '<div class="landmark-detail">';
+                                
+                                // $idx = 1;
+                                // while ($row = mysqli_fetch_array($result_landmark)) {
+                                //     $html = '<div class=" col-3 col-1g-3 m-2 shadow-lg landmark-detail p-2">';
+                                //     $landmark_name = $row['name'];
+                                //     $landmark_info = $row['info'];
+                                //     $landmark_img = $row['img'];
+
+                                //     $html .= '<h5>' . $idx .'. ' . $landmark_name. '</h1>';
+                                //     $html .= '<img width="200px" height="200px" src="' . $landmark_img . '">';
+                                //     $html .= '<br><br>' . $landmark_info . '';
+                                //     $html .= '</div>';
+                                //     echo($html);
+                                //     $idx++;
+
+                                // };
+                                // $html = '</div></div>';
+                                // echo($html);
+
                                 $idx = 1;
                                 while ($row = mysqli_fetch_array($result_landmark)) {
+                                    $html = '<div class=" col-12 col-1g-12 m-2 shadow-lg landmark-detail p-3">';
+                                    $html .= '<div class="d-flex">';
                                     $landmark_name = $row['name'];
                                     $landmark_info = $row['info'];
                                     $landmark_img = $row['img'];
 
-                                    $html .= '<h5>LANDMARK NAME ' . $idx .' : ' . $landmark_name. '</h1>';
-                                    $html .= '<p><h6>landmark info</h6>' . $landmark_info . '</p>';
-                                    $html .= '<img width="500px" height="500px" src="' . $landmark_img . '">';
+                                    
+                                    $html .= '<img class="landmark-img" src="' . $landmark_img . '">';
+                                    $html .= '<div class="m-3"><h5 class="mt-2 mb-2">' . $idx .'. ' . $landmark_name. '</h5>';
+                                    $html .= '<p class="m-1"> : ' . $landmark_info . '</p></div>';
+                                    $html .= '</div></div>';
+                                    echo($html);
+                                    $idx++;
+
                                 };
+                                $html = '</div>';
                                 echo($html);
                             ?>
                             <style>
                                 .city-like{
-                                    text-align: center;
+                                    /* text-align: center; */
+                                }
+                                .city-name{
+                                    margin-left: 25px;
+                                    margin-bottom: 10px;
                                 }
                                 .landmark-detail{
-                                    text-align: center;
+                                    
+                                    border-radius: 20px;
+                                    background-color: #ffffff;
+                                }
+                                .landmark-img{
+                                    width: 200px;
+                                    height: 200px;
+                                    border-radius: 3%;
+                                }
+                                .flag {
+                                    width: 25%;
+                                    height: 25%;
                                 }
                                 .city-info{
-                                    text-align: center;
+                                    margin-left: 25px;
+                                } 
+                                .text-blue{
+                                    color:#1F375B;
+                                }
+                                .explore{
+                                    color: rgba(255, 255, 255, 0.8  );
                                 }
                             </style>
                             
-                        </body>
+                        
 
-                    </div>
+                
 
-                </div>
-            </div>
+                
+        
         </section>
 
-       
+        <footer class="site-footer section-padding">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-3 col-12 mb-4 pb-2">
+                    <a class="navbar-brand mb-2" href="index.php">
+                        <i class="bi-back"></i>
+                        <span>Trip Planner</span>
+                    </a>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-6">
+                    <h6 class="site-footer-title mb-3">DEVELOPED BY BIBIBIG</h6>
+
+                    <ul class="site-footer-links">
+                        <li class="site-footer-link-item">
+                            <a href="#" class="site-footer-link">정다소</a>
+                        </li>
+
+                        <li class="site-footer-link-item">
+                            <a href="#" class="site-footer-link">박유진</a>
+                        </li>
+
+                        <li class="site-footer-link-item">
+                            <a href="#" class="site-footer-link">정유리</a>
+                        </li>
+
+                        <li class="site-footer-link-item">
+                            <a href="#" class="site-footer-link">이지혜</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </footer>
         
 
          <!-- JAVASCRIPT FILES -->
@@ -165,12 +248,15 @@
     #likeButton{
         background-color: transparent;
         font-size: 24px;
+        color: #ffffff;
         cursor: pointer;
-        border: 2px solid #000; /* 테두리 스타일 및 색상 설정 */
+        border: 2px solid #ffffff; /* 테두리 스타일 및 색상 설정 */
         padding: 5px 10px; /* 내부 여백 설정 */
-        border-radius: 0px; /* 테두리의 모서리를 둥글게 만듭니다. */
+        border-radius: 50px; /* 테두리의 모서리를 둥글게 만듭니다. */
         display: inline-block;
         max-width: 1000px;
+        margin-left: 20px;
+        margin-top:15px
     }
     #likeButton:active {
         transform: scale(0.95); /* 버튼 크기를 95%로 축소 */
