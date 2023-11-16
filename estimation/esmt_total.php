@@ -50,14 +50,7 @@ else{
     } else {
          printf("Error %s \n",mysqli_error($conn));
     }
-    //session_destroy();
-    $_SESSION['duration'] = null;
-    $_SESSION['cityId'] = null;
-    $_SESSION['accType'] = null;
-    $_SESSION['transType'] = null;
-    $_SESSION['accCost'] = null;
-    $_SESSION['transCost'] = null;
-    $_SESSION['total']  = null;
+
     $totalCost = null;
 }
 

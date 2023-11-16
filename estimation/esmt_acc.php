@@ -37,7 +37,7 @@ else{
     // 2. 종류가 없다면 숙박 종류가 동일한 조건의 가격 고려
     // 3. duration으로 나눠서 AVG 
     // 4. AVG한값을 duration만큼 곱함
-    $query = "SELECT city.name, accommodation_type, duration,accommodation_cost, AVG(accommodation_cost / duration) AS avgDayCost FROM `trip`,city WHERE city_id = ".$cityId." AND accommodation_type = '" .$accType . "'";
+    $query = "SELECT city.name, accommodation_type, duration,accommodation_cost, AVG(accommodation_cost / duration) AS avgDayCost FROM `trip`,city WHERE city.id = ".$cityId." AND accommodation_type = '" .$accType . "'";
     #'SELECT city_id, accommodation_type, duration, AVG(accommodation_cost / duration) AS avgDayCost FROM `trip` WHERE city_id = '.$cityId.' AND accommodation_type ='.$accType."'";
     $result = mysqli_query($conn,$query);
 

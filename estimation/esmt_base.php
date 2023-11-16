@@ -93,9 +93,7 @@ body, html {
 										
 								<?php
 
-								if(!session_id()) {
-                                    session_start();
-								}
+					
 								
                         
 								if(isset($_POST['cityId']) && isset($_POST['accType']) && isset($_POST['duration']) && isset($_POST['transType'])) {
