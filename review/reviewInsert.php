@@ -57,8 +57,13 @@ CREATE TABLE `review` (
      -- `city_id` integer NOT NULL
   );
 */
-//id 가 어차피 auto increment인데 없얻어도 삽입되나? 된다. 
+//id 가 어차피 auto increment인데 없어도 삽입되나? 된다. 
 //created_at 도 마찬가지. 조건에 추가해둬서 알아서 입력됨
+
+if(isset($_SESSION['id'])){
+  header('Location: ../userPage/login.html');
+}
+//세션 없는 상태로 리뷰 입력페이지 접근해서 올리는 걸 방지.
 
 $sql = "INSERT INTO review (title, body, user_id) VALUES (?, ?, ?);";
 
@@ -83,7 +88,6 @@ if ($stmt = mysqli_prepare($dblink, $sql)) {
 }
 mysqli_stmt_close($stmt);
 mysqli_close($dblink);
-
 
 
 //$review_id가 null인지 검사한다음에 보내기!!!!

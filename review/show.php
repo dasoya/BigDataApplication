@@ -19,34 +19,52 @@ if (mysqli_connect_errno()) {
 	exit();
 }
 
-$sql = "SELECT * 
+$sql_review = "SELECT * 
 		FROM review
 		WHERE id = ? ;";
 
+$sql_writer = "SELECT name
+		From user
+		Where id = (Select user_id
+					From review 
+					Where id = ? );";
 
-if ($stmt = mysqli_prepare($dblink, $sql)) {
+$stmt_review = mysqli_prepare($dblink, $sql_review);
+$stmt_writer = mysqli_prepare($dblink, $sql_writer);
 
-	mysqli_stmt_bind_param($stmt, "i", $id);
+if ($stmt_review && $stmt_writer ) {
+
+	mysqli_stmt_bind_param($stmt_review, "i", $id);
+	mysqli_stmt_bind_param($stmt_writer, "i", $id);
 
 	$id = $_GET['reviewId'];
 
-	if (mysqli_stmt_execute($stmt)) {
+	if (mysqli_stmt_execute($stmt_review)) {
 		//성공하면
 		//변수에 열저장
-		$result = mysqli_stmt_get_result($stmt);
-		$review = mysqli_fetch_array($result);
+		$result_review = mysqli_stmt_get_result($stmt_review);
+		$review = mysqli_fetch_array($result_review);
 
 
-		mysqli_free_result($result);
+		mysqli_free_result($result_review);
 	} else {
+		printf('%s', mysqli_error($dblink));
+	}
+	if(mysqli_stmt_execute($stmt_writer)){
+		$result_writer= mysqli_stmt_get_result($stmt_writer);
+		$writer = mysqli_fetch_array($result_writer);
 
-		// 실패하면, 어떻게 보여줄거야? 리뷰 메인페이지로 리다이렉트? 
+		mysqli_free_result($result_writer);
+	}
+	else{
+		printf('%s', mysqli_error($dblink));
 	}
 
-	mysqli_stmt_close($stmt);
 } else { // prepare 실패
 }
 
+mysqli_stmt_close($stmt_review);
+mysqli_stmt_close($stmt_writer);
 
 mysqli_close($dblink);
 

@@ -111,7 +111,7 @@ include "../dbconfig.php";
                         </div>
                         <div class="mt-lg-0">
                             <?php
-                             echo "<div class='col-lg-5 col-5 text-left>'><i class='text-gray'> user_id: " .$review['user_id'] ."/ created_at: ". date("Y-m-d", strtotime($review["created_at"]) )."</i> </div>";
+                             echo "<div class='col-lg-5 col-5 text-left>'><i class='text-gray'> writer: " .$writer['name'] ." | created_at: ". date("Y-m-d", strtotime($review["created_at"]) )."</i> </div>";
                             ?>
                         </div>
 
