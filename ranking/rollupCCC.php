@@ -39,7 +39,7 @@ else {
 
         // 국가 이름 출력 (한 번만)
         if ($prev_country != $row['country_name']) {
-            echo "<td>" . $row['country_name'] . "</td>";
+            echo "<td><strong>" . $row['country_name'] . "</storng></td>";
             $prev_country = $row['country_name'];
         } else {
             echo "<td></td>";
@@ -47,7 +47,7 @@ else {
 
         // 도시 이름 출력
         if (!empty($row['city_name'])) {
-            echo "<td><a href='../like/city_detail.php?city=". $row['city_name'] . "'>" . $row['city_name'] . "</a></td>";
+            echo "<td><strong><a href='../like/city_detail.php?city=". $row['city_name'] . "'>" . $row['city_name'] . "</a></storng></td>";
         } else {
             echo "<td></td>";
         }

@@ -15,7 +15,8 @@ $dblink = mysqli_connect($server_name, $db_username , $db_password, $db_name);
                                 GROUP BY city_id) as t
                         LEFT JOIN city on city.id = t.city_id
                         GROUP By country_id) as city
-                    LEFT JOIN country on country.iso_code2 = city.country_id;";
+                    LEFT JOIN country on country.iso_code2 = city.country_id
+                    LIMIT 10";
         
         $result = mysqli_query($dblink, $sql);
         $countryRanking = array();

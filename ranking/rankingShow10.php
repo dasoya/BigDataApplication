@@ -157,10 +157,10 @@
                             <button class="nav-link" id="marketing-tab" data-bs-toggle="tab" data-bs-target="#marketing-tab-pane" type="button" role="tab" aria-controls="marketing-tab-pane" aria-selected="false">country</button>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="finance-tab" data-bs-toggle="tab" data-bs-target="#finance-tab-pane" type="button" role="tab" aria-controls="finance-tab-pane" aria-selected="false">Country&City</button>
+                            <button class="nav-link" id="finance-tab" data-bs-toggle="tab" data-bs-target="#finance-tab-pane" type="button" role="tab" aria-controls="finance-tab-pane" aria-selected="false">Continent</button>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="music-tab" data-bs-toggle="tab" data-bs-target="#music-tab-pane" type="button" role="tab" aria-controls="music-tab-pane" aria-selected="false">best city of continent</button>
+                            <button class="nav-link" id="music-tab" data-bs-toggle="tab" data-bs-target="#music-tab-pane" type="button" role="tab" aria-controls="music-tab-pane" aria-selected="false">Country&City</button>
                         </li>
                         <li class="nav-item" role="presentation">
                             <button class="nav-link" id="education-tab" data-bs-toggle="tab" data-bs-target="#education-tab-pane" type="button" role="tab" aria-controls="education-tab-pane" aria-selected="false">ALL</button>
@@ -205,6 +205,7 @@
                             <!-- 여기부터 country -->
                             <div class="tab-pane fade" id="marketing-tab-pane" role="tabpanel" aria-labelledby="marketing-tab" tabindex="0">
                                 <div class="row">
+                                <h6 class = "text-center"> TOP 10 Country</h6>
                                     <table class="styled-table">
                                         <thead>
                                             <tr>
@@ -230,26 +231,8 @@
                             <!-- 여기서부터 rollup cc -->
                             <div class="tab-pane fade" id="finance-tab-pane" role="tabpanel" aria-labelledby="finance-tab" tabindex="0">   
                                 <div class="row">
-                                    <table class="styled-table">
-                                        <thead>
-                                            <tr>
-                                                <th>country</th>
-                                                <th>city</th>
-                                                <th>Number of visits</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <?php
-                                                include "rollupCC.php";
-                                            ?>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                           
-                            <div class="tab-pane fade" id="music-tab-pane" role="tabpanel" aria-labelledby="music-tab" tabindex="0">
-                                <div class="row">
-                                    <table class="styled-table">
+                                <h6 class = "text-center">Best City Of Continent</h6>
+                                <table class="styled-table">
                                         <thead>
                                             <tr>
                                                 <th>Rank</th>
@@ -274,10 +257,31 @@
                                         </tbody>
                                     </table>
                                 </div>
+                            </div>
+                           
+                            <div class="tab-pane fade" id="music-tab-pane" role="tabpanel" aria-labelledby="music-tab" tabindex="0">
+                                <div class="row">
+                                <h6 class = "text-center"> Country-City Total Visits</h6>
+                                <table class="styled-table">
+                                        <thead>
+                                            <tr>
+                                                <th>country</th>
+                                                <th>city</th>
+                                                <th>Number of visits</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php
+                                                include "rollupCC.php";
+                                            ?>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>  
                              <!-- 전체 rollup.-->
                              <div class="tab-pane fade" id="education-tab-pane" role="tabpanel" aria-labelledby="education-tab" tabindex="0">
                                 <div class="row">
+                                <h6 class = "text-center"> Continent-Country-City Total Visits</h6>
                                     <table class="styled-table">
                                         <thead>
                                             <tr>

@@ -42,7 +42,7 @@ if (mysqli_connect_errno()) {
 
         // 도시 이름 출력
         if (!empty($row['city_name'])) {
-            echo "<td><a href='../like/city_detail.php?city=". $row['city_name'] . "'>" . $row['city_name'] . "</a></td>";
+            echo "<td><strong><a href='../like/city_detail.php?city=". $row['city_name'] . "'>" . $row['city_name'] . "</a></strong></td>";
         } else {
             echo "<td></td>";
         }

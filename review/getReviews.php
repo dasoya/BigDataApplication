@@ -29,7 +29,7 @@ $total = 1;
 $url = strtok($_SERVER['REQUEST_URI'], "?")."?searchKeyword=".$searchKeyword. "&page=";
 
 
- // 만약 $searchKeyword에  문자열이 없으면 전체 게시글.
+ // 만약 $searchKeyword에  문자열이 없으면 전체 게시글 보여준다.
 $sql_review = "SELECT r.id as review_id, title, body, created_at, u.id as user_id, u.name as user_name
                 FROM  review  as r JOIN user as u on r.user_id = u.id
                 where ( title like ? ) or ( body like ? ) 
@@ -93,33 +93,6 @@ if (mysqli_connect_errno()) {
     }
 
 
-    // $result_total = mysqli_query($dblink, $sql_total);
-    // $result_review = mysqli_query($dblink, $sql_review);
-    // if (mysqli_num_rows($result_review) > 0) {
-
-    //     while ($row = mysqli_fetch_assoc($result_total)) {
-    //         $total = $row['total'];
-            
-    //     }
-         
-    //     $total_cnt  = ceil($total / $page_num);
-
-    //     while ($review = mysqli_fetch_assoc($result_review)) {
-    //         //어떤 format으로 보여줄지 고민해보기
-    //         //게시판 형으로 갈거라면 이대로
-    //         //div 형으로 묶어서 보여줄거면 아래 echo 바꾸기 (일단 테스트)// <td>" . $review["body"] . "</td><td>" . $review["user_id"] . "</td>
-    //         echo "<tr>
-    //                     <td>" . $review["id"] . "</td>
-    //                     <td>" . $review["title"] . "</td>
-    //                     <td>" . $review["created_at"] . "</td>
-    //                 </tr>";
-    //     }
-    //     mysqli_free_result($result_total);
-    //     mysqli_free_result($result_review);
-    // } else {
-    //     printf("", mysqli_error($dblink));
-    //     exit();
-    // }
 
 mysqli_close($dblink);
 
