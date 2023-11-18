@@ -59,7 +59,7 @@
                     </ul>
 
                     <div class="d-none d-lg-block">
-                        <a href="../userPage/login.html" class="navbar-icon bi-person smoothscroll"></a>
+                        <a href="../userPage/mypage.php" class="navbar-icon bi-person smoothscroll"></a>
                     </div>
                 </div>
             </div>
